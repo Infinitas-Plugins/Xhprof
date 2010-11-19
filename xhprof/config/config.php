@@ -1,5 +1,5 @@
 <?php
 	$config['Xhprof'] = array(
-		'url' => 'http://admin.dev/xhprof/xhprof_html/',
-		'output' => '/var/www/xhprof/'
+		'url' => '/admin/xhprof/xhprof_html/',
+		'output' => '/var/www/profiles/xhprof/'
 	);

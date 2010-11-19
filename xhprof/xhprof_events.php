@@ -54,4 +54,22 @@
 			$menu['main']['Dashboard'] = array('plugin' => 'xhprof', 'controller' => 'xhprofs', 'action' => 'index');
 			return $menu;
 		}
+
+		public function onRequireCssToLoad($event) {
+			if($event->Handler->params['plugin'] == 'xhprof' && isset($event->Handler->params['admin']) && $event->Handler->params['admin']){
+				return array(
+					'/xhprof/css/xhprof',
+					'/xhprof/css/autocomplete'
+				);
+			}
+		}
+
+		public function onRequireJavascriptToLoad($event) {
+			if($event->Handler->params['plugin'] == 'xhprof' && isset($event->Handler->params['admin']) && $event->Handler->params['admin']){
+				return array(
+					//'/xhprof/js/xhprof_report',
+					'/xhprof/js/autocomplete'
+				);
+			}
+		}
 	 }

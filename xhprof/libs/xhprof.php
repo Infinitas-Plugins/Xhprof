@@ -18,6 +18,8 @@
 
 		public $profileCake = false;
 
+		public $errors = array();
+
 		public $ignore = array(
 
 		);
@@ -124,7 +126,7 @@
 			}
 
 			if(!$_this->__xhprofInstalled){
-				$this->errors[] = 'xhprof does not seem to be installed';
+				$_this->errors[] = 'xhprof does not seem to be installed';
 				return false;
 			}
 			
@@ -183,7 +185,7 @@
 			$links = array();
 			foreach($_this->runs as $name => $run){
 				if(Configure::read('debug')){
-					$links[] = '<a href="'.Configure::read('Xhprof.url').'index.php?run='.$run.'&source='.$name.'" target="_blank">'.str_replace('_', '/', $name).'</a>';
+					$links[] = '<a href="'.Configure::read('Xhprof.url').'index/run:'.$run.'/source:'.$name.'/all:0" target="_blank">'.str_replace('_', '/', $name).'</a>';
 					continue;
 				}
 

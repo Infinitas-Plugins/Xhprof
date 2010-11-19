@@ -141,6 +141,15 @@ class ApiIndexShell extends Shell {
 		foreach (array_keys($config['paths']) as $path) {
 			$fileList = $this->ApiFile->fileList($path);
 			foreach ($fileList as $file) {
+				$skip = false;
+				foreach($config['exclude'] as $fileIgnore){
+					if(strstr($file, $fileIgnore)){
+						$skip = true;
+					}
+				}
+				if($skip){
+					continue;
+				}
 				try {
 					$docsInFile = $this->ApiFile->loadFile($file);
 				} catch (Exception $e) {

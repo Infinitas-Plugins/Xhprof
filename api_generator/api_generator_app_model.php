@@ -36,6 +36,8 @@ ConnectionManager::create(
 
 class ApiGeneratorAppModel extends AppModel {
 	public $useDbConfig = 'infinitasapi';
+
+	public $viewable = false;
 /**
  * Inflect a slashed path to url safe path. Trims ApiGenerator.filePath off as well.
  *

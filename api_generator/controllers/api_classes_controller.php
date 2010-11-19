@@ -55,13 +55,6 @@ class ApiClassesController extends ApiGeneratorAppController {
 		parent::beforeFilter();
 
 		$this->ApiFile->ApiConfig->read();
-
-		if (isset($this->ApiFile->ApiConfig->data['users'])) {
-			$this->Security->loginUsers = $this->ApiFile->ApiConfig->data['users'];
-		}
-		$this->Security->loginOptions = array('type' => 'basic');
-		$this->Security->blackHoleCallback = '_notFound';
-		$this->Security->requireLogin('admin_index', 'admin_docs_coverage', 'admin_calculate_coverage');
 	}
 /**
  * Extract all the useful config info out of the ApiConfig.
@@ -185,7 +178,6 @@ class ApiClassesController extends ApiGeneratorAppController {
 			$this->_notFound($e->getMessage());
 		}
 		$backwards = $this->referer();
-		$this->helpers[] = 'Number';
 		$this->set(compact('apiClass', 'analysis', 'backwards'));
 	}
 /**

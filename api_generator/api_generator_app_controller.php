@@ -19,16 +19,6 @@
  **/
 class ApiGeneratorAppController extends AppController {
 /**
- * theme
- *
- **/
-	public $theme = 'api';
-/**
- * view
- *
- **/
-	public $view = 'Theme';
-/**
  * beforeFilter callback
  *
  * @return void

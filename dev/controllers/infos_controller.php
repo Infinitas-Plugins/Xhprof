@@ -69,6 +69,10 @@
 				$this->__removeSymlinks();
 			}
 
+			else if(isset($this->params['named']['show']) && $this->params['named']['show']){
+				$this->set('links', $this->DevLib->listSymlinks());
+			}
+
 			else{
 				$this->__createSymlinks();
 			}
@@ -96,5 +100,21 @@
 
 		private function __removeSymlinks(){
 			$links = $this->DevLib->autoAssetLinks(true);
+
+			if($links && (int)$links > 0){
+				$this->notice(
+					sprintf(__('%d symlinks removed', true), $links),
+					array(
+						'redirect' => true
+					)
+				);
+			}
+
+			$this->notice(
+				sprintf(__('No symlinks were removed', true), $links),
+				array(
+					'redirect' => true
+				)
+			);
 		}
 	}

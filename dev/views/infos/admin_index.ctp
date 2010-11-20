@@ -31,6 +31,11 @@
 	);
 	$actions = array(
 		$this->Html->link(
+			__('List Symlinks', true),
+			array('action' => 'symlink', 'show' => 1, '?' => 'width=500'),
+			array('class' => 'thickbox')
+		),
+		$this->Html->link(
 			__('Create Symlinks', true),
 			array('action' => 'symlink')
 		),

@@ -1,35 +1,88 @@
 <?php
-	/* 
-	 * Short Description / title.
-	 * 
-	 * Overview of what the file does. About a paragraph or two
+	/**
+	 * A bunch of methods that can be used to aid the development and release of
+	 * an Application
 	 * 
 	 * Copyright (c) 2010 Carl Sutton ( dogmatic69 )
 	 * 
 	 * @filesource
 	 * @copyright Copyright (c) 2010 Carl Sutton ( dogmatic69 )
 	 * @link http://www.infinitas-cms.org
-	 * @package {see_below}
-	 * @subpackage {see_below}
+	 * @package Developer
+	 * @subpackage Developer.dev.libs.dev_lib
 	 * @license http://www.opensource.org/licenses/mit-license.php The MIT License
-	 * @since {check_current_milestone_in_lighthouse}
+	 * @since 0.1
 	 * 
-	 * @author {your_name}
+	 * @author dogmatic69
 	 * 
 	 * Licensed under The MIT License
 	 * Redistributions of files must retain the above copyright notice.
 	 */
 	class DevLib{
+		/**
+		 * look through the webroot dir and find any symlinks. Also looks through
+		 * the webroot/theme dir for any links.
+		 *
+		 * @return array a list of smylink folders
+		 */
+		public function listSymlinks(){
+			$themeAssets = getcwd() . DS . 'theme' . DS;
+			$links = array();
+
+			if(is_dir($themeAssets)){
+				$Folder = new Folder($themeAssets);
+				$folders = $Folder->read();
+				$folders = $folders[0];
+
+				foreach($folders as $folder){
+					if(is_link($themeAssets . $folder)){
+						$links[] = $themeAssets . $folder;
+					}
+				}
+			}
+
+			$plugins = App::objects('plugin');
+			foreach($plugins as $plugin){
+				if(is_link(getcwd() . DS . Inflector::underscore($plugin))){
+					$links[] = getcwd() . DS . Inflector::underscore($plugin);
+				}
+			}
+
+			return $links;
+		}
+
+		/**
+		 * create and delete links to asset files for your app, this will help
+		 * speed the site up by making plugin assets not serve through php.
+		 *
+		 * Sites with many plugins can have 50 or more requests through php for
+		 * each page load. Having symlinks to all the plugin assets will reduce
+		 * this to just one.
+		 *
+		 * creating the links will first remove any existing links and then recreate
+		 * all of them
+		 *
+		 * @param bool $remove pass true to remove them
+		 * @return int the number of links that were added / removed.
+		 */
 		public function autoAssetLinks($remove = false){
-			if($remove){
-				$this->__linuxRemoveAssetSymlinks();
+			if($remove === true){
+				return $this->__removeAssetSymlinks();
 			}
 			else{
-				$this->__linuxCreateAssetSymlinks();
+				$this->__removeAssetSymlinks();
+				return $this->__createAssetSymlinks();
 			}
 		}
 
-		private function __linuxCreateAssetSymlinks(){
+		/**
+		 * create symlinks to asset files in the app. Will find all themes and
+		 * plugins with asset files (css / js) and create symlinks to the files
+		 * in the webroot dir
+		 *
+		 * @return int the number of links that were created
+		 */
+		private function __createAssetSymlinks(){
 			$Folder = new Folder(APP . 'views' . DS . 'themed' . DS);
 			$folders = $Folder->read();
 			$folders = $folders[0];
@@ -63,28 +116,21 @@
 			return $createdLinks;
 		}
 
-		private function __linuxRemoveAssetSymlinks(){
-			$themeAssets = getcwd() . DS . 'theme' . DS;
-			
-			if(is_dir($themeAssets)){
-				$Folder = new Folder($themeAssets);
-				$folders = $Folder->read();
-				$folders = $folders[0];
+		/**
+		 * Remove symlinks to asset files
+		 *
+		 * @return int the number of links that were removed
+		 */
+		private function __removeAssetSymlinks(){
+			$links = $this->listSymlinks();
+			$removedLinks = 0;
 
-				foreach($folders as $folder){					
-					if(is_link($themeAssets . $folder)){
-						pr($themeAssets . $folder);
-					}
-				}
-			}
-			
-			$plugins = App::objects('plugin');
-			foreach($plugins as $plugin){
-				if(is_link(getcwd() . DS . Inflector::underscore($plugin))){
-					pr(getcwd() . DS . Inflector::underscore($plugin));
+			foreach($links as $link){
+				if(unlink($link)){
+					++$removedLinks;
 				}
 			}
 
-			exit;
+			return $removedLinks;
 		}
 	}

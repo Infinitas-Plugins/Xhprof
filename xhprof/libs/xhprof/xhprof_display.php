@@ -53,7 +53,7 @@ $base_path = rtrim(dirname($_SERVER['SCRIPT_NAME']), "/");
  *
  */
 
-function xhprof_count_format($num) {
+function xhprof_count_format($num) {	
 	$num = round($num, 3);
 	return round($num) == $num ? number_format($num) : number_format($num, 3);
 }
@@ -169,146 +169,8 @@ $diff_mode = false;
 // call count data present?
 $display_calls = true;
 
-// The following column headers are sortable
-$sortable_columns = array(
-	'fn' => 1,
-	'ct' => 1,
-	'wt' => 1,
-	'excl_wt' => 1,
-	'ut' => 1,
-	'excl_ut' => 1,
-	'st' => 1,
-	'excl_st' => 1,
-	'mu' => 1,
-	'excl_mu' => 1,
-	'pmu' => 1,
-	'excl_pmu' => 1,
-	'cpu' => 1,
-	'excl_cpu' => 1,
-	'samples' => 1,
-	'excl_samples' => 1
-);
-
-// Textual descriptions for column headers in 'single run' mode
-$descriptions = array(
-	'fn' => 'Function Name',
-	'ct' => 'Calls',
-	'Calls%' => 'Calls%',
-	'wt' => 'Incl. Wall Time<br>(microsec)',
-	'IWall%' => 'IWall%',
-	'excl_wt' => 'Excl. Wall Time<br>(microsec)',
-	'EWall%' => 'EWall%',
-	'ut' => 'Incl. User<br>(microsecs)',
-	'IUser%' => 'IUser%',
-	'excl_ut' => 'Excl. User<br>(microsec)',
-	'EUser%' => 'EUser%',
-	'st' => 'Incl. Sys <br>(microsec)',
-	'ISys%' => 'ISys%',
-	'excl_st' => 'Excl. Sys <br>(microsec)',
-	'ESys%' => 'ESys%',
-	'cpu' => 'Incl. CPU<br>(microsecs)',
-	'ICpu%' => 'ICpu%',
-	'excl_cpu' => 'Excl. CPU<br>(microsec)',
-	'ECpu%' => 'ECPU%',
-	'mu' => 'Incl.<br>MemUse<br>(bytes)',
-	'IMUse%' => 'IMemUse%',
-	'excl_mu' => 'Excl.<br>MemUse<br>(bytes)',
-	'EMUse%' => 'EMemUse%',
-	'pmu' => 'Incl.<br> PeakMemUse<br>(bytes)',
-	'IPMUse%' => 'IPeakMemUse%',
-	'excl_pmu' => 'Excl.<br>PeakMemUse<br>(bytes)',
-	'EPMUse%' => 'EPeakMemUse%',
-	'samples' => 'Incl. Samples',
-	'ISamples%' => 'ISamples%',
-	'excl_samples' => 'Excl. Samples',
-	'ESamples%' => 'ESamples%',
-);
-
-// Formatting Callback Functions...
-$format_cbk = array(
-	'fn' => '',
-	'ct' => 'xhprof_count_format',
-	'Calls%' => 'xhprof_percent_format',
-	'wt' => 'number_format',
-	'IWall%' => 'xhprof_percent_format',
-	'excl_wt' => 'number_format',
-	'EWall%' => 'xhprof_percent_format',
-	'ut' => 'number_format',
-	'IUser%' => 'xhprof_percent_format',
-	'excl_ut' => 'number_format',
-	'EUser%' => 'xhprof_percent_format',
-	'st' => 'number_format',
-	'ISys%' => 'xhprof_percent_format',
-	'excl_st' => 'number_format',
-	'ESys%' => 'xhprof_percent_format',
-	'cpu' => 'number_format',
-	'ICpu%' => 'xhprof_percent_format',
-	'excl_cpu' => 'number_format',
-	'ECpu%' => 'xhprof_percent_format',
-	'mu' => 'number_format',
-	'IMUse%' => 'xhprof_percent_format',
-	'excl_mu' => 'number_format',
-	'EMUse%' => 'xhprof_percent_format',
-	'pmu' => 'number_format',
-	'IPMUse%' => 'xhprof_percent_format',
-	'excl_pmu' => 'number_format',
-	'EPMUse%' => 'xhprof_percent_format',
-	'samples' => 'number_format',
-	'ISamples%' => 'xhprof_percent_format',
-	'excl_samples' => 'number_format',
-	'ESamples%' => 'xhprof_percent_format',
-);
-
-
-// Textual descriptions for column headers in 'diff' mode
-$diff_descriptions = array(
-	'fn' => 'Function Name',
-	'ct' => 'Calls Diff',
-	'Calls%' => 'Calls<br>Diff%',
-	'wt' => 'Incl. Wall<br>Diff<br>(microsec)',
-	'IWall%' => 'IWall<br> Diff%',
-	'excl_wt' => 'Excl. Wall<br>Diff<br>(microsec)',
-	'EWall%' => 'EWall<br>Diff%',
-	'ut' => 'Incl. User Diff<br>(microsec)',
-	'IUser%' => 'IUser<br>Diff%',
-	'excl_ut' => 'Excl. User<br>Diff<br>(microsec)',
-	'EUser%' => 'EUser<br>Diff%',
-	'cpu' => 'Incl. CPU Diff<br>(microsec)',
-	'ICpu%' => 'ICpu<br>Diff%',
-	'excl_cpu' => 'Excl. CPU<br>Diff<br>(microsec)',
-	'ECpu%' => 'ECpu<br>Diff%',
-	'st' => 'Incl. Sys Diff<br>(microsec)',
-	'ISys%' => 'ISys<br>Diff%',
-	'excl_st' => 'Excl. Sys Diff<br>(microsec)',
-	'ESys%' => 'ESys<br>Diff%',
-	'mu' => 'Incl.<br>MemUse<br>Diff<br>(bytes)',
-	'IMUse%' => 'IMemUse<br>Diff%',
-	'excl_mu' => 'Excl.<br>MemUse<br>Diff<br>(bytes)',
-	'EMUse%' => 'EMemUse<br>Diff%',
-	'pmu' => 'Incl.<br> PeakMemUse<br>Diff<br>(bytes)',
-	'IPMUse%' => 'IPeakMemUse<br>Diff%',
-	'excl_pmu' => 'Excl.<br>PeakMemUse<br>Diff<br>(bytes)',
-	'EPMUse%' => 'EPeakMemUse<br>Diff%',
-	'samples' => 'Incl. Samples Diff',
-	'ISamples%' => 'ISamples Diff%',
-	'excl_samples' => 'Excl. Samples Diff',
-	'ESamples%' => 'ESamples Diff%',
-);
-
-// columns that'll be displayed in a top-level report
-$stats = array();
-
-// columns that'll be displayed in a function's parent/child report
-$pc_stats = array();
-
-// Various total counts
-$totals = 0;
-$totals_1 = 0;
-$totals_2 = 0;
-
-/*
- * The subset of $possible_metrics that is present in the raw profile data.
- */
+$stats = $pc_stats = array();
+$totals = $totals_1 = $totals_2 = 0;
 $metrics = null;
 
 /**
@@ -360,14 +222,13 @@ function init_metrics($xhprof_data, $rep_symbol, $sort, $diff_report = false) {
 	global $pc_stats;
 	global $metrics;
 	global $diff_mode;
-	global $sortable_columns;
 	global $sort_col;
 	global $display_calls;
 
 	$diff_mode = $diff_report;
 
 	if (!empty($sort)) {
-		if (array_key_exists($sort, $sortable_columns)) {
+		if (array_key_exists($sort, Configure::read('Xhprof.sortable_columns'))) {
 			$sort_col = $sort;
 		} else {
 			print('Invalid Sort Key $sort specified in URL');
@@ -433,11 +294,11 @@ function init_metrics($xhprof_data, $rep_symbol, $sort, $diff_report = false) {
  * @author Kannan
  */
 function stat_description($stat) {
-	global $descriptions;
-	global $diff_descriptions;
 	global $diff_mode;
 
-	return $diff_mode ? $diff_descriptions[$stat] : $descriptions[$stat];
+	return $diff_mode 
+		? Configure::read('Xhprof.diff_descriptions.' . $stat)
+		: Configure::read('Xhprof.descriptions.' . $stat);
 }
 
 /**
@@ -624,11 +485,9 @@ function print_td_pct($numer, $denom, $bold=false, $attributes=null) {
  */
 function print_function_info($url_params, $info, $sort, $run1, $run2) {
 	static $odd_even = 0;
-
 	global $totals;
 	global $sort_col;
 	global $metrics;
-	global $format_cbk;
 	global $display_calls;
 	global $base_path;
 
@@ -651,18 +510,18 @@ function print_function_info($url_params, $info, $sort, $run1, $run2) {
 
 	if ($display_calls) {
 		// Call Count..
-		print_td_num($info['ct'], $format_cbk['ct'], ($sort_col == 'ct'));
+		print_td_num($info['ct'], Configure::read('Xhporf.format_cbk.ct'), ($sort_col == 'ct'));
 		print_td_pct($info['ct'], $totals['ct'], ($sort_col == 'ct'));
 	}
 
 	// Other metrics..
 	foreach ($metrics as $metric) {
 		// Inclusive metric
-		print_td_num($info[$metric], $format_cbk[$metric], ($sort_col == $metric));
+		print_td_num($info[$metric], Configure::read('Xhporf.format_cbk.' . $metric), ($sort_col == $metric));
 		print_td_pct($info[$metric], $totals[$metric], ($sort_col == $metric));
 
 		// Exclusive Metric
-		print_td_num($info['excl_' . $metric], $format_cbk['excl_' . $metric], ($sort_col == 'excl_' . $metric));
+		print_td_num($info['excl_' . $metric], Configure::read('Xhporf.format_cbk.excl_' . $metric), ($sort_col == 'excl_' . $metric));
 		print_td_pct($info['excl_' . $metric], $totals[$metric], ($sort_col == 'excl_' . $metric));
 	}
 
@@ -676,7 +535,6 @@ function print_function_info($url_params, $info, $sort, $run1, $run2) {
  */
 function print_flat_data($url_params, $title, $flat_data, $sort, $run1, $run2, $limit) {
 	global $stats;
-	global $sortable_columns;
 	global $vwbar;
 	global $base_path;
 
@@ -692,40 +550,33 @@ function print_flat_data($url_params, $title, $flat_data, $sort, $run1, $run2, $
 
 	echo '<h1 class="no-gap">' . $title . ' <small>' . $display_link . '</small></h1>';
 
-	print('<table rules=rows align=center class="listing no-gap">');
-	print('<tr bgcolor="#bdc7d8" align=right>');
+	echo '<table rules=rows align=center class="listing no-gap">';
+		echo '<thead><tr bgcolor="#bdc7d8" align=right>';
+			foreach ($stats as $stat) {
+				$header = $desc = stat_description($stat);
+				if (array_key_exists($stat, Configure::read('Xhprof.sortable_columns'))) {
+					$href = $base_path . '/?' . http_build_query(xhprof_array_set($url_params, 'sort', $stat));
+					$header = xhprof_render_link($desc, $href);					
+				}
 
-	foreach ($stats as $stat) {
-		$header = $desc = stat_description($stat);
-		if (array_key_exists($stat, (array)$sortable_columns)) {
-			$href = $base_path . '/?' . http_build_query(xhprof_array_set($url_params, 'sort', $stat));
-			$header = xhprof_render_link($desc, $href);
-		} 
+				echo sprintf('<th %s >%s</th>', $stat = 'fn' ? 'align="left"' : $vwbar, $header);
+			}
+		echo '</tr></thead>';
 
-		if ($stat == 'fn'){
-			print("<th align=left><nobr>$header</th>");
+		if ($limit >= 0) {
+			$limit = min($size, $limit);
+			for ($i = 0; $i < $limit; $i++) {
+				print_function_info($url_params, $flat_data[$i], $sort, $run1, $run2);
+			}
 		}
-		
-		else{
-			print("<th " . $vwbar . "><nobr>$header</th>");
+		else {
+			// if $limit is negative, print abs($limit) items starting from the end
+			$limit = min($size, abs($limit));
+			for ($i = 0; $i < $limit; $i++) {
+				print_function_info($url_params, $flat_data[$size - $i - 1], $sort, $run1, $run2);
+			}
 		}
-	}
-	print('</tr>');
-
-	if ($limit >= 0) {
-		$limit = min($size, $limit);
-		for ($i = 0; $i < $limit; $i++) {
-			print_function_info($url_params, $flat_data[$i], $sort, $run1, $run2);
-		}
-	}
-	else {
-		// if $limit is negative, print abs($limit) items starting from the end
-		$limit = min($size, abs($limit));
-		for ($i = 0; $i < $limit; $i++) {
-			print_function_info($url_params, $flat_data[$size - $i - 1], $sort, $run1, $run2);
-		}
-	}
-	print('</table>');
+	echo '</table>';
 
 	// let's print the display all link at the bottom as well...
 	if ($display_link) {
@@ -746,13 +597,12 @@ function full_report($url_params, $symbol_tab, $sort, $run1, $run2) {
 	global $totals_2;
 	global $metrics;
 	global $diff_mode;
-	global $descriptions;
 	global $sort_col;
-	global $format_cbk;
 	global $display_calls;
 	global $base_path;
 
 	$possible_metrics = xhprof_get_possible_metrics();
+	$callgraph_report_title = '[View Full Callgraph]';
 
 	if ($diff_mode) {
 
@@ -763,31 +613,30 @@ function full_report($url_params, $symbol_tab, $sort, $run1, $run2) {
 		print('<h1 class="no-gap">Overall Diff Summary</h1>');
 		print('<table class="listing no-gap">' . "\n");
 		print('<tr bgcolor="#bdc7d8" align=right>');
-		print("<th></th>");
-		print("<th $vwbar>" . xhprof_render_link("Run #$run1", $href1) . "</th>");
-		print("<th $vwbar>" . xhprof_render_link("Run #$run2", $href2) . "</th>");
-		print("<th $vwbar>Diff</th>");
-		print("<th $vwbar>Diff%</th>");
+		print('<th></th>');
+		print('<th ' . $vwbar . '>' . xhprof_render_link('Run #' . $run1, $href1) . '</th>');
+		print('<th ' . $vwbar . '>' . xhprof_render_link('Run #' . $run2, $href2) . '</th>');
+		print('<th ' . $vwbar . '>Diff</th>');
+		print('<th ' . $vwbar . '>Diff%</th>');
 		print('</tr>');
 
 		if ($display_calls) {
 			print('<tr>');
-			print("<td>Number of Function Calls</td>");
-			print_td_num($totals_1["ct"], $format_cbk["ct"]);
-			print_td_num($totals_2["ct"], $format_cbk["ct"]);
-			print_td_num($totals_2["ct"] - $totals_1["ct"], $format_cbk["ct"], true);
-			print_td_pct($totals_2["ct"] - $totals_1["ct"], $totals_1["ct"], true);
+			print('<td>Number of Function Calls</td>');
+			print_td_num($totals_1['ct'], Configure::read('Xhporf.format_cbk.ct'));
+			print_td_num($totals_2['ct'], Configure::read('Xhporf.format_cbk.ct'));
+			print_td_num($totals_2['ct'] - $totals_1['ct'], Configure::read('Xhporf.format_cbk.ct'), true);
+			print_td_pct($totals_2['ct'] - $totals_1['ct'], $totals_1['ct'], true);
 			print('</tr>');
 		}
 
 		foreach ($metrics as $metric) {
-			$m = $metric;
 			print('<tr>');
-			print("<td>" . str_replace("<br>", " ", $descriptions[$m]) . "</td>");
-			print_td_num($totals_1[$m], $format_cbk[$m]);
-			print_td_num($totals_2[$m], $format_cbk[$m]);
-			print_td_num($totals_2[$m] - $totals_1[$m], $format_cbk[$m], true);
-			print_td_pct($totals_2[$m] - $totals_1[$m], $totals_1[$m], true);
+			print('<td>' . str_replace('<br>', ' ', Configure::read('Xhprof.descriptions.' . $metric)) . '</td>');
+			print_td_num($totals_1[$metric], Configure::read('Xhporf.format_cbk.' . $metric));
+			print_td_num($totals_2[$metric], Configure::read('Xhporf.format_cbk.' . $metric));
+			print_td_num($totals_2[$metric] - $totals_1[$metric], Configure::read('Xhporf.format_cbk.' . $metric), true);
+			print_td_pct($totals_2[$metric] - $totals_1[$metric], Configure::read('Xhporf.format_cbk.' . $metric), true);
 			print('<tr>');
 		}
 		print('</table>');
@@ -800,65 +649,49 @@ function full_report($url_params, $symbol_tab, $sort, $run1, $run2) {
 		print('<table class="listing no-gap">' . "\n");
 
 		foreach ($metrics as $metric) {
-			echo "<tr>";
-			echo "<td >Total " . str_replace("<br>", " ", stat_description($metric)) . ":</td>";
-			echo "<td>" . number_format($totals[$metric]) . " " . $possible_metrics[$metric][1] . "</td>";
-			echo "</tr>";
+			echo '<tr>';
+			echo '<td >Total ' . str_replace('<br>', ' ', stat_description($metric)) . ':</td>';
+			echo '<td>' . number_format($totals[$metric]) . ' ' . $possible_metrics[$metric][1] . '</td>';
+			echo '</tr>';
 		}
 
 		if ($display_calls) {
-			echo "<tr>";
-			echo "<td>Number of Function Calls:</td>";
-			echo "<td>" . number_format($totals['ct']) . "</td>";
-			echo "</tr>";
+			echo '<tr>';
+			echo '<td>Number of Function Calls:</td>';
+			echo '<td>' . number_format($totals['ct']) . '</td>';
+			echo '</tr>';
 		}
 
-		echo "</table>";
-
-		$callgraph_report_title = '[View Full Callgraph]';
+		echo '</table>';
 	}
 
 	print('<h1>' . xhprof_render_link($callgraph_report_title, $base_path . '/callgraph.php? ' . http_build_query($url_params)) . '</h1>');
 
 
 	$flat_data = array();
-	foreach ($symbol_tab as $symbol => $info) {
-		$tmp = $info;
-		$tmp["fn"] = $symbol;
-		$flat_data[] = $tmp;
+	foreach ($symbol_tab as $symbol => $info) {		
+		$info['fn'] = $symbol;
+		$flat_data[] = $info;
 	}
 	usort($flat_data, 'sort_cbk');
 
+	$all = false;
+	$limit = 100;
 	if (!empty($url_params['all'])) {
 		$all = true;
 		$limit = 0;	// display all rows
-	} else {
-		$all = false;
-		$limit = 100;  // display only limited number of rows
 	}
 
-	$desc = str_replace("<br>", " ", $descriptions[$sort_col]);
+	$desc = str_replace('<br>', ' ', configure::read('Xhprof.descriptions.' . $sort_col));
 
+	$title = sprintf('Displaying top %s functions: Sorted by %s', $limit, $desc);
+	if ($all) {
+		$title = sprintf('Sorted by %s', $desc);
+	}
 	if ($diff_mode) {
+		$title = sprintf('Top 100 <i style="color:red;">Regressions</i>/<i style="color:green;">Improvements</i>: Sorted by %s Diff', $desc);
 		if ($all) {
-			$title = "Total Diff Report: '
-               .'Sorted by absolute value of regression/improvement in $desc";
-		}
-
-		else {
-			$title = "Top 100 <i style='color:red'>Regressions</i>/"
-					. "<i style='color:green'>Improvements</i>: "
-					. "Sorted by $desc Diff";
-		}
-	}
-
-	else {
-		if ($all) {
-			$title = "Sorted by $desc";
-		}
-		
-		else {
-			$title = "Displaying top $limit functions: Sorted by $desc";
+			$title = sprintf('Total Diff Report: Sorted by absolute value of regression/improvement in %s', $desc);
 		}
 	}
 	
@@ -881,7 +714,6 @@ function get_tooltip_attributes($type, $metric) {
 function pc_info($info, $base_ct, $base_info, $parent) {
 	global $sort_col;
 	global $metrics;
-	global $format_cbk;
 	global $display_calls;
 
 	if ($parent){
@@ -894,13 +726,13 @@ function pc_info($info, $base_ct, $base_info, $parent) {
 	if ($display_calls) {
 		$mouseoverct = get_tooltip_attributes($type, "ct");
 		/* call count */
-		print_td_num($info["ct"], $format_cbk["ct"], ($sort_col == "ct"), $mouseoverct);
+		print_td_num($info["ct"], Configure::read('Xhporf.format_cbk.ct'), ($sort_col == "ct"), $mouseoverct);
 		print_td_pct($info["ct"], $base_ct, ($sort_col == "ct"), $mouseoverct);
 	}
 
 	/* Inclusive metric values  */
 	foreach ($metrics as $metric) {
-		print_td_num($info[$metric], $format_cbk[$metric], ($sort_col == $metric), get_tooltip_attributes($type, $metric));
+		print_td_num($info[$metric], Configure::read('Xhporf.format_cbk.' . $metric), ($sort_col == $metric), get_tooltip_attributes($type, $metric));
 		print_td_pct($info[$metric], $base_info[$metric], ($sort_col == $metric), get_tooltip_attributes($type, $metric));
 	}
 }
@@ -968,11 +800,8 @@ function symbol_report($url_params, $run_data, $symbol_info, $sort, $rep_symbol,
 	global $vbar;
 	global $totals;
 	global $pc_stats;
-	global $sortable_columns;
 	global $metrics;
 	global $diff_mode;
-	global $descriptions;
-	global $format_cbk;
 	global $sort_col;
 	global $display_calls;
 	global $base_path;
@@ -1004,72 +833,70 @@ function symbol_report($url_params, $run_data, $symbol_info, $sort, $rep_symbol,
 
 		if ($display_calls) {
 			print("<td>Number of Function Calls</td>");
-				print_td_num($symbol_info1["ct"], $format_cbk["ct"]);
-				print_td_num($symbol_info2["ct"], $format_cbk["ct"]);
-				print_td_num($symbol_info2["ct"] - $symbol_info1["ct"], $format_cbk["ct"], true);
+				print_td_num($symbol_info1["ct"], Configure::read('Xhporf.format_cbk.ct'));
+				print_td_num($symbol_info2["ct"], Configure::read('Xhporf.format_cbk.ct'));
+				print_td_num($symbol_info2["ct"] - $symbol_info1["ct"], Configure::read('Xhporf.format_cbk.ct'), true);
 				print_td_pct($symbol_info2["ct"] - $symbol_info1["ct"], $symbol_info1["ct"], true);
 			print('</tr>');
 		}
 
 
 		foreach ($metrics as $metric) {
-			$m = $metric;
-
 			// Inclusive stat for metric
 			print('<tr>');
-				print("<td>" . str_replace("<br>", " ", $descriptions[$m]) . "</td>");
-				print_td_num($symbol_info1[$m], $format_cbk[$m]);
-				print_td_num($symbol_info2[$m], $format_cbk[$m]);
-				print_td_num($symbol_info2[$m] - $symbol_info1[$m], $format_cbk[$m], true);
-				print_td_pct($symbol_info2[$m] - $symbol_info1[$m], $symbol_info1[$m], true);
+				print("<td>" . str_replace("<br>", " ", Configure::read('Xhprof.descriptions.' . $metric)) . "</td>");
+				print_td_num($symbol_info1[$metric], Configure::read('Xhporf.format_cbk.' . $metric));
+				print_td_num($symbol_info2[$metric], Configure::read('Xhporf.format_cbk.' . $metric));
+				print_td_num($symbol_info2[$metric] - $symbol_info1[$metric], Configure::read('Xhporf.format_cbk.' . $metric), true);
+				print_td_pct($symbol_info2[$metric] - $symbol_info1[$metric], $symbol_info1[$metric], true);
 			print('</tr>');
 
 			// AVG (per call) Inclusive stat for metric
 			print('<tr>');
-				print("<td>" . str_replace("<br>", " ", $descriptions[$m]) . " per call </td>");
+				print("<td>" . str_replace("<br>", " ", Configure::read('Xhprof.descriptions.' . $metric)) . " per call </td>");
 				$avg_info1 = 'N/A';
 				$avg_info2 = 'N/A';
 				if ($symbol_info1['ct'] > 0) {
-					$avg_info1 = ($symbol_info1[$m] / $symbol_info1['ct']);
+					$avg_info1 = ($symbol_info1[$metric] / $symbol_info1['ct']);
 				}
 				if ($symbol_info2['ct'] > 0) {
-					$avg_info2 = ($symbol_info2[$m] / $symbol_info2['ct']);
+					$avg_info2 = ($symbol_info2[$metric] / $symbol_info2['ct']);
 				}
-				print_td_num($avg_info1, $format_cbk[$m]);
-				print_td_num($avg_info2, $format_cbk[$m]);
-				print_td_num($avg_info2 - $avg_info1, $format_cbk[$m], true);
+				print_td_num($avg_info1, Configure::read('Xhporf.format_cbk.' . $metric));
+				print_td_num($avg_info2, Configure::read('Xhporf.format_cbk.' . $metric));
+				print_td_num($avg_info2 - $avg_info1, Configure::read('Xhporf.format_cbk.' . $metric), true);
 				print_td_pct($avg_info2 - $avg_info1, $avg_info1, true);
 			print('</tr>');
 
 			// Exclusive stat for metric
-			$m = "excl_" . $metric;
+			$metric = 'excl_' . $metric;
 			print('<tr style="border-bottom: 1px solid black;">');
-				print("<td>" . str_replace("<br>", " ", $descriptions[$m]) . "</td>");
-				print_td_num($symbol_info1[$m], $format_cbk[$m]);
-				print_td_num($symbol_info2[$m], $format_cbk[$m]);
-				print_td_num($symbol_info2[$m] - $symbol_info1[$m], $format_cbk[$m], true);
-				print_td_pct($symbol_info2[$m] - $symbol_info1[$m], $symbol_info1[$m], true);
+				print("<td>" . str_replace("<br>", " ", Configure::read('Xhprof.descriptions.' . $metric)) . "</td>");
+				print_td_num($symbol_info1[$metric], Configure::read('Xhporf.format_cbk.' . $metric));
+				print_td_num($symbol_info2[$metric], Configure::read('Xhporf.format_cbk.' . $metric));
+				print_td_num($symbol_info2[$metric] - $symbol_info1[$metric], Configure::read('Xhporf.format_cbk.' . $metric), true);
+				print_td_pct($symbol_info2[$metric] - $symbol_info1[$metric], $symbol_info1[$metric], true);
 			print('</tr>');
 		}
 
 		print('</table>');
 	}
 
-	print("<br><h4><center>");
-	print("Parent/Child $regr_impr report for <b>$rep_symbol</b>");
-
 	$callgraph_href = $base_path . '/callgraph.php?' . http_build_query(xhprof_array_set($url_params, 'func', $rep_symbol));
-
-	print('<a href="' . normalUrlToCakeUrl($callgraph_href) . '&TB_iframe=true" class="thickbox">[View Callgraph ' . $diff_text . ']</a>');
-
-	print("</center></h4><br>");
+	$link = '<a href="' . normalUrlToCakeUrl($callgraph_href) . '&TB_iframe=true" class="thickbox">[View Callgraph ' . $diff_text . ']</a>';
+	echo sprintf(
+		'<h1 class="no-gap">Parent/Child %s report for %s<small>%s</small></h1>',
+		$regr_impr,
+		$rep_symbol,
+		$link
+	);
 
 	print('<table class="listing no-gap">' . "\n");
 	print('<tr bgcolor="#bdc7d8" align=right>');
 
 	foreach ($pc_stats as $stat) {
 		$header = $desc = stat_description($stat);
-		if (array_key_exists($stat, (array) $sortable_columns)) {
+		if (array_key_exists($stat, Configure::read('Xhprof.sortable_columns'))) {
 			$href = $base_path . '/?' . http_build_query(xhprof_array_set($url_params, 'sort', $stat));
 			$header = xhprof_render_link($desc, $href);
 		}
@@ -1081,25 +908,20 @@ function symbol_report($url_params, $run_data, $symbol_info, $sort, $rep_symbol,
 			print("<th " . $vwbar . "><nobr>$header</th>");
 		}
 	}
-	print("</tr>");
-
-	print("<tr bgcolor='#e0e0ff'><td>");
-	print("<b><i><center>Current Function</center></i></b>");
-	print("</td></tr>");
-
-	print("<tr>");
+	echo '</tr><tr bgcolor="#e0e0ff"><th colspan="' . count($metrics) . '"><b><i>Current Function</i></b></th></tr><tr>'
+	;
 	// make this a self-reference to facilitate copy-pasting snippets to e-mails
 	print("<td><a href=''>$rep_symbol</a></td>");
 
 	if ($display_calls) {
 		// Call Count
-		print_td_num($symbol_info["ct"], $format_cbk["ct"]);
+		print_td_num($symbol_info["ct"], Configure::read('Xhporf.format_cbk.ct'));
 		print_td_pct($symbol_info["ct"], $totals["ct"]);
 	}
 
 	// Inclusive Metrics for current function
 	foreach ($metrics as $metric) {
-		print_td_num($symbol_info[$metric], $format_cbk[$metric], ($sort_col == $metric));
+		print_td_num($symbol_info[$metric], Configure::read('Xhporf.format_cbk.' . $metric), ($sort_col == $metric));
 		print_td_pct($symbol_info[$metric], $totals[$metric], ($sort_col == $metric));
 	}
 	print("</tr>");
@@ -1116,7 +938,7 @@ function symbol_report($url_params, $run_data, $symbol_info, $sort, $rep_symbol,
 
 	// Exclusive Metrics for current function
 	foreach ($metrics as $metric) {
-		print_td_num($symbol_info["excl_" . $metric], $format_cbk["excl_" . $metric], ($sort_col == $metric), get_tooltip_attributes("Child", $metric));
+		print_td_num($symbol_info["excl_" . $metric], Configure::read('Xhporf.format_cbk.excl_' . $metric), ($sort_col == $metric), get_tooltip_attributes("Child", $metric));
 		print_td_pct($symbol_info["excl_" . $metric], $symbol_info[$metric], ($sort_col == $metric), get_tooltip_attributes("Child", $metric));
 	}
 	print("</tr>");

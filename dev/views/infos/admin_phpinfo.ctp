@@ -19,5 +19,24 @@
 	 * Licensed under The MIT License
 	 * Redistributions of files must retain the above copyright notice.
 	 */
+?>
+<style type="text/css">
+	.listing.no-gap{
+		margin-bottom: 0;
+	}
 
-	phpinfo();
+	h1.no-gap{
+		margin-top: 10px;
+	}
+</style>
+<?php
+	ob_start();
+		phpinfo();
+		$pinfo = ob_get_contents();
+	ob_end_clean();
+
+	$phpInfo = str_replace('module_Zend Optimizer', 'module_Zend_Optimizer', preg_replace ( '%^.*<body>(.*)</body>.*$%ms', '$1', $pinfo));
+	$phpInfo = str_replace(array('<table ', '<h2>', '</h2>', '<h1'), array('<table class="listing no-gap" ', '<h1 class="no-gap">', '</h1>', '<h1 class="no-gap" '), $phpInfo);
+	$phpInfo = str_replace(array('<br />', '<hr />'), '', $phpInfo);
+
+	echo $phpInfo;

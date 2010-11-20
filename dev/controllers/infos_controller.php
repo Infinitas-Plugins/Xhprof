@@ -24,6 +24,10 @@
 		public $name = 'Infos';
 
 		public $uses = array();
+		
+		public function admin_index(){
+			
+		}
 
 		public function admin_phpinfo(){
 			

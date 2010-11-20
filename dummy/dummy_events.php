@@ -21,17 +21,7 @@
 	 */
 
 	class DummyEvents extends AppEvents{
-		public function onPluginRollCall(){
-			return array(
-				'name' => 'Dummy Data',
-				'description' => 'Generate random test data that makes sence',
-				'icon' => '/dummy/img/icon.png',
-				'author' => 'Infinitas',
-				'dashboard' => array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'index'),
-			);
-		}
-
-		public function onAdminMenu(&$event){
+		public function onAdminMenu($event){
 			$id = isset($event->Handler->params['pass'][0]) ? $event->Handler->params['pass'][0] : '';
 
 			$menu['main']['Dashboard'] = array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'index');

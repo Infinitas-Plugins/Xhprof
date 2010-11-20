@@ -19,6 +19,21 @@
 	 */
 
 	class DevEvents extends AppEvents{
+		public function onPluginRollCall(){
+			return array(
+				'name' => 'Developer',
+				'description' => 'Some help developing your Infinitas powered website',
+				'icon' => '/dev/img/icon.png',
+				'author' => 'Infinitas',
+				'dashboard' => array('plugin' => 'dev', 'controller' => 'infos', 'action' => 'index'),
+			);
+		}
+
+		public function onAdminMenu(&$event){
+			$menu['main']['Dashboard'] = array('plugin' => 'xhprof', 'controller' => 'xhprofs', 'action' => 'index');
+			return $menu;
+		}
+
 		public function onRequestDone(){
 			/**
 			 * dump an array of data from Apc to see what is going on

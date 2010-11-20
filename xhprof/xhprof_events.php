@@ -38,19 +38,9 @@
 		 
 		public function onSetupCache(){
 			
-		}
-		
-		public function onPluginRollCall(){
-			return array(
-				'name' => 'Xhprof',
-				'description' => 'Profling for your application',
-				'icon' => '/xhprof/img/icon.png',
-				'author' => 'Infinitas',
-				'dashboard' => array('plugin' => 'xhprof', 'controller' => 'xhprofs', 'action' => 'index'),
-			);
-		}
+		}		
 
-		public function onAdminMenu(&$event){
+		public function onAdminMenu($event){
 			$menu['main']['Dashboard'] = array('plugin' => 'xhprof', 'controller' => 'xhprofs', 'action' => 'index');
 			return $menu;
 		}

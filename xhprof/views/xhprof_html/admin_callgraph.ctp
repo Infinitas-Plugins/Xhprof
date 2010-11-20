@@ -31,6 +31,11 @@
 
 // by default assume that xhprof_html & xhprof_lib directories
 // are at the same level.
+
+Configure::write('debug', 0);
+$data = ob_get_contents(); ob_end_clean();
+unset($data);
+
 $GLOBALS['XHPROF_LIB_ROOT'] = App::pluginPath('xhprof') . 'libs' . DS .'xhprof';
 
 require_once $GLOBALS['XHPROF_LIB_ROOT'] . DS . 'xhprof_lib.php';
@@ -39,32 +44,32 @@ require_once $GLOBALS['XHPROF_LIB_ROOT'] . DS . 'callgraph_utils.php';
 ini_set('max_execution_time', 100);
 
 $params = array(// run id param
-                'run' => array(XHPROF_STRING_PARAM, ''),
+	'run' => array(XHPROF_STRING_PARAM, ''),
 
-                // source/namespace/type of run
-                'source' => array(XHPROF_STRING_PARAM, 'xhprof'),
+	// source/namespace/type of run
+	'source' => array(XHPROF_STRING_PARAM, 'xhprof'),
 
-                // the focus function, if it is set, only directly
-                // parents/children functions of it will be shown.
-                'func' => array(XHPROF_STRING_PARAM, ''),
+	// the focus function, if it is set, only directly
+	// parents/children functions of it will be shown.
+	'func' => array(XHPROF_STRING_PARAM, ''),
 
-                // image type, can be 'jpg', 'gif', 'ps', 'png'
-                'type' => array(XHPROF_STRING_PARAM, 'png'),
+	// image type, can be 'jpg', 'gif', 'ps', 'png'
+	'type' => array(XHPROF_STRING_PARAM, 'png'),
 
-                // only functions whose exclusive time over the total time
-                // is larger than this threshold will be shown.
-                // default is 0.01.
-                'threshold' => array(XHPROF_FLOAT_PARAM, 0.01),
+	// only functions whose exclusive time over the total time
+	// is larger than this threshold will be shown.
+	// default is 0.01.
+	'threshold' => array(XHPROF_FLOAT_PARAM, 0.01),
 
-                // whether to show critical_path
-                'critical' => array(XHPROF_BOOL_PARAM, true),
+	// whether to show critical_path
+	'critical' => array(XHPROF_BOOL_PARAM, true),
 
-                // first run in diff mode.
-                'run1' => array(XHPROF_STRING_PARAM, ''),
+	// first run in diff mode.
+	'run1' => array(XHPROF_STRING_PARAM, ''),
 
-                // second run in diff mode.
-                'run2' => array(XHPROF_STRING_PARAM, '')
-                );
+	// second run in diff mode.
+	'run2' => array(XHPROF_STRING_PARAM, '')
+);
 
 // pull values of these params, and create named globals for each param
 xhprof_param_init($params);
@@ -81,14 +86,14 @@ if (!isset($type) || !array_key_exists($type, $xhprof_legal_image_types)) {
 
 $xhprof_runs_impl = new XHProfRuns_Default();
 ob_start();
-	if (!empty($run)) {
+	if (isset($run) && !empty($run)) {
 	  // single run call graph image generation
-	  xhprof_render_image($xhprof_runs_impl, $run, $type,
-						  $threshold, $func, $source, $critical);
-	} else {
+	  xhprof_render_image($xhprof_runs_impl, $run, $type, $threshold, $func, $source, $critical);
+	}
+
+	else {
 	  // diff report call graph image generation
-	  xhprof_render_diff_image($xhprof_runs_impl, $run1, $run2,
-							   $type, $threshold, $source);
+	  xhprof_render_diff_image($xhprof_runs_impl, $run1, $run2, $type, $threshold, $source);
 	}
 
 $image = ob_get_contents(); ob_end_clean();

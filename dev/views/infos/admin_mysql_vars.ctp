@@ -20,9 +20,9 @@
 	 * Redistributions of files must retain the above copyright notice.
 	 */
 ?>
-<h1>Local Variables<small>Only what is different</small></h1>
 <div class="table">
-    <table class="listing" cellpadding="0" cellspacing="0">
+	<h1 class="no-gap">Local Variables<small>Only what is different</small></h1>
+    <table class="listing no-gap" cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
 				<th style="width:200px;">Variable Name</th>
@@ -43,9 +43,9 @@
 	</table>
 </div>
 
-<h1>Global Variables<small>Highlighted Items have been Changed localy</small></h1>
 <div class="table">
-    <table class="listing" cellpadding="0" cellspacing="0">
+	<h1 class="no-gap">Global Variables<small>Highlighted Items have been Changed localy</small></h1>
+    <table class="listing no-gap" cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
 				<th style="width:200px;">Variable Name</th>

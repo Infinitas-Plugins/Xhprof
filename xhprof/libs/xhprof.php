@@ -119,6 +119,10 @@
 		 * @return bool
 		 */
 		public function start($session = null){
+			if(strstr(env('REQUEST_URI'), '/admin/xhprof')){
+				return false;
+			}
+
 			$_this =& Xhprof::getInstance();
 
 			if(!$session || empty($session) || !is_string($session)){

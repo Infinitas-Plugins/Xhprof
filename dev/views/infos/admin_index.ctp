@@ -29,8 +29,19 @@
 			'dashboard' => array('plugin' => 'dev', 'controller' => 'infos', 'action' => 'mysql_vars'),
 		)
 	);
+	$actions = array(
+		$this->Html->link(
+			__('Create Symlinks', true),
+			array('action' => 'symlink')
+		),
+		$this->Html->link(
+			__('Remove Symlinks', true),
+			array('action' => 'symlink', 'remove' => 1)
+		)
+	);
 ?>
 <div class="dashboard grid_16">
 	<h1><?php echo __('Developer Tools', true); ?></h1>
 	<ul class="icons"><li><?php echo implode('</li><li>', current((array)$this->Menu->builDashboardLinks($devIcons, 'dev_icons'))); ?></li></ul>
+	<?php echo $this->Design->arrayToList($actions, 'field-sort', true); ?>
 </div>

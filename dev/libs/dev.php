@@ -19,34 +19,72 @@
 	 * Licensed under The MIT License
 	 * Redistributions of files must retain the above copyright notice.
 	 */
-
-	function autoAssetLinks(){
-		pr(getcwd());
-		exit;
-		$Folder = new Folder(APP.'views'.DS.'themed'.DS);
-		$folders = $Folder->read();
-		$folders = $folders[0];
-		if(!is_dir(getcwd().DS.'theme')){
-			$Folder->create(getcwd().DS.'theme', 0755);
-		}
-		foreach((array)$folders as $folder){
-			if(is_dir(APP.'views'.DS.'themed'.DS.$folder.DS.'webroot'.DS) && !is_dir(getcwd().DS.'theme'.DS.$folder.DS)){
-				symlink(
-					APP.'views'.DS.'themed'.DS.$folder.DS.'webroot'.DS,
-					'theme'.DS.$folder
-				);
+	class DevLib{
+		public function autoAssetLinks($remove = false){
+			if($remove){
+				$this->__linuxRemoveAssetSymlinks();
+			}
+			else{
+				$this->__linuxCreateAssetSymlinks();
 			}
 		}
-		unset($Folder);
 
-		$plugins = App::objects('plugin');
-		foreach($plugins as $plugin){
-			if(is_dir(App::pluginPath($plugin).'webroot'.DS) && !is_dir(getcwd().DS.Inflector::underscore($plugin))){
-				symlink(
-					App::pluginPath($plugin).'webroot'.DS,
-					Inflector::underscore($plugin)
-				);
+		private function __linuxCreateAssetSymlinks(){
+			$Folder = new Folder(APP . 'views' . DS . 'themed' . DS);
+			$folders = $Folder->read();
+			$folders = $folders[0];
+			if(!is_dir(getcwd() . DS . 'theme')){
+				$Folder->create(getcwd() . DS . 'theme', 0755);
+			}
+			
+			$createdLinks = 0;
+			foreach((array)$folders as $folder){
+				if(is_dir(APP . 'views' . DS . 'themed' . DS . $folder . DS . 'webroot' . DS) && !is_dir(getcwd() . DS . 'theme' . DS . $folder . DS)){
+					symlink(
+						APP . 'views' . DS . 'themed' . DS . $folder . DS . 'webroot' . DS,
+						'theme' . DS . $folder
+					);
+					++$createdLinks;
+				}
+			}
+			unset($Folder);
+
+			$plugins = App::objects('plugin');
+			foreach($plugins as $plugin){
+				if(is_dir(App::pluginPath($plugin) . 'webroot' . DS) && !is_dir(getcwd() . DS . Inflector::underscore($plugin))){
+					symlink(
+						App::pluginPath($plugin) . 'webroot' . DS,
+						Inflector::underscore($plugin)
+					);
+					++$createdLinks;
+				}
 			}
 
+			return $createdLinks;
+		}
+
+		private function __linuxRemoveAssetSymlinks(){
+			$themeAssets = getcwd() . DS . 'theme' . DS;
+			
+			if(is_dir($themeAssets)){
+				$Folder = new Folder($themeAssets);
+				$folders = $Folder->read();
+				$folders = $folders[0];
+
+				foreach($folders as $folder){					
+					if(is_link($themeAssets . $folder)){
+						pr($themeAssets . $folder);
+					}
+				}
+			}
+			
+			$plugins = App::objects('plugin');
+			foreach($plugins as $plugin){
+				if(is_link(getcwd() . DS . Inflector::underscore($plugin))){
+					pr(getcwd() . DS . Inflector::underscore($plugin));
+				}
+			}
+
+			exit;
 		}
 	}

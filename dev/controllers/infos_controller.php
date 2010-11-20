@@ -51,4 +51,50 @@
 
 			$this->set(compact('globalVars', 'localVars'));
 		}
+
+		public function admin_symlink(){
+			App::import('libs', 'developer.dev');
+			$this->DevLib = new DevLib();
+
+			if(!is_writable(getcwd())){
+				$this->notice(
+					__('The webroot directory is not writable', true),
+					array(
+						'redirect' => true
+					)
+				);
+			}
+
+			if(isset($this->params['named']['remove']) && $this->params['named']['remove']){
+				$this->__removeSymlinks();
+			}
+
+			else{
+				$this->__createSymlinks();
+			}
+		}
+
+		private function __createSymlinks(){
+			$links = $this->DevLib->autoAssetLinks();
+
+			if($links && (int)$links > 0){
+				$this->notice(
+					sprintf(__('%d symlinks created', true), $links),
+					array(
+						'redirect' => true
+					)
+				);
+			}
+
+			$this->notice(
+				sprintf(__('No symlinks were created', true), $links),
+				array(
+					'redirect' => true
+				)
+			);
+		}
+
+		private function __removeSymlinks(){
+			$links = $this->DevLib->autoAssetLinks(true);
+		}
 	}

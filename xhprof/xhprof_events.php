@@ -21,6 +21,8 @@
 	 */
 	class XhprofEvents extends AppEvents{
 		public function onRequireLibs(){
+			Configure::load('xhprof.config');
+
 			if(
 				App::import('Lib', 'xhprof.xhprof/xhprof_lib.php') &&
 				App::import('Lib', 'xhprof.xhprof/xhprof_runs.php') &&

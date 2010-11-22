@@ -29,7 +29,7 @@
 			);
 		}
 
-		public function onAdminMenu(&$event){
+		public function onAdminMenu($event){
 			$menu['main']['Dashboard'] = array('plugin' => 'xhprof', 'controller' => 'xhprofs', 'action' => 'index');
 			return $menu;
 		}
@@ -94,7 +94,7 @@
 			echo '</table></div>';
 		}
 
-		public function onAttachBehaviors(&$event){
+		public function onAttachBehaviors($event){
 			if(is_subclass_of($event, 'Model') && isset($event->_schema) && is_array($event->_schema)) {
 				$event->Behaviors->attach('Dev.Dev');
 			}

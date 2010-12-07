@@ -13,20 +13,6 @@
 			'icon' => '/dummy/img/icon.png',
 			'author' => 'Infinitas',
 			'dashboard' => array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'index'),
-		),
-		array(
-			'name' => 'PhpInfo',
-			'description' => 'See all the information related to the current Php installation',
-			'icon' => '/dev/img/php.png',
-			'author' => 'Infinitas',
-			'dashboard' => array('plugin' => 'dev', 'controller' => 'infos', 'action' => 'phpinfo'),
-		),
-		array(
-			'name' => 'MySQL',
-			'description' => 'Information regarding the MySQL server currently running',
-			'icon' => '/dev/img/mysql.png',
-			'author' => 'Infinitas',
-			'dashboard' => array('plugin' => 'dev', 'controller' => 'infos', 'action' => 'mysql_vars'),
 		)
 	);
 	$actions = array(

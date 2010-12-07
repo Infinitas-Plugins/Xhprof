@@ -49,7 +49,7 @@
 			Router::connect('/dummy_image/*', array('plugin' => 'dummy', 'controller' => 'dummy_images', 'action' => 'image'));
 		}
 
-		public function onSetupExtentions(){
+		public function onSetupExtensions(){
 			return array(
 				'png',
 				'gif',

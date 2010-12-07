@@ -30,7 +30,9 @@
 		}
 
 		public function onAdminMenu($event){
-			$menu['main']['Dashboard'] = array('plugin' => 'xhprof', 'controller' => 'xhprofs', 'action' => 'index');
+			$menu['main']['Dashboard'] = array('plugin' => 'dev', 'controller' => 'infos', 'action' => 'index');
+			$menu['main']['Xhprof'] = array('plugin' => 'xhprof', 'controller' => 'xhprofs', 'action' => 'index');
+			$menu['main']['Dummy Data'] = array('plugin' => 'xhprof', 'controller' => 'dummy', 'action' => 'dummy_tables');
 			return $menu;
 		}
 

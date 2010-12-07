@@ -43,7 +43,7 @@
 		}		
 
 		public function onAdminMenu($event){
-			$menu['main']['Dashboard'] = array('plugin' => 'xhprof', 'controller' => 'xhprofs', 'action' => 'index');
+			$menu['main']['Dashboard'] = array('plugin' => 'dev', 'controller' => 'infos');
 			return $menu;
 		}
 

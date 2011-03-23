@@ -29,7 +29,7 @@ ConnectionManager::create(
 		'password' => 'infinitas_api',
 		'database' => 'infinitas_api',
 		'prefix' => '',
-		'port' => '',
+		'port' => null,
 		'encoding' => 'utf8'
 	)
 );

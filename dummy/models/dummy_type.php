@@ -72,7 +72,7 @@ class DummyType extends DummyAppModel {
 		'time' => 'Time->time', 
 		'float' => 'Number->float', 
 		'binary' => 'Lorem->sentence',
-    'text' => 'English->quote'
+	'text' => 'English->quote'
 	);
 	
 	public $specialGenerators = array(

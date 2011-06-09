@@ -28,7 +28,7 @@ echo $apiUtils->element('before_class_info');
 		<dt><?php __d('api_generator', 'Interfaces Implemented'); ?></dt>
 		<dd>
 			<?php foreach ($doc->classInfo['interfaces'] as $interfaces): ?>
-		        <?php echo $apiDoc->classLink($interfaces); ?>
+				<?php echo $apiDoc->classLink($interfaces); ?>
 			<?php endforeach; ?>
 		</dd>
 		<?php endif;?>

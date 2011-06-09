@@ -1,9 +1,9 @@
 <?php echo $this->Infinitas->adminIndexHead(); ?>
 <div class="table">
-    <table class="listing" cellpadding="0" cellspacing="0">
+	<table class="listing" cellpadding="0" cellspacing="0">
 		<?php
-            echo $this->Infinitas->adminTableHeader(
-                array(
+			echo $this->Infinitas->adminTableHeader(
+				array(
 					__('Name', true),
 					__('Type', true),
 					__('Allow Null', true),
@@ -59,10 +59,10 @@
 	</table>
 
 	<h4><?php __('Inactive'); ?></h4>
-    <table class="listing" cellpadding="0" cellspacing="0">
+	<table class="listing" cellpadding="0" cellspacing="0">
 		<?php
-            echo $this->Infinitas->adminTableHeader(
-                array(
+			echo $this->Infinitas->adminTableHeader(
+				array(
 					__('Name', true),
 					__('Default', true),
 					__('Actions', true)
@@ -93,7 +93,7 @@
 <?php
 if (sizeof($contents)) { ?>
 	<h4><?php __('Current Content Sample'); ?></h4>
-    <table class="listing" cellpadding="0" cellspacing="0">
+	<table class="listing" cellpadding="0" cellspacing="0">
 		<?php
 			$tds = array();
 			foreach ($contents[0]['Model'] as $key => $value) {

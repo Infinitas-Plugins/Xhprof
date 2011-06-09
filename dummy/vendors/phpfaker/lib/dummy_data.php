@@ -4415,14 +4415,14 @@ class DummyData {
 		
 		$quotes = array(
 				'Gradually it was disclosed to me that the line seperating good and evil passes not through states, nor between classes, nor
-               between political parties but right through every human heart and all human hearts.', 
+			   between political parties but right through every human heart and all human hearts.', 
 				'The good Christian should beware of mathematicians and all those who make empty prophecies.  The danger already exists that
-               mathematicians have made a covenant with the devil to darken the spirit and confine man in the bonds of Hell.', 
+			   mathematicians have made a covenant with the devil to darken the spirit and confine man in the bonds of Hell.', 
 				'Everybody is ignorant, only on different subjects.', 
 				'Love does not consist in gazing at each other,
-               but in looking outward in the same direction.', 
+			   but in looking outward in the same direction.', 
 				'Scratch most feminists and underneath there is a woman who longs to be a sex object. The difference is that is not all she
-               longs to be. ', 
+			   longs to be. ', 
 				'Heavier-than-air flying machines are impossible.', 
 				'Glory is fleeting, but obscurity is forever.', 
 				'Victory goes to the player who makes the next-to-last mistake.', 
@@ -4435,7 +4435,7 @@ class DummyData {
 				'Perfection is achieved, not when there is nothing left to add, but when there is nothing left to take away.', 
 				'The opposite of a correct statement is a false statement. The opposite of a profound truth may well be another profound truth.', 
 				'In science one tries to tell people, in such a way as to be understood by everyone, something that no one ever knew before.
-               But in poetry, it\'s the exact opposite.', 
+			   But in poetry, it\'s the exact opposite.', 
 				'Reality is merely an illusion, albeit a very persistent one.', 
 				'Make everything as simple as possible, but not simpler.', 
 				'A doctor can bury his mistakes but an architect can only advise his clients to plant vines.', 
@@ -4451,49 +4451,49 @@ class DummyData {
 				'The right to swing my fist ends where the other man\'s nose begins.', 
 				'It\'s not the size of the dog in the fight, it\'s the size of the fight in the dog.', 
 				'The man who does not read good books has no advantage over the man who cannot
-               read them.', 
+			   read them.', 
 				'Sacred cows make the best hamburger.', 
 				'When I told the people of Northern Ireland that I was an atheist, a woman in the audience stood up and said, "Yes, but is
-               it the God of the Catholics or the God of the Protestants in whom you Don\'t believe?"', 
+			   it the God of the Catholics or the God of the Protestants in whom you Don\'t believe?"', 
 				'If triangles had a God, He\'d have three sides.', 
 				'Your enemy is never a villain in his own eyes. Keep this in mind, it may offer a way to make him your friend.  If not, you
-               can kill him without hate--and quickly.', 
+			   can kill him without hate--and quickly.', 
 				'Serious people have few ideas. People with ideas are never serious.', 
 				'It depends on your definition of asleep. They were not stretched out. They had their eyes closed. They were seated at their
-               desks with their heads in a nodding position.', 
+			   desks with their heads in a nodding position.', 
 				'The bureaucracy is expanding to meet the needs of an expanding bureaucracy.', 
 				'I\'ve enjoyed just about as much of this as I can stand.', 
 				'You cannot successfully determine beforehand which side of the bread to butter.', 
 				'If you understand what you\'re doing, you\'re not learning anything.', 
 				'No one can make you feel inferior without your consent.', 
 				'The most exciting phrase to hear in science, the one that heralds new discoveries, is not "Eureka!" (I found it!) but "That\'s
-               funny ...".', 
+			   funny ...".', 
 				'Children often have been likened to scientists. Both ask fundamental questions about the nature of the universe. Both also
-               ask innumerable questions that seems utterly trivial to others. Finally, both are granted by society the time to pursue their
-               musings.', 
+			   ask innumerable questions that seems utterly trivial to others. Finally, both are granted by society the time to pursue their
+			   musings.', 
 				'Life in uncertain. Eat dessert first.', 
 				'Heaven is where the police are British, the cooks are French, the mechanics German, the lovers Italian and it\'s all organised
-               by the Swiss.
-               Hell is where the chefs are British, the mechanics French, the lover\'s Swiss, the police German and it\'s all organised by
-               the Italians.', 
+			   by the Swiss.
+			   Hell is where the chefs are British, the mechanics French, the lover\'s Swiss, the police German and it\'s all organised by
+			   the Italians.', 
 				'Democracy is a device that insures we shall be governed no better than we deserve.', 
 				'All animals are equal but some animals are more equal than others.', 
 				'Don\'t think of it as being outnumbered, think of it as a wide target selection.', 
 				'Courage consists not in blindly overlooking danger, but in seeing it, and conquering it.', 
 				'Much of the social history of the Western world over the past three decades has been a history of replacing what worked with
-               what sounded good.', 
+			   what sounded good.', 
 				'"The only true teaching" is Hillel\'s negative formulation of the Golden Rule: "d`alakh sani l`havrakh la ta`avid" (Do not
-               do to your neighbor what is hateful to you).  This formulation has the advantage that it can be incorporated into an equitable
-               and enforcible - legal system, whereas the "positive" version is mere wishful thinking.', 
+			   do to your neighbor what is hateful to you).  This formulation has the advantage that it can be incorporated into an equitable
+			   and enforcible - legal system, whereas the "positive" version is mere wishful thinking.', 
 				'Right behind sex, commerce on the Internet seems to excite people the most.', 
 				'The real problem is not whether machines think but whether men do.', 
 				'Without Gun Confiscation, The Streets Would Not Be Safe For The SS.', 
 				'Scriptures, n.  The sacred books of our holy religion, as distinguished from the false and profane writings on which all other
-               faiths are based.', 
+			   faiths are based.', 
 				'I do not feel obliged to believe that the same God who has endowed us with sense, reason and intellect has intended us to
-               forgo their use.', 
+			   forgo their use.', 
 				'If the designers of X-Windows built cars, there would be no fewer than five steering wheels hidden about the cockpit, none
-               of which followed the same principles -- but you\'d be able to shift gears with your car stereo.  Useful feature, that.', 
+			   of which followed the same principles -- but you\'d be able to shift gears with your car stereo.  Useful feature, that.', 
 				'A witty saying proves nothing.', 
 				'If you make people think they\'re thinking, they\'ll love you; but if you really make them think, they\'ll hate you.', 
 				'Intellectual brilliance is no guarentee against being dead wrong.', 
@@ -4501,7 +4501,7 @@ class DummyData {
 				'Fine words! I wonder where you stole them.', 
 				'If you steal from one another it\'s plagiarism; if you steal from many, it\'s research.', 
 				'One cannot play chess if one becomes aware of the pieces as living souls and of the fact that the Whites and the Blacks have
-               more in common with each other than with the players. Suddenly one loses all interest in who will be champion.', 
+			   more in common with each other than with the players. Suddenly one loses all interest in who will be champion.', 
 				'An infallible method of conciliating a tiger is to allow oneself to be devoured.', 
 				'Americans always try to do the right thing -- after they\'ve tried everything else.', 
 				'Don\'t look now, but there\'s one too many in this room and I think it\'s you.', 
@@ -4527,17 +4527,17 @@ class DummyData {
 				'Computers are useless.  They can only give you answers.', 
 				'Democracy substitutes election by the incompetent many for appointment by the corrupt few.', 
 				'Many forms of Government have been tried, and will be tried in this world of sin and woe.  No one pretends that democracy
-               is perfect or all-wise.  Indeed, it has been said that democracy is the worst form of Government except all those others that
-               have been tried from time to time.', 
+			   is perfect or all-wise.  Indeed, it has been said that democracy is the worst form of Government except all those others that
+			   have been tried from time to time.', 
 				'I cannot forecast to you the action of Russia. It is a riddle wrapped in a mystery inside an enigma.', 
 				'it\'s you and me against the world. When do we attack?', 
 				'Writing is easy.  All you do is stare at a blank sheet of paper until drops of blood form on your forehead.', 
 				'He was a wise man who invented God.', 
 				'Give me the strength to change those things I should change,
-               The patience to accept those things I shouldn\'t change,
-               And the wisdom to know the difference.', 
+			   The patience to accept those things I shouldn\'t change,
+			   And the wisdom to know the difference.', 
 				'God, give me grace to accept with serenity the things I cannot change, courage to change the things I can, and wisdom to know
-               the difference.', 
+			   the difference.', 
 				'What a time! What a civilisation!', 
 				'One only needs two tools in life: WD-40 to make things go, and duct tape to make them stop.', 
 				'Due to budgetary cutbacks, the light at the end of the tunnel has been turned off.', 
@@ -4562,9 +4562,9 @@ class DummyData {
 				'Nothing so absurd can be said, that some philosopher has not said it.', 
 				'May you live in interesting times.', 
 				'If one only wished to be happy, this could be easily accomplished; but we wish to be happier that other people, and this is
-               always difficult, for we believe others to be happier than they are.', 
+			   always difficult, for we believe others to be happier than they are.', 
 				'There is no one, says another, whom fortune does not visit once in his life; but when she does not find him ready to receive
-               her, she walks in at the door, and flies out at the window.', 
+			   her, she walks in at the door, and flies out at the window.', 
 				'Nothing is more common than for great thieves to ride in triumph when small ones are punished.', 
 				'People readily believe what they want to believe.', 
 				'Life is playing a violin solo in public and learning the instrument as one goes on.', 
@@ -4574,7 +4574,7 @@ class DummyData {
 				'Many a man\'s tongue broke his nose.', 
 				'The most popular labour-saving device is still money.', 
 				'Progress, far from consisting in change, depends on retentiveness.  Those who cannot remember the past are condemned to repeat
-               it.', 
+			   it.', 
 				'A coupla months in the laboratory can save a coupla hours in the library.', 
 				'Time is what prevents everything from happening at once.', 
 				'Ye have enemies?  Good, good; that means ye\'ve stood up for something, sometime in thy life.', 
@@ -4582,33 +4582,33 @@ class DummyData {
 				'There came a time when the risk to remain tight in a bud was more painful than the risk it took to blossom.', 
 				'Sometimes you just have to take the leap, and build your wings on the way down.', 
 				'No one in this world, as far as I know ... has ever lost money by underestimating the intelligence of the great masses of
-               the plain people.', 
+			   the plain people.', 
 				'Failures are divided into two classes - those who thought and never did, and those who did and never thought.', 
 				'This [letter] would not be so long had I but the leisure to make it shorter.', 
 				'Those whom the gods wish to destroy, they first drive mad.', 
 				'Enjoyment is not a goal, it is a feeling that accompanies important ongoing activity.', 
 				'All bad precedents began as justifiable measures.', 
 				'When you can measure what you are speaking about, and express it in numbers, you know something about it; but when you cannot
-               measure it, when you cannot express it in numbers, your knowledge is a meagre and unsatisfactory kind; it may be the beginning
-               of knowledge, but you have scarcely, in your thoughts, advanced to the stage of science.', 
+			   measure it, when you cannot express it in numbers, your knowledge is a meagre and unsatisfactory kind; it may be the beginning
+			   of knowledge, but you have scarcely, in your thoughts, advanced to the stage of science.', 
 				'This article is a natural product.  The slight variation in spelling and
-               grammar enhance its individual character and beauty and in no way are to be
-               considered flaws or defects.', 
+			   grammar enhance its individual character and beauty and in no way are to be
+			   considered flaws or defects.', 
 				'They called me mad, and I called them mad, and damn them, they outvoted me.', 
 				'They [La Prensa] accused us of suppressing freedom of expression.  This was a lie and we could not let them publish it.', 
 				'If you say you can, or if you say you can\'t, you\'re right.', 
 				'Life is a comedy for those who think and a tragedy for those who feel.', 
 				'Asking whether a machine can think is precisely as interesting as asking whether a submarine can swim.', 
 				'On the Plains of Hesitation bleach the bones of countless millions who, at 
-               the Dawn of Victory, sat down to wait, and waiting ... died.', 
+			   the Dawn of Victory, sat down to wait, and waiting ... died.', 
 				'When the ordinary man attains wisdom, he becomes a sage. When the sage attains wisdom, he becomes an ordinary man.', 
 				'It is a mistake to look too far ahead.  Only one link in the chain of destiny can be handled at a time.', 
 				'If only God would give me some clear sign! Like making a large deposit in my name at a Swiss bank.', 
 				'Champagne to my true friends and true pain to my sham friends.', 
 				'A real friend is someone who knows the song in your heart, and can sing it back to you when you have forgotten the words.', 
 				'When two people are under the influence of the most violent, most insane, most delusive, and most transient of passions, they
-               are required to swear that they will remain in that exalted, abnormal, and exhausting condition continuously until death do
-               them part.', 
+			   are required to swear that they will remain in that exalted, abnormal, and exhausting condition continuously until death do
+			   them part.', 
 				'Love is the triumph of imagination over intelligence.', 
 				'To be in love is merely to be in a state of perpetual anesthesia - to mistake an ordinary young woman for a goddess.', 
 				'There are very few people who are not ashamed of having been in love when they no longer love each other.', 
@@ -4618,55 +4618,55 @@ class DummyData {
 				'The time you enjoy wasting is not wasted time.', 
 				'We should take care not to make the intellect our god; it has, of course, powerful muscles, but no personality.', 
 				'A man\'s ethical behaviour should be based effectually on sympathy, education, and social ties; no religious basis is necessary.
-               Man would indeed be in a poor way if he had to be restrained by fear of punishment and hope of reward after death.', 
+			   Man would indeed be in a poor way if he had to be restrained by fear of punishment and hope of reward after death.', 
 				'Peace cannot be kept by force. It can only be achieved by understanding.', 
 				'Whoever undertakes to set himself up as a judge of Truth and Knowledge is shipwrecked by the laughter of the gods.', 
 				'Put your hand on a hot stove for a minute, and it seems like an hour.  Sit with a pretty girl for an hour, and it seems like
-               a minute.  THAT\'S relativity.', 
+			   a minute.  THAT\'S relativity.', 
 				'Only two things are infinite, the universe and human stupidity, and I\'m not sure about the former.', 
 				'The genius of you Americans is that you never make clear-cut stupid moves, only complicated stupid moves which make us wonder
-               at the possibility that there may be something to them which we are missing.', 
+			   at the possibility that there may be something to them which we are missing.', 
 				'Nothing in this world can take the place of persistence. Talent will not; nothing is more common than unsuccessful men with
-               talent.  Genius will not; unrewarded genius is almost a proverb.  Education will not; the world is full of educated derelicts.
-               Persistence and determination are omnipotent.  The slogan "press on" has solved and always will solve the problems of the
-               human race.', 
+			   talent.  Genius will not; unrewarded genius is almost a proverb.  Education will not; the world is full of educated derelicts.
+			   Persistence and determination are omnipotent.  The slogan "press on" has solved and always will solve the problems of the
+			   human race.', 
 				'The ultimate test of a relationship is to disagree but hold hands.', 
 				'Some cause happiness wherever they go; others whenever they go.', 
 				'I love deadlines.  I love the whooshing sound they make as they fly by.', 
 				'Be it resolved that all women, of whatever age, rank,profession, or degree; whether virgin maids or widows; that shall after
-               the passing of this Act, impose upon and betray into matrimony any of His Majesty\'s male subjects, by scents, paints,cosmetics,
-               washes, artificial teeth, false hair, Spanish wool, iron stays, hoops, high-heeled shoes, or bolstered hips, shall incur the
-               penalty of the laws now in force against witchcraft, sorcery, and such like misdemeanours, and that the marriage, upon conviction,
-               shall stand null and void.', 
+			   the passing of this Act, impose upon and betray into matrimony any of His Majesty\'s male subjects, by scents, paints,cosmetics,
+			   washes, artificial teeth, false hair, Spanish wool, iron stays, hoops, high-heeled shoes, or bolstered hips, shall incur the
+			   penalty of the laws now in force against witchcraft, sorcery, and such like misdemeanours, and that the marriage, upon conviction,
+			   shall stand null and void.', 
 				'Rules are made for people who aren\'t willing to make up their own.', 
 				'To feed applied science by starving basic science is like economising on the foundations of a building so that it may be built
-               higher.', 
+			   higher.', 
 				'I readily accept all that biologists postulate in respect of my brain, yet I find my own consciously experiencing self not
-               satisfactorily accounted for... The further we progress in research, the more each of us will realise the tremendous mystery
-               of our personal existence as a consciously experiencing being with imagination and a sense of value and a systematisation
-               of knowledge.', 
+			   satisfactorily accounted for... The further we progress in research, the more each of us will realise the tremendous mystery
+			   of our personal existence as a consciously experiencing being with imagination and a sense of value and a systematisation
+			   of knowledge.', 
 				'The race is not always to the swift nor the battle to the strong -- but that\'s the way to bet it.', 
 				'When a man wants to murder a tiger he calls it sport; when the tiger wants to murder him he calls it ferocity.', 
 				'Failure? I never encountered it. All I ever met were temporary setbacks.', 
 				'The most certain test by which we judge whether a country is really free is the amount of security enjoyed by minorities.', 
 				'Great works are performed, not by strength, but by perseverance; yonder palace was raised by single stones, yet you see its
-               height and spaciousness. He that shall walk with vigour three hours a day, will pass in seven years a space equal to the circumference
-               of the globe.', 
+			   height and spaciousness. He that shall walk with vigour three hours a day, will pass in seven years a space equal to the circumference
+			   of the globe.', 
 				'In nature there are neither rewards nor punishments -- there are consequences.', 
 				'Out of the air a voice without a face
-               Proved by statistics that some cause was just
-               In tones as dry and level as the place.', 
+			   Proved by statistics that some cause was just
+			   In tones as dry and level as the place.', 
 				'The whole problem with the world is that fools and fanatics are always so certain of themselves, but wiser people so full
-               of doubts.', 
+			   of doubts.', 
 				'A little knowledge that acts is worth infinitely more than much knowledge that is idle.', 
 				'The government [is] extremely fond of amassing great quantities of statistics.  These are raised to the nth degree, the cube
-               roots are extracted, and the results are arranged into elaborate and impressive displays.  What must be kept ever in mind,
-               however, is that in every case, the figures are first put down by a village watchman, and he puts down anything he damn well
-               pleases.', 
+			   roots are extracted, and the results are arranged into elaborate and impressive displays.  What must be kept ever in mind,
+			   however, is that in every case, the figures are first put down by a village watchman, and he puts down anything he damn well
+			   pleases.', 
 				'The most pathetic person in the world is someone who has sight but has no vision.', 
 				'Most conventional soldiers think of the jungle as being full of lurking enemies.  Under our system, we will do the lurking.', 
 				'The death of democracy is not likely to be an assassination from ambush.  It will be a slow extinction from apathy, indifference,
-               and undernourishment.', 
+			   and undernourishment.', 
 				'It is not only for what we do that we are held responsible, but also for what we do not do.', 
 				'it\'s better to get mugged than to live a life of fear.', 
 				'The hammer shatters glass but forges steel', 
@@ -4677,51 +4677,51 @@ class DummyData {
 				'Blessed is he who expects nothing, for he shall never be disappointed.', 
 				'Men occasionally stumble over the truth, but most of them pick themselves up and hurry off as if nothing had happened.', 
 				'We are the protagonists and authors of our own drama.  It is up to us; there is no one left to blame.  Neither the "system,"
-               not our leaders, nor our parents.  We can\'t go out and hang the first amoeba.', 
+			   not our leaders, nor our parents.  We can\'t go out and hang the first amoeba.', 
 				'Madam, there\'s no such thing as a tough child -- if you parboil them first for seven hours, they always come out tender.', 
 				'Pardon him, Theodotus. He is a barbarian and thinks the customs of his tribe and island are the laws of nature.', 
 				'What good is reason if it drives out beauty, terror, and vivid emotion? Can a thousand facts compare with that epiphanic moment,
-               when a poet stands tall in a lightning storm, hurling challenges at God?', 
+			   when a poet stands tall in a lightning storm, hurling challenges at God?', 
 				'Science gives man what he needs, but magic gives man what he wants.', 
 				'When we are unable to find tranquility within ourselves, it is useless to seek it elsewhere.', 
 				'Natives who beat drums to drive off evil spirits are objects of scorn to smart Americans who blow horns to break up traffic
-               jams.', 
+			   jams.', 
 				'Twenty years from now you will be more disappointed by the things you didn\'t do than by the ones you did do.  So throw off
-               the bowlines, sail away from the safe harbor.  Catch the trade winds in your sails.  Explore.  Dream.  Discover.', 
+			   the bowlines, sail away from the safe harbor.  Catch the trade winds in your sails.  Explore.  Dream.  Discover.', 
 				'There\'s a fine line between genius and insanity.  I have erased that line.', 
 				'Kill a man, you are a murderer. Kill millions of men, you are a conqueror. Kill all, you are a god.', 
 				'Only an unlit candle lasts forever.', 
 				'The most important bill in our whole code is that for the diffusion of knowledge among the people.  No other sure foundation
-               can be devised, for the preservation of freedom and happiness.', 
+			   can be devised, for the preservation of freedom and happiness.', 
 				'At 50, everyone has the face he deserves.', 
 				'Be satisfied with life always, but never with oneself.', 
 				'The difference between fiction and reality? Fiction has to make sense.', 
 				'A mathematician is a blind man in a dark room looking for a black cat which isn\'t there.', 
 				'Math was always my bad subject.  I couldn\'t convince my teachers that many of my answers were meant ironically.', 
 				'Imagine a person with a gift of ridicule [He might say] First that a negative quantity has no logarithm; secondly that a negative
-               quantity has no square root; thirdly that the first non-existent is to the second as the circumference of a circle is to the
-               diameter.', 
+			   quantity has no square root; thirdly that the first non-existent is to the second as the circumference of a circle is to the
+			   diameter.', 
 				'Nothing ... will ever be attempted, if all possible objections must be first overcome.', 
 				'People are always blaming their circumstances for what they are. I Don\'t believe in circumstances. The people who get on in
-               this world are the people who get up and look for the circumstances they want, and, if they can\'t find them, make them.', 
+			   this world are the people who get up and look for the circumstances they want, and, if they can\'t find them, make them.', 
 				'it\'s supposed to be hard; if it wasn\'t hard, everyone would do it. The hard is what makes it great.', 
 				'In all matters of opinion, our adversaries are insane.', 
 				'The users took much longer than we anticipated to adapt to the intuitive user interface.', 
 				'Opportunities multiply as they are seized.', 
 				'Your lips are two course red threads intertwined in an eternal dance of laugh and frown.', 
 				'It stands to reason that self-righteous, inflexible, single-minded, authoritarian true believers are politically organized.
-               Open-minded, flexible, complex, ambiguous, anti-authoritarian people would just as soon be left to mind their own fucking
-               business.', 
+			   Open-minded, flexible, complex, ambiguous, anti-authoritarian people would just as soon be left to mind their own fucking
+			   business.', 
 				'The reasonable man adapts himself to the world; the unreasonable one persists
-               in trying to adapt the world to himself. Therefore all progress depends on the
-               unreasonable man.', 
+			   in trying to adapt the world to himself. Therefore all progress depends on the
+			   unreasonable man.', 
 				'Religion must remain an outlet for people who say to themselves, "I am not the kind of person I want to be."  It must never
-               sink into an assemblage of the self-satisfied.', 
+			   sink into an assemblage of the self-satisfied.', 
 				'	My eyes discover you
-               		  naked
-               	     and cover you
-               	   with a warm rain
-               	      of glances...', 
+			   		  naked
+			   		 and cover you
+			   	   with a warm rain
+			   		  of glances...', 
 				'What\'s a freudian whip, er slip?  Well, its where you say one thing and mean a mother, er another.', 
 				'Eagles may soar in the clouds, but weasels never get sucked into jet engines.', 
 				'I pretend to work. They pretend to pay me.', 
@@ -4735,36 +4735,36 @@ class DummyData {
 				'We\'ve been through so much together - and most of it was your fault.', 
 				'mirrors and copulation are abominations, for both multiply the number of mankind.', 
 				'Don\'t be afraid to take a big step when one is indicated. You can\'t cross a
-               chasm in two small jumps.', 
+			   chasm in two small jumps.', 
 				'You cannot reason a person out of a position he did not reason himself into in the first place.', 
 				'Be very, very careful what you put into that head, because you will never, ever get it out.', 
 				'Work is love made visible.  And if you cannot work with love but only
-               distaste, it is better that you should leave your work and sit at the gate
-               of the temple and take alms of those who work with joy.', 
+			   distaste, it is better that you should leave your work and sit at the gate
+			   of the temple and take alms of those who work with joy.', 
 				'It is not enough to fight. It is the spirit which we bring to the fight that decides the issue. It is morale that wins the
-               victory.', 
+			   victory.', 
 				'We are what we repeatedly do. Excellence, then, is not an act, but a habit.', 
 				'...As Aristotle said, happiness is not a condition that is produced or stands on its own; rather, it is a frame of mind that
-               accompanies an activity. But another frame of mind comes first. It is a steely determination to do well.', 
+			   accompanies an activity. But another frame of mind comes first. It is a steely determination to do well.', 
 				'Never ruin an apology with an excuse.', 
 				'I quote others only the better to express myself.', 
 				'I used to say that Politics is the second oldest profession, but I have come to realize that it bears a gross similarity to
-               the first.', 
+			   the first.', 
 				'Give us clear vision, that we may know where to stand and what to stand for - because unless we stand for something, we shall
-               fall for anything.', 
+			   fall for anything.', 
 				'America is the only country that went from barbarism to decadence without civilization in between.', 
 				'America may be unique in being a country which has leapt from barbarism to decadence without touching civilization.', 
 				'Children seldom misquote you.  In fact, they usually repeat word for word what you shouldn\'t have said. ', 
 				'A liberal is a man too broadminded to take his own side in a quarrel.', 
 				'The modern conservative is engaged in one of man\'s oldest exercises in moral philosophy; that is, the search for a superior
-               moral justification for selfishness.', 
+			   moral justification for selfishness.', 
 				'A conservative is one who admires radicals centuries after they\'re dead.', 
 				'Excess on occasion is exhilarating.  It prevents moderation from acquiring the deadening effect of a habit.', 
 				'The nice thing about standards is that there are so many of them to choose from.', 
 				'There are two tragedies in life.  One is to lose your heart\'s desire.  The other is to gain it.', 
 				'The trick is to stop thinking it as "your" money.', 
 				'Capitalism is the astounding belief that the most wickedest of men will do the most wickedest of things for the greatest good
-               of everyone.', 
+			   of everyone.', 
 				'Education makes a people easy to lead, but difficult to drive; easy to govern but impossible to enslave.', 
 				'You cannot teach a man anything; you can only help him find it within himself.', 
 				'Education is a method whereby one acquires a higher grade of prejudices.', 
@@ -4776,63 +4776,63 @@ class DummyData {
 				'Language is a wonderful thing. It can be used to express thoughts, to conceal thoughts, but more often, to replace thinking.', 
 				'If the King\'s English was good enough for Jesus, it\'s good enough for me!', 
 				'The Law, in its majestic equality, forbids the rich, as well as the poor, to  sleep under the bridges, to beg in the streets,
-               and to steal bread.', 
+			   and to steal bread.', 
 				'The best team for operating a computer system consists of a man and a dog.  The dog\'s job is to keep the man away from the
-               system.', 
+			   system.', 
 				'A life without cause is a life without effect.', 
 				'My life has a superb cast but I can\'t figure out the plot.', 
 				'Too many people are thinking of security instead of opportunity.  They seem more afraid of life than death.', 
 				'Absence is to love what wind is to fire; it extinguishes the small, it enkindles the great.', 
 				'Love is like racing across the frozen tundra on a snowmobile which flips over, trapping you underneath. At night, the ice-weasels
-               come.', 
+			   come.', 
 				'Infatuation is when you think he\'s as sexy as Robert Redford, as smart as Henry Kissinger, as noble as Ralph Nader, as funny
-               as Woody Allen, and as athletic as Jimmy Conners.  Love is when you realize that he\'s as sexy as Woody Allen, as smart as
-               Jimmy Connors, as funny as Ralph Nader, as athletic as Henry Kissinger and nothing like Robert Redford - but you\'ll take him
-               anyway.', 
+			   as Woody Allen, and as athletic as Jimmy Conners.  Love is when you realize that he\'s as sexy as Woody Allen, as smart as
+			   Jimmy Connors, as funny as Ralph Nader, as athletic as Henry Kissinger and nothing like Robert Redford - but you\'ll take him
+			   anyway.', 
 				'Familiarity breeds contempt -- and children.', 
 				'Never try to guess your wife\'s size.  Just buy her anything marked "petite" and hold on to the receipt.', 
 				'Why is it that you physicists always require so much expensive equipment?  Now the Department of Mathematics requires nothing
-               but money for paper, pencils, and erasers . . . and the Department of Philosophy is better still. It doesn\'t even ask for
-               erasers.', 
+			   but money for paper, pencils, and erasers . . . and the Department of Philosophy is better still. It doesn\'t even ask for
+			   erasers.', 
 				'Sex is the mathematics urge sublimated.', 
 				'If all the world\'s a stage, I want to operate the trap door.', 
 				'Please Don\'t ask me what the score is, I\'m not even sure what the game is.', 
 				'If you can\'t learn to do it well, learn to enjoy doing it badly.', 
 				'Some people like my advice so much that they frame it upon the wall instead of using it.', 
 				'Only those who attempt the absurd...will achieve the impossible.  I think ...I think it\'s in my basement...Let me go upstairs
-               and check.', 
+			   and check.', 
 				'Expressing anger is a form of public littering.', 
 				'I find that the great thing in this world is not so much where we stand as in what direction we are moving; To reach the port
-               of heaven, we must sail sometimes with the wind and sometimes against it--but we must sail, and not drift, nor lie at anchor.', 
+			   of heaven, we must sail sometimes with the wind and sometimes against it--but we must sail, and not drift, nor lie at anchor.', 
 				'Nothing else in the world ... not all the armies ... is so powerful as an idea whose time has come.', 
 				'Human salvation lies in the hands of the creatively maladjusted.', 
 				'Nearly all men can stand adveristy, but if you want to test a man\'s character, give him power.', 
 				'Some people have so much respect for their superiors they have none left for themselves.', 
 				'The bigger the real-life problems, the greater the tendency for the discipline to retreat into a reassuring fantasy-land of
-               abstract theory and technical manipulation.', 
+			   abstract theory and technical manipulation.', 
 				'I Don\'t mind occasionally having to reinvent a wheel; I Don\'t even mind using someone\'s reinvented wheel occasionally.  But
-               it helps a lot if it is symmetric, contains no fewer than ten sides, and has the axle centered.  I do tire of trapezoidal
-               wheels with offset axles.', 
+			   it helps a lot if it is symmetric, contains no fewer than ten sides, and has the axle centered.  I do tire of trapezoidal
+			   wheels with offset axles.', 
 				'I didn\'t think; I experimented.', 
 				'A classic is something that everybody wants to have read and nobody wants to read.', 
 				'We are all in the gutter, but some of us are looking at the stars.', 
 				'The only thing to do with good advice is pass it on.  It is never any use to oneself.', 
 				'I am returning this otherwise good typing paper to you because someone has printed gibberish all over it and put your name
-               at the top.', 
+			   at the top.', 
 				'There\'s nothing remarkable about it.  All one has to do is hit the right keys at the right time and the instrument plays itself.', 
 				'If one morning I walked on top of the water across the Potomac River, the headline that afternoon would read:  PRESIDENT can\'t
-               SWIM!', 
+			   SWIM!', 
 				'Christian Fundamentalism:  The doctrine that there is an absolutely powerful, infinitely knowledgeable, universe-spanning
-               entity that is deeply and personally concerned about my sex life.', 
+			   entity that is deeply and personally concerned about my sex life.', 
 				'There was never a genius without a tincture of madness.', 
 				'That\'s the nature of research-you Don\'t know what in hell you\'re doing.', 
 				'I have not failed. I\'ve just found 10,000 ways that won\'t work.', 
 				'There are three schools of magic.  One:  State a tautology, then ring the changes on its corollaries; that\'s philosophy. 
-               Two:  Record many facts.  Try to find a pattern.  Then make a wrong guess at the next fact; that\'s science.  Three:  Be aware
-               that you live in a malevolent Universe controlled by Murphy\'s Law, sometimes offset by Brewster\'s Factor; that\'s engineering.', 
+			   Two:  Record many facts.  Try to find a pattern.  Then make a wrong guess at the next fact; that\'s science.  Three:  Be aware
+			   that you live in a malevolent Universe controlled by Murphy\'s Law, sometimes offset by Brewster\'s Factor; that\'s engineering.', 
 				'Science would be ruined if (like sports) it were to put competition above everything else, and if it were to clarify the rules
-               of competition by withdrawing entirely into narrowly defined specialties.  The rare scholars who are nomads-by- choice are
-               essential to the intellectual welfare of the settled disciplines.', 
+			   of competition by withdrawing entirely into narrowly defined specialties.  The rare scholars who are nomads-by- choice are
+			   essential to the intellectual welfare of the settled disciplines.', 
 				'If we knew what we were doing, it wouldn\'t be research.', 
 				'Errors using inadequate data are much less than those using no data at all.', 
 				'Statistics are like bikinis.  What they reveal is suggestive, but what they conceal is vital.', 
@@ -4846,43 +4846,43 @@ class DummyData {
 				'In the country of the blind, the one-eyed man is king.', 
 				'Believe those who are seeking the truth. Doubt those who find it.', 
 				'A human being should be able to change a diaper, plan an invasion, butcher a hog, con a ship, design a building, write a sonnet,
-               balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations,
-               analyse a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization
-               is for insects.', 
+			   balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations,
+			   analyse a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization
+			   is for insects.', 
 				'But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let
-               your yea be yea; and your nay, nay; lest ye fall into condemnation.', 
+			   your yea be yea; and your nay, nay; lest ye fall into condemnation.', 
 				'The first casualty when war comes is truth.', 
 				'We have met the enemy - and he is us.', 
 				'First they went after the Communists, and I did not stand up, because I was not a Communist. Then they went after the homosexuals
-               and infirm, and I did not stand up, because I was neither. Then they went after the Jews, and I did not stand up, because
-               I was not a Jew. Then they went after the Catholics, and I did not stand up, because I was Protestant. Finally, they went
-               after me, and there was no one left to stand up for me.', 
+			   and infirm, and I did not stand up, because I was neither. Then they went after the Jews, and I did not stand up, because
+			   I was not a Jew. Then they went after the Catholics, and I did not stand up, because I was Protestant. Finally, they went
+			   after me, and there was no one left to stand up for me.', 
 				'A woman needs a man like a fish needs a bicycle.', 
 				'The best is the enemy of the good.', 
 				'Hell is a giant banquet room with tables filled with every possible good thing to eat and drink. The people are all seated
-               at the banquet tables, but they are all starving, emaciated, skin on skeleton figures. They are chained in such a way that
-               they can reach out and pick up the food, but the chains prevent them from bringing the food to their mouth. In the ultimate
-               cruelty, they are dying of starvation with food in their hands.
-               Surprisingly, the Heaven is also a giant banquet room with tables filled with all the same, wonderful, choices as before.
-               And just as before, the people are all chained so that they can pick up the food, but can\'t bring it to their mouth.  However,
-               in this banquet room, the people are all healthy.  They are laughing, singing and enjoying themselves. The difference? In
-               Heaven, they have realized that although they cannot feed themselves, the chains allow them to feed each other.', 
+			   at the banquet tables, but they are all starving, emaciated, skin on skeleton figures. They are chained in such a way that
+			   they can reach out and pick up the food, but the chains prevent them from bringing the food to their mouth. In the ultimate
+			   cruelty, they are dying of starvation with food in their hands.
+			   Surprisingly, the Heaven is also a giant banquet room with tables filled with all the same, wonderful, choices as before.
+			   And just as before, the people are all chained so that they can pick up the food, but can\'t bring it to their mouth.  However,
+			   in this banquet room, the people are all healthy.  They are laughing, singing and enjoying themselves. The difference? In
+			   Heaven, they have realized that although they cannot feed themselves, the chains allow them to feed each other.', 
 				'Nearly all people in England are of the superior sort, superiority being an English ailment.', 
 				'Which beginning of time according to our chronology, fell upon the entrance of the night preceding the twenty third day of
-               October in the year of the Julian Calendar, 710.', 
+			   October in the year of the Julian Calendar, 710.', 
 				'Hollywood\'s a place where they\'ll pay you a thousand dollars for a kiss, and fifty cents for your soul.', 
 				'In Hollywood, all marriages are happy.  it\'s trying to live together afterwards that causes the problems.', 
 				'Pigmies placed on the shoulders of giants see more than the giants themselves.', 
 				'If I have seen further ( than you and Descartes ) it is by standing upon the shoulders of Giants.', 
 				'If I have not seen as far as others, it is because giants were standing
-               on my shoulders.', 
+			   on my shoulders.', 
 				'If I have seen further, it is because I am surrounded by dwarves.', 
 				'It does a scientist good to discard a favorite theory every morning before breakfast.', 
 				'The way to gain a good reputation is to endeavour to be what you desire to appear.', 
 				'The devil is not wise because he is the devil but because he is old.', 
 				'If we think we hear, we no longer listen If we think we see, we no longer look If we think we know, we no longer search.', 
 				'Any member introducing a dog into the Society\'s premises shall be liable to a fine of Â£10.  Any animal leading a blind person
-               shall be deemed to be a cat.', 
+			   shall be deemed to be a cat.', 
 				'You\'ve got to do your own growing, no matter how tall your grandfather was.', 
 				'Behold the turtle. He only makes progress when he sticks his neck out. ', 
 				'Patriotism is the last refuge of a scoundrel.', 
@@ -4890,54 +4890,54 @@ class DummyData {
 				'The length of our life is less important than its depth.', 
 				'Men who cannot deceive others are very often successful at deceiving themselves.', 
 				'...a common observation, that few are mended by imprisonment, and that he, whose crimes have made confinement necessary, seldom
-               makes any other use of his enlargement, than to do, with greater cunning, what he did before with less.', 
+			   makes any other use of his enlargement, than to do, with greater cunning, what he did before with less.', 
 				'Those who made the laws have apparently supposed, that every deficiency of payment is the crime of the debtor. But the truth
-               is, that the creditor always shares the act, and often more than shares the guilt, of improper trust. It seldom happens that
-               any man imprisons another but for debts which he suffered to be contracted in hope of advantage to himself, and for bargains
-               in which proportioned his own profit to his own opinion of the hazard; and there is no reason, why one should punish the other
-               for a contract in which both concurred.', 
+			   is, that the creditor always shares the act, and often more than shares the guilt, of improper trust. It seldom happens that
+			   any man imprisons another but for debts which he suffered to be contracted in hope of advantage to himself, and for bargains
+			   in which proportioned his own profit to his own opinion of the hazard; and there is no reason, why one should punish the other
+			   for a contract in which both concurred.', 
 				'No man is a hypocrite in his pleasures.', 
 				'We have more respect for a man who robs boldly on the highway, than for a fellow who jumps out of a ditch, and knocks you
-               down behind your back. Courage is a quality so necessary for maintaining virtue, that it is always respected, even when it
-               is associated with vice.', 
+			   down behind your back. Courage is a quality so necessary for maintaining virtue, that it is always respected, even when it
+			   is associated with vice.', 
 				'To succeed in the world it is not enough to be stupid, you must also be well-mannered.', 
 				'Humans are the only animals that have children on purpose with the exception of guppies, who like to eat theirs.', 
 				'A man has made at least a start on discovering the meaning of human life when he plants trees under which he knows full well
-               he will never sit.', 
+			   he will never sit.', 
 				'As usual the Liberals offer a mixture of sound and original ideas.  Unfortunately none of the sound ideas is original and
-               none of the original ideas is sound.', 
+			   none of the original ideas is sound.', 
 				'If we are unwilling to let our ideals cost us anything, our ideals aren\'t worth anything.', 
 				'Success covers a multitude of blunders.', 
 				'There are fools everywhere, even in asylums.', 
 				'There are many truths of which the full meaning cannot be realised until personal experience has brought it home.', 
 				'The only purpose for which power can be rightfully exercised over any member of a civilized community, against his will, is
-               to prevent harm to others. His own good, either physical or moral, is not a sufficient warrant.', 
+			   to prevent harm to others. His own good, either physical or moral, is not a sufficient warrant.', 
 				'I like work; it fascinates me.  I can sit and look at it for hours.', 
 				'Love is like an hourglass with the heart filling up as the brain empties.', 
 				'I know that you believe that you understood what you think I said, but I am not sure you realize that what you heard is not
-               what I meant.', 
+			   what I meant.', 
 				'Familiarity breeds content.', 
 				'I sold my memoirs of my love life to Parker Brothers and they are going to make a game of it.', 
 				'He had a big head and a face so ugly it became almost fascinating.', 
 				'I see her as one great stampede of lips directed at the nearest derriere.', 
 				'The city is not a concrete jungle, it is a human zoo.', 
 				'You\'ve got to sing like you Don\'t need the money,
-               Love like you\'ll never get hurt.
-               You\'ve got to dance like no one is watching,
-               it\'s gotta come from the heart, if you want it to work.', 
+			   Love like you\'ll never get hurt.
+			   You\'ve got to dance like no one is watching,
+			   it\'s gotta come from the heart, if you want it to work.', 
 				'Eighty percent of success is showing up.', 
 				'Knowledge is power.', 
 				'Rules are for the obedience of fools and the guidance of wise men.', 
 				'Ah, but a man\'s reach should exceed his grasp, or what\'s a heaven for?', 
 				'What if you slept, and what if in your sleep you dreamed, and what if in your dreams you went to heaven and there you plucked
-               a strange and beautiful flower, and what if when you awoke you had the flower in your hand? Ah, what then?', 
+			   a strange and beautiful flower, and what if when you awoke you had the flower in your hand? Ah, what then?', 
 				'Cogito, ergo sum.', 
 				'I think, therefore I am.', 
 				'Man\'s mind stretched to a new idea never goes back to its original dimensions.', 
 				'Whom the Gods love dies young.', 
 				'An excellent plumber is infinitely more admirable than an incompetent philosopher. The society which scorns excellence in
-               plumbing because plumbing is a humble activity, and tolerates shoddiness in philosophy because it is an exalted activity,
-               will have neither good plumbing nor good philosophy. Neither its pipes nor its theories will hold water.', 
+			   plumbing because plumbing is a humble activity, and tolerates shoddiness in philosophy because it is an exalted activity,
+			   will have neither good plumbing nor good philosophy. Neither its pipes nor its theories will hold water.', 
 				'No matter how great your triumphs or how tragic your defeats, approximately one billion Chinese couldn\'t care less.', 
 				'Creativity is allowing yourself to make mistakes. Art is knowing which ones to keep.', 
 				'The power of accurate observation is commonly called cynicism by those who have not got it.', 
@@ -4949,33 +4949,33 @@ class DummyData {
 				'When we are planning for posterity, we ought to remember that virtue is not hereditary.', 
 				'First they ignore you, then they laugh at you, then they beat you, then you win.', 
 				'A long habit of not thinking a thing wrong, gives it a superficial appearance of being right...Time makes more converts than
-               reason.', 
+			   reason.', 
 				'Every kind of peaceful cooperation among men is primarily based on mutual trust and only secondarily on institutions such
-               as courts of justice and police.', 
+			   as courts of justice and police.', 
 				'They that can give up essential liberty to obtain a little temporary safety deserve neither liberty nor safety.', 
 				'People who pray for miracles usually Don\'t get miracles...But people who pray for courage, for strength to bear the unbearable,
-               for the grace to remember what they have left instead of what they have lost, very often find their prayers answered. Their
-               prayers helped them tap hidden reserves of faith and courage that were not available to them before.', 
+			   for the grace to remember what they have left instead of what they have lost, very often find their prayers answered. Their
+			   prayers helped them tap hidden reserves of faith and courage that were not available to them before.', 
 				'Show me the boy until he is 7 and I will show you the man.', 
 				'Train up a child in the way he should go: and when he is old, he will not depart from it.', 
 				'Tis education forms the common mind,
-               Just as the twig is bent, the tree\'s inclined.', 
+			   Just as the twig is bent, the tree\'s inclined.', 
 				'Confront a child, a puppy, and a kitten with a sudden danger; the child will turn instinctively for assistance, the puppy
-               will grovel in abject submission .. the kitten will brace its tiny body for a frantic resistance.', 
+			   will grovel in abject submission .. the kitten will brace its tiny body for a frantic resistance.', 
 				'Never explain -- your friends do not need it and your enemies will not believe you anyway.', 
 				'The very essence of leadership is that you have to have vision. You can\'t blow an uncertain trumpet.', 
 				'The minute a man ceases to grow, no matter what his years, that minute he begins to be old.', 
 				'He who has a why to live can bear almost any how.', 
 				'I have seen gross intolerance shown in support of toleration.', 
 				'Tolerance does not...do anything, embrace anyone, champion any issue.  It wipes the notes off the score of life and replaces
-               them with one long bar of rest.  It does not attack error, it does not champion truth, it does not hate evil, it does not
-               love good.', 
+			   them with one long bar of rest.  It does not attack error, it does not champion truth, it does not hate evil, it does not
+			   love good.', 
 				'Like the bee gathering honey from different flowers, the wise man accepts the essence of different Scriptures and sees only
-               the good in all religions.', 
+			   the good in all religions.', 
 				'We have to go forth and crush every world view that doesn\'t believe in tolerance and free speech.', 
 				'Broad-minded is just another way of saying a fellow\'s too lazy to form an opinion.', 
 				'The true way to overcome the evil of class distinctions is not to denounce them as revolutionists denounce them, but to ignore
-               them as children ignore them.', 
+			   them as children ignore them.', 
 				'Let me never fall into the vulgar mistake of dreaming that I am persecuted whenever I am contradicted.', 
 				'There is no prejudice so strong as that which arises from a fancied exemption from all prejudice.', 
 				'Without the aid of prejudice and custom I should not be able to find my way across the room.', 
@@ -4983,20 +4983,20 @@ class DummyData {
 				'An Englishman thinks he is moral when he is only uncomfortable.', 
 				'Education is not filling a pail, but lighting a fire.', 
 				'A foolish consistency is the hobgoblin of little minds, adored by little statesmen and philosophers and divines. With consistency
-               a great soul has simply nothing to do.', 
+			   a great soul has simply nothing to do.', 
 				'The trouble with fighting for human freedom is that one spends most of one\'s time defending scoundrels. For it is against
-               scoundrels that oppressive laws are first aimed, and oppression must be stopped at the beginning if it is to be stopped at
-               all.', 
+			   scoundrels that oppressive laws are first aimed, and oppression must be stopped at the beginning if it is to be stopped at
+			   all.', 
 				'The First Amendment was designed to protect offensive speech, because nobody ever tries to ban the other kind.', 
 				'If we could just get everyone to close their eyes and visualize world peace for an hour, imagine how serene and quiet it would
-               be until the looting started.', 
+			   be until the looting started.', 
 				'I can picture in my mind a world with out war, a world with out hate.  And I can picture us attacking that world, because
-               they\'d never expect it.', 
+			   they\'d never expect it.', 
 				'Tell your boss what you think of him, and the truth shall set you free.', 
 				'War is evil, but it is often the lesser evil.', 
 				'Travel is fatal to prejudice, bigotry and narrow-mindedness - all foes to real understanding. Likewise, tolerance or broad,
-               wholesome charitable views of men and things cannot be acquired by vegetating in our little corner of the earth all one\'s
-               lifetime.', 
+			   wholesome charitable views of men and things cannot be acquired by vegetating in our little corner of the earth all one\'s
+			   lifetime.', 
 				'Everywhere is nowhere. When a person spends all his time in foreign travel, he ends by having many acquaintances, but no friends.', 
 				'Let them hate so long as they fear.', 
 				'Power tends to corrupt, and absolute power corrupts absolutely.  Great men are almost always bad men.', 
@@ -5006,19 +5006,19 @@ class DummyData {
 				'It is easier to forgive an Enemy than to forgive a Friend.', 
 				'We cheat the other guy and pass the savings on to you.', 
 				' But pain ... seems to me an insufficient reason not to embrace life.  Being dead is quite painless.  Pain, like time, is going
-               to come on regardless.  Question is, what glorious moments can you win from life in addition to the pain?', 
+			   to come on regardless.  Question is, what glorious moments can you win from life in addition to the pain?', 
 				'Statistics show that teen pregnancy drops of significantly after age 25.', 
 				'Races north of the Pyrenees ... never reach maturity; they are of great stature and of a white colour.  But they lack all
-               sharpness of wit and penetration of intellect.', 
+			   sharpness of wit and penetration of intellect.', 
 				'Capital punishment is our society\'s recognition of the sanctity of human life.', 
 				'Quite a number of people ... describe the German classical author, Shakespeare, as belonging to English literature, because
-               - quite accidentally born at Stratford-on-Avon - he was forced by the authorities of that country to write in English.', 
+			   - quite accidentally born at Stratford-on-Avon - he was forced by the authorities of that country to write in English.', 
 				'Give me chastity and continency, but not yet.', 
 				'The verdict of the world is final.', 
 				'And thou wilt give thyself relief, if thou doest every act of thy life as if it were the last.', 
 				'Remember that to change your mind and follow him who sets you right is to be none the less free than you were before.', 
 				'All important issues are decided by violence.  An alternative way of stating this corollary is: Any issue not worth defending
-               violently is not considered important.', 
+			   violently is not considered important.', 
 				'Misers get up early in the morning; and burglars, I am informed, get up the night before.', 
 				'War is not "the best way of settling differences"; it is the only way of preventing their being settled for you.', 
 				'Impartiality is a pompous name for indifference, which is an elegant name for ignorance.', 
@@ -5026,14 +5026,14 @@ class DummyData {
 				'God brings men into deep waters, not to drown them, but to cleanse them.', 
 				'You cannot step twice into the same river, for other waters are continually flowing in.', 
 				'Life is not lost by dying;
-               life is lost minute by minute,
-               day by dragging day,
-               in all the thousand small uncaring ways.', 
+			   life is lost minute by minute,
+			   day by dragging day,
+			   in all the thousand small uncaring ways.', 
 				'In philosophy, we must distrust the things we understand too easily as well as the things we Don\'t understand.', 
 				'Which is it: is man one of God\'s blunders, or is God one of man\'s blunders?', 
 				'No group or class should be freed from doing the toil of the culture.  One of our current problems is that there are too many
-               people who simply have no idea how much unpleasant, tedious, and repetitive work is required to support their "high-level"
-               activities, and how ineffective they would be without the effort of those they all too often disdain.', 
+			   people who simply have no idea how much unpleasant, tedious, and repetitive work is required to support their "high-level"
+			   activities, and how ineffective they would be without the effort of those they all too often disdain.', 
 				'Liberty too can corrupt, and absolute liberty can corrupt absolutely.', 
 				'What we call failure is not the falling down, but the staying down.', 
 				'Many individuals have, like uncut diamonds, shining qualities beneath a rough exterior.', 
@@ -5041,29 +5041,29 @@ class DummyData {
 				'Simplicity of character is no hindrance to subtlety of intellect.', 
 				'The most important thing in politics -- and the hardest -- is to say no to your friends.', 
 				'That you may retain your self-respect, it is better to displease the people by doing what you know is right, than to temporarily
-               please them by doing what you know is wrong.', 
+			   please them by doing what you know is wrong.', 
 				'She left pieces of her life behind her everywhere she went.  it\'s easier to feel the sunlight without them, she said.', 
 				'Children have never been very good at listening to their elders, but they have never failed to imitate them.', 
 				'The crab instructs its young, "Walk straight ahead -  like me."', 
 				'There is, in fact, a manly and lawful passion for equality which excites men to wish all to be powerful and honored. This
-               passion tends to elevate the humble to the rank of the great; but there exists also in the human heart a depraved taste for
-               equality, which impels the weak to attempt to lower the powerful to their own level, and reduces men to prefer equality in
-               slavery to inequality with freedom.', 
+			   passion tends to elevate the humble to the rank of the great; but there exists also in the human heart a depraved taste for
+			   equality, which impels the weak to attempt to lower the powerful to their own level, and reduces men to prefer equality in
+			   slavery to inequality with freedom.', 
 				'If you always do what you have always done, you will always get what you have always gotten!', 
 				'Ideas are more powerful than guns. We would not let our enemies have guns, why should we let them have ideas.', 
 				'Political correctness is just tyranny with manners.', 
 				'All truth goes through three stages: First it is ridiculed; second it is violently opposed; and third, it is accepted as self-evident.', 
 				'The reason angels can fly is that they take themselves very lightly.', 
 				'It is the answer that fate gives to all who ask that question, when disaster, death, tragedy, hardship overtake them. "Why
-               me? Why me? Why me?"...
-               And Fate answers these fools--"Why not?"', 
+			   me? Why me? Why me?"...
+			   And Fate answers these fools--"Why not?"', 
 				'One of the unkindest things about the Universe is that more often than not the bullet doesn\'t have _your_ name on it; it likes
-               to mass produce ones with "to whom it may concern".', 
+			   to mass produce ones with "to whom it may concern".', 
 				'I know the world isn\'t fair, but why isn\'t it ever unfair in my favor?', 
 				'Don\'t go around saying the world owes you a living. The world owes you nothing. It was here first.', 
 				'Sweet are the uses of adversity;
-               Which, like a toad, ugly and venomous,
-               Wears yet a precious jewel in his head.', 
+			   Which, like a toad, ugly and venomous,
+			   Wears yet a precious jewel in his head.', 
 				'Always remember that others may hate you but those who hate you Don\'t win unless you hate them. And then you destroy yourself.', 
 				'God was satisfied with his work, and that is fatal.', 
 				'Wit can stand its ground against Truth only a little while.', 
@@ -5074,73 +5074,73 @@ class DummyData {
 				'Do not seek to follow in the footsteps of the wise: seek what they sought.', 
 				'History is a pack of lies about events that never happened told by people who weren\'t there.', 
 				'Each man thought: one of the others is bound to say something soon, some protest, and then I\'ll murmer agreement, not actually
-               say anything, I\'m not as stupid as that, but definitely murmur very firmly, so that the others will be in no doubt that I
-               thoroughly disapprove, because at a time like this it behooves all decent men to nearly stand up and be almost heard...
-               But no-one said anything.  The cowards, each man thought.', 
+			   say anything, I\'m not as stupid as that, but definitely murmur very firmly, so that the others will be in no doubt that I
+			   thoroughly disapprove, because at a time like this it behooves all decent men to nearly stand up and be almost heard...
+			   But no-one said anything.  The cowards, each man thought.', 
 				'Tis a wise thing to know what is wanted, and wiser still to know when \'tis achieved.', 
 				'I\'ll do the stupid thing first and then you shy people follow...', 
 				'Discovery consists of seeing what everybody has seen and thinking what nobody has thought.', 
 				'Here\'s a good rule of thumb;
-               Too clever is dumb.', 
+			   Too clever is dumb.', 
 				'The mind commands the body and it obeys.  The mind orders itself and meets resistance.', 
 				'There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies.
-               And the other way is to make it so complicated that there are no obvious deficiencies.', 
+			   And the other way is to make it so complicated that there are no obvious deficiencies.', 
 				'People always call me up and ask me these stupid things they already know or could easily find out.  But they want me to tell
-               them... I feel like some kind of religious leader.', 
+			   them... I feel like some kind of religious leader.', 
 				'Be aware that a halo has to fall only a few inches to be a noose.', 
 				'To live outside the law you must be honest.', 
 				'Criticism is not just a question of taste, but of whose taste.', 
 				'To my mind, the only possible pet is a cow.  Cows love you ... They will listen to your problems and never ask a thing in
-               return.  They will be your friends forever. And when you get tired of them, you can kill and eat them. Perfect.', 
+			   return.  They will be your friends forever. And when you get tired of them, you can kill and eat them. Perfect.', 
 				'If I had to live my life again I\'d make the same mistakes, only sooner.', 
 				'Get a shot off fast. This upsets him long enough to let you make your second shot perfect.', 
 				'it\'s amazing how much "mature wisdom" resembles being too tired.', 
 				'To stay young requires unceasing cultivation of the ability to unlearn old falsehoods.', 
 				'But life wasn\'t yes-no, on-off.  Life was shades of gray, and rainbows not in the order of the spectrum.', 
 				'What a debasing thing is war, when it suggests to man such horrible, ghastly ideas, and his fellow man applauds him for them,
-               and instead of calling him an inhuman monster, calls him a "great man"!', 
+			   and instead of calling him an inhuman monster, calls him a "great man"!', 
 				'We predict the future.  The best way to predict the future is to invent it.', 
 				'Reality is what, when you stop believing in it, doesn\'t go away.', 
 				'Failure is not an option. It is a privilege reserved for those who try.', 
 				'If Parliament does not mean what it says, my lord, it must say so.', 
 				'The mind is its own place, and of itself
-               Can make a hell of heaven, a heaven of hell.', 
+			   Can make a hell of heaven, a heaven of hell.', 
 				'Immorality: The morality of those who are having a better time.', 
 				'When you\'re hard enough on yourself, noone elses criticism matters.', 
 				'The three cardinal virtues of a master technologist are: laziness, impatience, and hubris.', 
 				'You can cut up a thing that\'s alive and beautiful to find out how it\'s alive and why it\'s beautiful and before you know it,
-               it\'s neither of those things, and you\'re standing there with blood on your face and tears in your sight and only the terrible
-               ache of guilt to show for it.', 
+			   it\'s neither of those things, and you\'re standing there with blood on your face and tears in your sight and only the terrible
+			   ache of guilt to show for it.', 
 				'Maybe it\'s better not to be the best. Then you can lose and it\'s OK.', 
 				'Experience should teach us to be most on our guard to protect liberty when the government\'s purposes are beneficent. Men born
-               to freedom are naturally alert to repel invasion of their liberty by evil minded rulers. The greatest dangers to liberty lurk
-               in insidious encroachment by men of zeal, well-meaning but without understanding.', 
+			   to freedom are naturally alert to repel invasion of their liberty by evil minded rulers. The greatest dangers to liberty lurk
+			   in insidious encroachment by men of zeal, well-meaning but without understanding.', 
 				'Adults are obsolete children.', 
 				'If you want to see what God thinks of money, just look at all the people He gave it to.', 
 				'Is it not the beauty of an asynchronous form of discussion that one can go and 
-               make cups of tea, floss the cat, fluff the geraniums, open the kitchen window 
-               and scream out it with operatic force, volume, and decorum, and then return to 
-               the vexed glowing letters calmer of mind and soul?', 
+			   make cups of tea, floss the cat, fluff the geraniums, open the kitchen window 
+			   and scream out it with operatic force, volume, and decorum, and then return to 
+			   the vexed glowing letters calmer of mind and soul?', 
 				'The right to fork is like the right to strike, the right to sue, or the right to bear arms -- you Don\'t want to have to exercise
-               any of these rights, but it\'s a signal of serious danger when anyone tries to take them away.', 
+			   any of these rights, but it\'s a signal of serious danger when anyone tries to take them away.', 
 				'The believer is happy, the doubter is wise.', 
 				'History doesn\'t repeat itself, but it does rhyme.', 
 				'Faster! Faster! Until the thrill of speed overcomes the fear of death.', 
 				'The only "intuitive" interface is the nipple. After that, it\'s all learned. ', 
 				'It is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail.', 
 				'There has grown in the minds of certain groups in this country the idea that just because a man or corporation has made a
-               profit out of the public for a number of years, the government and the courts are charged with guaranteeing such profit in
-               the future, even in the face of changing circumstances and contrary to public interest. This strange doctrine is supported
-               by neither statue or common law. Neither corporations or individuals have the right to come into court and ask that the clock
-               of history be stopped, or turned back.', 
+			   profit out of the public for a number of years, the government and the courts are charged with guaranteeing such profit in
+			   the future, even in the face of changing circumstances and contrary to public interest. This strange doctrine is supported
+			   by neither statue or common law. Neither corporations or individuals have the right to come into court and ask that the clock
+			   of history be stopped, or turned back.', 
 				'You can never break a habit; you can only replace it with a different habit.', 
 				'The regular combinations occur more rarely only because they are less numerous.  If we seek a cause wherever we perceive symmetry,
-               it is not that we regard the symmetrical event as less possible than the others, but, since this event ought to be the effect
-               of a regular cause or that of chance, the first of these suppositions is more probable than the second.  On a table we see
-               letters arranged in this order C o n s t a n t i n o p l e, and we judge that this arrangement is not the result of chance,
-               not beacuse it is less possible than others, for if this word were not employed in any language we would not suspect it came
-               from any particular cause, but this word being in use among us, it is incomparably more probably that some person has thus
-               arranged the aforesaid letters than that this arrangement is due to chance.', 
+			   it is not that we regard the symmetrical event as less possible than the others, but, since this event ought to be the effect
+			   of a regular cause or that of chance, the first of these suppositions is more probable than the second.  On a table we see
+			   letters arranged in this order C o n s t a n t i n o p l e, and we judge that this arrangement is not the result of chance,
+			   not beacuse it is less possible than others, for if this word were not employed in any language we would not suspect it came
+			   from any particular cause, but this word being in use among us, it is incomparably more probably that some person has thus
+			   arranged the aforesaid letters than that this arrangement is due to chance.', 
 				'Computer science is as much about computers as astronomy is about telescopes.', 
 				'The art of progress is to preserve order amid change and to preserve change amid order.', 
 				'Newbie vs Professional : "If it works, it\'s right" vs. "If it\'s right, it works"', 
@@ -5148,12 +5148,12 @@ class DummyData {
 				' You can complain because roses have thorns, or you can be happy because thorns have roses.', 
 				'Anything that is too stupid to be spoken is sung.', 
 				'When I became a man I put away childish things, including
-               the fear of childishness and the desire to be very grown up.', 
+			   the fear of childishness and the desire to be very grown up.', 
 				'Opportunity is missed by most people because it is dressed in overalls and looks like work.', 
 				'If there is one thing worse than the modern weakening of major morals it is the modern strengthening of minor morals.  Thus
-               it is considered more withering to accuse a man of bad taste than of bad ethics.', 
+			   it is considered more withering to accuse a man of bad taste than of bad ethics.', 
 				'Many clever men like you have trusted to civilisation. Many clever Babylonians, many clever Egyptians, many clever men at
-               the end of Rome.', 
+			   the end of Rome.', 
 				'An inconvenience is only an adventure wrongly considered; an adventure is an inconvenience rightly considered.', 
 				'There is a great man who makes every man feel small. But the real great man is the man who makes every man feel great.', 
 				'To have a right to do a thing is not at all the same as to be right in doing it.', 

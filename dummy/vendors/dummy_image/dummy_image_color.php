@@ -9,32 +9,32 @@
 *  - Pantone (seperate include file: pantone.color.class.php)
 *  - HEX Codes for HTML
 * 
-* @author    Sven Wagener <wagener_at_indot_dot_de>
+* @author	Sven Wagener <wagener_at_indot_dot_de>
 * @copyright Sven Wagener
 * @include 	 Funktion:_include_
-* @url       http://phpclasses.ehd.com.br/browse/package/804.html
+* @url	   http://phpclasses.ehd.com.br/browse/package/804.html
 */
 class DummyImageColor {
 	
-    /**
-    * @var	array $rgb
-    * @access private
-    * @desc	array for RGB colors
-    */	
+	/**
+	* @var	array $rgb
+	* @access private
+	* @desc	array for RGB colors
+	*/	
 	var $rgb=array('r'=>0,'g'=>0,'b'=>0);
 
-    /**
-    * @var	string $hex
-    * @access private
-    * @desc	variable for HTML HEX color
-    */	
+	/**
+	* @var	string $hex
+	* @access private
+	* @desc	variable for HTML HEX color
+	*/	
 	var $hex='';
 
-    /**
-    * @var	array $cmyk
-    * @access private
-    * @desc	array for cmyk colors
-    */	
+	/**
+	* @var	array $cmyk
+	* @access private
+	* @desc	array for cmyk colors
+	*/	
 	var $cmyk=array('c'=>0,'m'=>0,'y'=>0,'b'=>0);
 
 	/**
@@ -42,7 +42,7 @@ class DummyImageColor {
 	* @param int $red number from 0-255 for blue color value
 	* @param int $green number from 0-255 for green color value
 	* @param int $blue number from 0-255 for blue color value
-    * @access public	
+	* @access public	
 	* @desc Sets the RGB values
 	*/
 	function set_rgb($red,$green,$blue){
@@ -58,7 +58,7 @@ class DummyImageColor {
 	/**
 	* Sets the HEX HTML color value
 	* @param string $hex 6,3,2, or 1 characters long.
-    * @access public	
+	* @access public	
 	* @desc Sets the HEX HTML color value like ffff00. It will convert shorthand to a 6 digit hex.
 	*/
 	function set_hex($hex){
@@ -87,7 +87,7 @@ class DummyImageColor {
 	/**
 	* Sets the HTML color name, converting it to a 6 digit hex code.
 	* @param string $name The name of the color.
-    * @access public	
+	* @access public	
 	* @desc Sets the HTML color name, converting it to a 6 digit hex code.
 	*/
 	function set_name($name){
@@ -103,7 +103,7 @@ class DummyImageColor {
 	* @param int $m number from 0-100 for m color value
 	* @param int $y number from 0-100 for y color value
 	* @param int $b number from 0-100 for b color value
-    * @access public
+	* @access public
 	* @desc Sets the CMYK color values
 	*/	
 	function set_cmyk($c,$m,$y,$b){
@@ -119,7 +119,7 @@ class DummyImageColor {
 	/**
 	* Sets the pantone color value
 	* @param string $pantone_name name of the pantone color
-    * @access public	
+	* @access public	
 	* @desc Sets the pantone color value
 	*/	
 	function set_pantone($pantone_name){
@@ -136,7 +136,7 @@ class DummyImageColor {
 	/**
 	* Sets the pantone pc color value
 	* @param string $pantone_name_pc name of the pantone pc color
-    * @access public	
+	* @access public	
 	* @desc Sets the pantone pc color value
 	*/		
 	function set_pantone_pc($pantone_name){
@@ -155,7 +155,7 @@ class DummyImageColor {
 	/**
 	* Returns the RGB values of a set color
 	* @return array $rgb color values of red ($rgb['r']), green ($rgb['green') and blue ($rgb['b'])
-    * @access public
+	* @access public
 	* @desc Returns the RGB values of a set color
 	*/	
 	function get_rgb($val){
@@ -169,7 +169,7 @@ class DummyImageColor {
 	/**
 	* Returns the HEX HTML color value of a set color
 	* @return string $hex HEX HTML color value
-    * @access public
+	* @access public
 	* @desc Returns the HEX HTML color value of a set color
 	*/	
 	function get_hex(){
@@ -179,7 +179,7 @@ class DummyImageColor {
 	/**
 	* Returns the CMYK values of a set color
 	* @return array $cmyk color values of c ($cmyk['c']), m ($cmyk['m'), y ($cmyk['blue']) and b ($cmyk['b'])
-    * @access public	
+	* @access public	
 	* @desc Returns the CMYK values of a set color
 	*/	
 	function get_cmyk(){
@@ -188,7 +188,7 @@ class DummyImageColor {
 
 	/**
 	* Converts the RGB colors to HEX HTML colors
-    * @access private
+	* @access private
 	* @desc Converts the RGB colors to HEX HTML colors
 	*/	
 	function convert_rgb_to_hex(){
@@ -197,7 +197,7 @@ class DummyImageColor {
 	
 	/**
 	* Converts the RGB colors to CMYK colors
-    * @access private
+	* @access private
 	* @desc Converts the RGB colors to CMYK colors
 	*/		
 	function convert_rgb_to_cmyk(){
@@ -215,7 +215,7 @@ class DummyImageColor {
 	
 	/**
 	* Converts the CMYK colors to RGB colors
-    * @access private
+	* @access private
 	* @desc Converts the CMYK colors to RGB colors
 	*/		
 	function convert_cmyk_to_rgb(){
@@ -238,7 +238,7 @@ class DummyImageColor {
 	
 	/**
 	* Converts the HTML HEX colors to RGB colors
-    * @access private
+	* @access private
 	* @desc Converts the HTML HEX colors to RGB colors
 	* @url http://css-tricks.com/snippets/php/convert-hex-to-rgb/
 	*/		
@@ -246,14 +246,14 @@ class DummyImageColor {
 		$red = substr($this->hex,0,2);
 		$green = substr($this->hex,2,2);
 		$blue = substr($this->hex,4,2);
-        $this->rgb['r'] = hexdec( $red );
-        $this->rgb['g']  = hexdec( $green );
-        $this->rgb['b'] = hexdec( $blue );
+		$this->rgb['r'] = hexdec( $red );
+		$this->rgb['g']  = hexdec( $green );
+		$this->rgb['b'] = hexdec( $blue );
 	}
 	
 	/**
 	* Converts HTML color name to 6 digit HEX value.
-    * @access private
+	* @access private
 	* @param string $name One of the offical HTML color names.
 	* @desc Converts HTML color name to 6 digit HEX value.
 	* @url http://en.wikipedia.org/wiki/HTML_color_names

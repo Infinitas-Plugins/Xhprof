@@ -11,9 +11,9 @@
 
 	final class Xhprof{
 		public $profileFlags = array(
-			XHPROF_FLAGS_MEMORY,      // track memory usage
+			XHPROF_FLAGS_MEMORY,	  // track memory usage
 			XHPROF_FLAGS_NO_BUILTINS, // ignore php methods
-			XHPROF_FLAGS_CPU          // track cpu usage
+			XHPROF_FLAGS_CPU		  // track cpu usage
 		);
 
 		public $profileCake = false;

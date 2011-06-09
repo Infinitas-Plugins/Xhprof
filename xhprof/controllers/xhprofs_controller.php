@@ -74,14 +74,14 @@
 
 			var_dump(XHPROF_STRING_PARAM);
 			$params = array(
-				'run'        => array(XHPROF_STRING_PARAM, ''),
-                'wts'        => array(XHPROF_STRING_PARAM, ''),
-                'symbol'     => array(XHPROF_STRING_PARAM, ''),
-                'sort'       => array(XHPROF_STRING_PARAM, 'wt'), // wall time
-                'run1'       => array(XHPROF_STRING_PARAM, ''),
-                'run2'       => array(XHPROF_STRING_PARAM, ''),
-                'source'     => array(XHPROF_STRING_PARAM, 'xhprof'),
-                'all'        => array(XHPROF_UINT_PARAM, 0),
+				'run'		=> array(XHPROF_STRING_PARAM, ''),
+				'wts'		=> array(XHPROF_STRING_PARAM, ''),
+				'symbol'	 => array(XHPROF_STRING_PARAM, ''),
+				'sort'	   => array(XHPROF_STRING_PARAM, 'wt'), // wall time
+				'run1'	   => array(XHPROF_STRING_PARAM, ''),
+				'run2'	   => array(XHPROF_STRING_PARAM, ''),
+				'source'	 => array(XHPROF_STRING_PARAM, 'xhprof'),
+				'all'		=> array(XHPROF_UINT_PARAM, 0),
 			);
 
 			global $sortable_columns;

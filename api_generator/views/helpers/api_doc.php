@@ -12,12 +12,12 @@
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2008-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org
- * @package       api_generator
- * @subpackage    api_generator.views.helpers
- * @since         ApiGenerator 0.1
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright	 Copyright 2008-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link		  http://cakephp.org
+ * @package	   api_generator
+ * @subpackage	api_generator.views.helpers
+ * @since		 ApiGenerator 0.1
+ * @license	   MIT License (http://www.opensource.org/licenses/mit-license.php)
  **/
 App::import('Lib', 'ApiGenerator.DocMarkdown');
 App::import('Lib', 'ApiGenerator.ApiLinkGenerator');
@@ -261,7 +261,7 @@ class ApiDocHelper extends AppHelper {
 /**
  * Create a nested inheritance tree from an array.
  * Uses an array stack like a tree. So
- *     array('foo', 'bar', 'baz')
+ *	 array('foo', 'bar', 'baz')
  * will create a tree like
  *  * foo
  *  ** bar

@@ -215,7 +215,7 @@ TEXT;
 <p>this is some</p>
 
 <pre><code>function test() {
-    echo '&lt;test&gt;';
+	echo '&lt;test&gt;';
 }</code></pre>
 
 <p>more text</p>
@@ -236,7 +236,7 @@ TEXT;
 <p>this is some</p>
 
 <pre><code>function test() {
-    echo '&lt;test&gt;';
+	echo '&lt;test&gt;';
 }</code></pre>
 
 <p>more text</p>
@@ -273,13 +273,13 @@ TEXT;
 <p>this is some</p>
 
 <pre><code>function test() {
-    echo '&lt;test&gt;';
+	echo '&lt;test&gt;';
 }</code></pre>
 
 <p>more text goes here.</p>
 
 <pre><code>function test() {
-    echo '&lt;test&gt;';
+	echo '&lt;test&gt;';
 }</code></pre>
 
 <p>Additional text</p>
@@ -331,7 +331,7 @@ TEXT;
 <p>this is some</p>
 
 <pre><code>function test() {
-    echo '&lt;test&gt;';
+	echo '&lt;test&gt;';
 }</code></pre>
 
 <p>more text</p>
@@ -342,9 +342,9 @@ HTML;
 		$text = <<<TEXT
 this is some
 
-    function test() {
-    	echo '<test>';
-    }
+	function test() {
+		echo '<test>';
+	}
 
 more text
 TEXT;
@@ -352,7 +352,7 @@ TEXT;
 <p>this is some</p>
 
 <pre><code>function test() {
-    echo '&lt;test&gt;';
+	echo '&lt;test&gt;';
 }</code></pre>
 
 <p>more text</p>
@@ -363,11 +363,11 @@ HTML;
 		$text = <<<TEXT
 this is some
 
-    function test() {
-    	echo '<test>';
-    }
-    
-    \$foo->bar();
+	function test() {
+		echo '<test>';
+	}
+	
+	\$foo->bar();
 
 more text
 TEXT;
@@ -375,7 +375,7 @@ TEXT;
 <p>this is some</p>
 
 <pre><code>function test() {
-    echo '&lt;test&gt;';
+	echo '&lt;test&gt;';
 }
 
 \$foo-&gt;bar();</code></pre>
@@ -451,7 +451,7 @@ HTML;
 ### Attributes:
 
  - `empty` - If true, the empty select option is shown.  If a string, 
-    that string is displayed as the empty element.
+	that string is displayed as the empty element.
  - this is another line
 TEXT;
 
@@ -535,9 +535,9 @@ HTML;
 Some text here.
 
  - Line 1
-    - Indented 1
-    - Indented 2
-    - Indented 3
+	- Indented 1
+	- Indented 2
+	- Indented 3
  - Line 2
  - Line 3
 
@@ -567,9 +567,9 @@ HTML;
 Some text here.
 
  - Line 1
-    - Indented 1
-    - Indented 2
-        - Indented 3
+	- Indented 1
+	- Indented 2
+		- Indented 3
  - Line 2
  - Line 3
 
@@ -608,8 +608,8 @@ HTML;
 Some text here.
 
  - Line 1
-    1. Indented 1
-    2. Indented 2
+	1. Indented 1
+	2. Indented 2
  - Line 2
  - Line 3
 

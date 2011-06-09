@@ -9,19 +9,19 @@
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @package       app
- * @subpackage    app.plugins.clear_cache.vendors.shells
- * @copyright     2010 Marc Ypes, The Netherlands
- * @author        Ceeram
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @package	   app
+ * @subpackage	app.plugins.clear_cache.vendors.shells
+ * @copyright	 2010 Marc Ypes, The Netherlands
+ * @author		Ceeram
+ * @license	   MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 /**
  * Helps clear content of CACHE subfolders as well as content in cache engines from console
  *
- * @package       app
- * @subpackage    app.plugins.clear_cache.vendors.shells
- * @property      ClearCache $_Cleaner
+ * @package	   app
+ * @subpackage	app.plugins.clear_cache.vendors.shells
+ * @property	  ClearCache $_Cleaner
  */
 class ClearCacheShell extends Shell {
 

@@ -1,2 +1,3 @@
 # Developer ignores
 config/api_config.ini
+dev/webroot/img/docs/*

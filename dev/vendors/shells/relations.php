@@ -1,5 +1,9 @@
 <?php
 	class RelationsShell extends Shell {
+		public $tasks = array(
+			'Infinitas'
+		);
+
 		public $relations = array(
 			'hasOne',
 			'hasMany',
@@ -47,7 +51,7 @@
 			'Feed' => array(
 				'URL' => 'https://github.com/infinitas/infinitas/tree/beta/core/feed'
 			),
-			'filemanager' => array(
+			'Filemanager' => array(
 				'URL' => 'https://github.com/infinitas/infinitas/tree/beta/core/Filemanager'
 			),
 			'Filter' => array(
@@ -221,15 +225,15 @@
 				$this->__params['output'] = $dispatch->params['output'];
 			}
 
-			foreach(App::objects('plugin') as $plugin){
+			parent::__construct($dispatch);
+
+			foreach(App::objects('plugins') as $plugin){
 				if(isset($this->__options[$plugin])){
 					continue;
 				}
-				
+
 				$this->__options[$plugin] = array();
 			}
-
-			parent::__construct($dispatch);
 		}
 
 		/**
@@ -251,11 +255,28 @@
 		}
 
 		public function main() {
+			$this->Infinitas->h1('Relational Diagram');
+			$this->Infinitas->out('GraphViz: ' . $this->__params['graphViz']);
+			$this->Infinitas->out('Output:   ' . $this->__params['output']);
+			$this->Infinitas->out('Plugins:  ' . count($this->__params['plugins']));
+			$this->Infinitas->out('Skipping: (' . count($this->__params['ignore']) . ') ' . implode(', ', $this->__params['ignore']));
+			$this->Infinitas->out('Hidden:   ' . implode(', ', $this->__params['hide']));
+			$this->Infinitas->br();
+
 			foreach($this->__params['plugins'] as $plugin){
+				echo $plugin . '... ';
 				$this->buildDiagram($plugin);
 			}
 
+			$this->Infinitas->br();
+			$this->Infinitas->br();
+			$this->Infinitas->out('Writing files:');
+
 			$this->__writeFile();
+
+			$this->Infinitas->br();
+			$this->Infinitas->br();
+			$this->Infinitas->out('All done :)');
 		}
 
 		public function addNode($Model, $relationType, $plugin){
@@ -264,12 +285,13 @@
 			}
 
 			foreach($Model->{$relationType} as $name => $relatedModel){
-				$options = array_merge(
-					array('title' => $relationType),
-					$this->__options[$plugin]
-				);
-
-				unset($options[$plugin]['URL']);
+				$options = array('title' => $relationType);
+				if(isset($this->__options[$plugin])){
+					$options = array_merge(
+						$options,
+						(array)$this->__options[$plugin]
+					);
+				}
 				
 				$this->GraphViz->addNode(
 					$relatedModel['className'],
@@ -284,8 +306,11 @@
 						break;
 
 					case 'hasMany':
-					case 'hasAndBelongsToMany':
 						$color = '#3bad0e';
+						break;
+
+					case 'hasAndBelongsToMany':
+						$color = '#ff0000';
 						break;
 				}
 
@@ -353,10 +378,14 @@
 			if(isset($this->__params['hide']['pluginNames']) && $this->__params['hide']['pluginNames']){
 				return false;
 			}
-			$options = array_merge(
-				array('shape' => 'box'),
-				$this->__options[$plugin]
-			);
+
+			$options = array('shape' => 'box');
+			if(isset($this->__options[$plugin])){
+				$options = array_merge(
+					$options,
+					(array)$this->__options[$plugin]
+				);
+			}
 
 			$this->GraphViz->addNode(
 				$plugin . ' Plugin',
@@ -383,12 +412,10 @@
 		 * @return mixed, false if nothing to add. true when adding
 		 */
 		public function addMethodNodes($Model, $plugin){
-			$data = implode(
+			$data = trim(implode(
 				"\n",
 				$this->__getClassVariables($Model)) . "\n" . implode("\n", $this->__getClassMethods($Model)
-			);
-
-			$data = trim($data);
+			));
 
 			if(empty($data)){
 				return false;
@@ -397,7 +424,7 @@
 			$this->GraphViz->addNode(
 				$data,
 				array(
-					'title' => $data,
+					'title' => sprintf('Methods and/or variables for %s', $Model->alias),
 					'fontsize' => '8',
 					'shape' => 'box'
 				),
@@ -532,7 +559,11 @@
 				$this->GraphViz->setDirected(false);
 			}
 
+			echo 'DOT file... ';
+
 			$this->GraphViz->saveParsedGraph($this->__params['output'] . '.dot');
+
+			echo 'SVG file... ';
 			$this->GraphViz->renderDotFile(
 				$this->__params['output'] . '.dot',
 				$this->__params['output'] . '.svg',
@@ -540,9 +571,11 @@
 				'dot'
 			);
 
+			echo 'PNG file... ';
 			$File = new File($this->__params['output'] . '.png');
 			$File->write($this->GraphViz->fetch('png'));
 
+			echo 'HTML file... ';
 			ob_start();
 			$html = '<html><head></head><body>';
 			$this->GraphViz->image();

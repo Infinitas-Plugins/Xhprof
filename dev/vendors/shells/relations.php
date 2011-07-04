@@ -213,14 +213,19 @@
 
 			$this->__params['plugins'] = App::objects('plugin');
 			if(isset($dispatch->params['plugins'])){
-				$this->__params['plugins'] = explode(',', $dispatch->params['plugins']);
+				$plugins = array();
+				foreach(explode(',', $dispatch->params['plugins']) as $plugin){
+					$plugins[] = Inflector::camelize($plugin);
+				}
+				
+				$this->__params['plugins'] = $plugins;
 			}
 
 			if(isset($dispatch->params['ignore'])){
 				$this->__params['ignore'] = explode(',', $dispatch->params['ignore']);
 			}
 
-			$this->__params['output'] = App::pluginPath('Dev') . 'webroot' . DS . 'img' . DS . 'docs' . DS  . 'relations';
+			$this->__params['output'] = App::pluginPath('Dev') . 'webroot' . DS . 'img' . DS . 'docs';
 			if(isset($dispatch->params['output'])){
 				$this->__params['output'] = $dispatch->params['output'];
 			}
@@ -244,39 +249,125 @@
 		 * @return void
 		 */
 		private function __loadGraphViz(){
-			require $this->__params['graphViz'];
+			if(!class_exists('Image_GraphViz')){
+				require $this->__params['graphViz'];
+			}
+			
 			$this->GraphViz = new Image_GraphViz();
-		}
-
-		public function app() {
-			$this->buildDiagram('App');
-
-			$this->__writeFile();
 		}
 
 		public function main() {
 			$this->Infinitas->h1('Relational Diagram');
 			$this->Infinitas->out('GraphViz: ' . $this->__params['graphViz']);
 			$this->Infinitas->out('Output:   ' . $this->__params['output']);
-			$this->Infinitas->out('Plugins:  ' . count($this->__params['plugins']));
-			$this->Infinitas->out('Skipping: (' . count($this->__params['ignore']) . ') ' . implode(', ', $this->__params['ignore']));
+
+			$totalPlugins = count(App::objects('plugin'));
+			
+			$plugins = count($this->__params['plugins']) < $totalPlugins ? implode(', ', $this->__params['plugins']) : '';
+			$this->Infinitas->out('Plugins:  (' . count($this->__params['plugins']) . ') ' . $plugins);
+
+			$skipping = '(' . count($this->__params['ignore']) . ') ';
+			if(count($this->__params['plugins']) == $totalPlugins){
+				$skipping = $skipping . implode(', ', $this->__params['ignore']);
+			}
+			else{
+				$skipping = '(' . ($totalPlugins - count($this->__params['plugins'])) . ') ';
+			}
+
+			$this->Infinitas->out('Skipping: ' . $skipping);
 			$this->Infinitas->out('Hidden:   ' . implode(', ', $this->__params['hide']));
 			$this->Infinitas->br();
+
+
+			$this->Infinitas->out('[E]verything');
+			$this->Infinitas->out('[A]pp Models only');
+			$this->Infinitas->out('[P]lugins only');
+			$this->Infinitas->out('[Q]Quit');
+
+			$option = strtoupper($this->in(__('What would you like to generate?', true), array('E', 'A', 'P', 'Q')));
+			switch ($option) {
+				case 'E':
+					$this->everything();
+					break;
+
+				case 'A':
+					$this->app();
+					break;
+
+				case 'P':
+					$this->plugins();
+					break;
+
+				case 'Q':
+					exit(0);
+					break;
+
+				default:
+					$this->out(__('You have made an invalid selection. Please choose an option from above.', true));
+			}
+
+			$this->Infinitas->br();
+			$this->Infinitas->br();
+			$this->Infinitas->out('All done :)');
+
+			$this->main();
+		}
+
+		/**
+		 * @brief generate the docs for the app model files
+		 *
+		 * @access public
+		 *
+		 * @return void
+		 */
+		public function app() {
+			$this->Infinitas->p('Generating for App...');
+			$this->buildDiagram('App');
+
+			$this->__writeFile($this->__params['output'] . DS . 'App');
+		}
+
+		/**
+		 * @brief generate the relations for eveything in the app
+		 *
+		 * @access public
+		 *
+		 * @return void
+		 */
+		public function everything(){
+			$this->Infinitas->p('Generating for Everything...');
+			$this->app();
 
 			foreach($this->__params['plugins'] as $plugin){
 				echo $plugin . '... ';
 				$this->buildDiagram($plugin);
 			}
 
-			$this->Infinitas->br();
-			$this->Infinitas->br();
-			$this->Infinitas->out('Writing files:');
+			$this->__writeFile($this->__params['output'] . DS . 'Everything');
+		}
 
-			$this->__writeFile();
+		/**
+		 * @brief generate the relations for the plugins, seperatly
+		 *
+		 * @access public
+		 *
+		 * @return void
+		 */
+		public function plugins() {
+			$this->Infinitas->p('Generating for Plugins seperatly...');
+			
+			$path = $this->__params['output'];
 
-			$this->Infinitas->br();
-			$this->Infinitas->br();
-			$this->Infinitas->out('All done :)');
+			foreach($this->__params['plugins'] as $plugin){
+				$this->__loadGraphViz();
+
+				echo $plugin . '... ';
+				$this->buildDiagram($plugin);
+
+				$this->__writeFile($this->__params['output'] . DS . $plugin);
+
+				$this->__params['output'] = $path;
+			}
 		}
 
 		public function addNode($Model, $relationType, $plugin){
@@ -412,29 +503,9 @@
 		 * @return mixed, false if nothing to add. true when adding
 		 */
 		public function addMethodNodes($Model, $plugin){
-			$data = trim(implode(
-				"\n",
-				$this->__getClassVariables($Model)) . "\n" . implode("\n", $this->__getClassMethods($Model)
-			));
-
-			if(empty($data)){
-				return false;
-			}
-
-			$this->GraphViz->addNode(
-				$data,
-				array(
-					'title' => sprintf('Methods and/or variables for %s', $Model->alias),
-					'fontsize' => '8',
-					'shape' => 'box'
-				),
-				$plugin
-			);
-
-			$this->GraphViz->addEdge(
-				array($Model->alias => $data),
-				array('style' => 'dashed')
-			);
+			$this->__getTableFields($Model, $plugin);
+			$this->__getClassVariables($Model, $plugin);
+			$this->__getClassMethods($Model, $plugin);
 
 			return true;
 		}
@@ -498,7 +569,7 @@
 		 */
 		private function __getClassVariables($Model){
 			if(in_array('variables', $this->__params['hide'])){
-				return array();
+				return false;
 			}
 
 			$variables = array_keys(get_class_vars(get_class($Model)));
@@ -515,7 +586,39 @@
 
 			unset($parentVariables, $k, $variable);
 
-			return $variables;
+			$data = $Model->alias . " variables \n" . trim(implode("\n", $variables));
+
+			$this->GraphViz->addNode(
+				$data,
+				array(
+					'title' => sprintf('Variables for %s', $Model->alias),
+					'fontsize' => '8',
+					'shape' => 'box'
+				),
+				$Model->plugin
+			);
+
+			$this->GraphViz->addNode(
+				$Model->alias . 'Extra',
+				array(
+					'title' => 'Extra Info',
+					'fontsize' => '8',
+					'shape' => 'box'
+				),
+				$Model->plugin
+			);
+
+			$this->GraphViz->addEdge(
+				array($Model->alias => $Model->alias . 'Extra'),
+				array('style' => 'dashed')
+			);
+
+			$this->GraphViz->addEdge(
+				array($Model->alias . 'Extra' => $data),
+				array('style' => 'dotted', 'fontsize' => 8)
+			);
+
+			return true;
 		}
 
 		/**
@@ -529,7 +632,7 @@
 		 */
 		private function __getClassMethods($Model){
 			if(in_array('methods', $this->__params['hide'])){
-				return array();
+				return false;
 			}
 
 			$methods = get_class_methods(get_class($Model));
@@ -546,7 +649,92 @@
 
 			unset($parentMethods, $k, $method);
 
-			return $methods;
+			$data = $Model->alias . " methods\n" . trim(implode("\n", $methods));
+
+			$this->GraphViz->addNode(
+				$data,
+				array(
+					'title' => sprintf('Methods for %s', $Model->alias),
+					'fontsize' => '8',
+					'shape' => 'box'
+				),
+				$Model->plugin
+			);
+
+			$this->GraphViz->addNode(
+				$Model->alias . 'Extra',
+				array(
+					'title' => 'Extra Info',
+					'fontsize' => '8',
+					'shape' => 'box'
+				),
+				$Model->plugin
+			);
+
+			$this->GraphViz->addEdge(
+				array($Model->alias => $Model->alias . 'Extra'),
+				array('style' => 'dashed')
+			);
+
+			$this->GraphViz->addEdge(
+				array($Model->alias . 'Extra' => $data),
+				array('style' => 'dotted', 'fontsize' => 8)
+			);
+
+			return true;
+		}
+
+		/**
+		 * @brief get a list of model fields for the model in question
+		 *
+		 * @access public
+		 *
+		 * @param object $Model the model being worked with
+		 *
+		 * @return bool
+		 */
+		private function __getTableFields($Model){
+			if(in_array('fields', $this->__params['hide'])){
+				return false;
+			}
+
+			$data = $Model->alias . " fields\n" . trim(implode("\n", array_keys($Model->schema())));
+
+			if(empty($data)){
+				return false;
+			}
+
+			$this->GraphViz->addNode(
+				 $data,
+				array(
+					'title' => sprintf('Fields for %s', $Model->alias),
+					'fontsize' => '8',
+					'shape' => 'box'
+				),
+				$Model->plugin
+			);
+
+			$this->GraphViz->addNode(
+				$Model->alias . 'Extra',
+				array(
+					'title' => 'Extra Info',
+					'fontsize' => '8',
+					'shape' => 'box'
+				),
+				$Model->plugin
+			);
+
+			$this->GraphViz->addEdge(
+				array($Model->alias => $Model->alias . 'Extra'),
+				array('style' => 'dashed')
+			);
+
+			$this->GraphViz->addEdge(
+				array($Model->alias . 'Extra' => $data),
+				array('style' => 'dotted', 'fontsize' => 8)
+			);
+
+			return true;
 		}
 
 		/**
@@ -554,25 +742,33 @@
 		 *
 		 * @access private
 		 */
-		private function __writeFile(){
+		private function __writeFile($path = null){
+			$this->Infinitas->br();
+			$this->Infinitas->br();
+			$this->Infinitas->out('Writing files:');
+
+			if(!$path){
+				$path = $this->__params['output'];
+			}
+
 			if(isset($this->__params['hide']['direction']) && $this->__params['hide']['direction']){
 				$this->GraphViz->setDirected(false);
 			}
 
 			echo 'DOT file... ';
 
-			$this->GraphViz->saveParsedGraph($this->__params['output'] . '.dot');
+			$this->GraphViz->saveParsedGraph($path . '.dot');
 
 			echo 'SVG file... ';
 			$this->GraphViz->renderDotFile(
-				$this->__params['output'] . '.dot',
-				$this->__params['output'] . '.svg',
+				$path . '.dot',
+				$path . '.svg',
 				'svg' ,
 				'dot'
 			);
 
 			echo 'PNG file... ';
-			$File = new File($this->__params['output'] . '.png');
+			$File = new File($path . '.png');
 			$File->write($this->GraphViz->fetch('png'));
 
 			echo 'HTML file... ';
@@ -583,7 +779,7 @@
 			$html .= '</body></html>';
 			ob_end_clean();
 
-			$File = new File($this->__params['output'] . '.html');
+			$File = new File($path . '.html');
 			$File->write($html);
 		}
 	}

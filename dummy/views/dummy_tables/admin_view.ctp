@@ -2,11 +2,11 @@
 	echo $html->link('Back', array('action'=>'index')). ' ';
 	echo $html->link('Generate data', array('action'=>'generate',$data['DummyTable']['name'])). ' ';
 	echo $html->link(
-        'Empty data', 
-         array('action'=>'truncate',$data['DummyTable']['name']),
-         array(),
-         __('Are you sure?',true)
-    ). ' ';
+		'Empty data', 
+		 array('action'=>'truncate',$data['DummyTable']['name']),
+		 array(),
+		 __('Are you sure?',true)
+	). ' ';
 	if ($editable) {
 		if ($data['DummyTable']['active']) {
 			echo $html->link('Deactivate', array('action'=>'deactivate',$data['DummyTable']['name']));

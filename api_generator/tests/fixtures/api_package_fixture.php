@@ -10,12 +10,12 @@
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2008-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org
- * @package       api_generator
- * @subpackage    api_generator.tests.fixtures
- * @since         ApiGenerator 0.5
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright	 Copyright 2008-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link		  http://cakephp.org
+ * @package	   api_generator
+ * @subpackage	api_generator.tests.fixtures
+ * @since		 ApiGenerator 0.5
+ * @license	   MIT License (http://www.opensource.org/licenses/mit-license.php)
  **/
 class ApiPackageFixture extends CakeTestFixture {
 	var $name = 'ApiPackage';

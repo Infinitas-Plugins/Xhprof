@@ -28,9 +28,9 @@
 			$menu['main']['Images'] = array('plugin' => 'dummy', 'controller' => 'dummy_images', 'action' => 'index');
 			switch($event->Handler->params['controller']){
 				case 'dummy_fields':
-					$menu['main']['Generate Data']     = array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'generate', $id);
+					$menu['main']['Generate Data']	 = array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'generate', $id);
 					$menu['main']['Re-analyze Table'] = array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'analyze', $id);
-					$menu['main']['Truncate']         = array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'truncate', $id);
+					$menu['main']['Truncate']		 = array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'truncate', $id);
 					break;
 
 				case 'dummy_images':

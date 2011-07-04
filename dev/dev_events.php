@@ -110,7 +110,7 @@
 		}
 
 		$ths = str_repeat('<th>%s</th>', count($data['cache_list'][0]));
-                $tds = str_replace('th', 'td', $ths);
+				$tds = str_replace('th', 'td', $ths);
 		echo '<table style="width:100%">'.call_user_func_array('sprintf', array('a' => '<tr>'.$ths.'</tr>') + array_map('Inflector::humanize', array_keys($data['cache_list'][0])));
 		foreach($data['cache_list'] as $cache){
 			echo call_user_func_array('sprintf', array('<tr>'.$tds.'</tr>') + $cache);

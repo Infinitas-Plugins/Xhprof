@@ -6,7 +6,7 @@
 //  you may not use this file except in compliance with the License.
 //  You may obtain a copy of the License at
 //
-//      http://www.apache.org/licenses/LICENSE-2.0
+//	  http://www.apache.org/licenses/LICENSE-2.0
 //
 //  Unless required by applicable law or agreed to in writing, software
 //  distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,10 +20,10 @@
 // XHProf has two components:
 //
 //  * This module is the UI/reporting component, used
-//    for viewing results of XHProf runs from a browser.
+//	for viewing results of XHProf runs from a browser.
 //
 //  * Data collection component: This is implemented
-//    as a PHP extension (XHProf).
+//	as a PHP extension (XHProf).
 //
 // @author Kannan Muthukkaruppan
 //
@@ -1061,32 +1061,32 @@ function profiler_diff_report($url_params, $xhprof_data1, $run1_desc, $xhprof_da
  * the iXHProfRuns interface.
  *
  * @param object  $xhprof_runs_impl  An object that implements
- *                                   the iXHProfRuns interface
+ *								   the iXHProfRuns interface
  * .
  * @param array   $url_params   Array of non-default URL params.
  *
- * @param string  $source       Category/type of the run. The source in
- *                              combination with the run id uniquely
- *                              determines a profiler run.
+ * @param string  $source	   Category/type of the run. The source in
+ *							  combination with the run id uniquely
+ *							  determines a profiler run.
  *
- * @param string  $run          run id, or comma separated sequence of
- *                              run ids. The latter is used if an aggregate
- *                              report of the runs is desired.
+ * @param string  $run		  run id, or comma separated sequence of
+ *							  run ids. The latter is used if an aggregate
+ *							  report of the runs is desired.
  *
- * @param string  $wts          Comma separate list of integers.
- *                              Represents the weighted ratio in
- *                              which which a set of runs will be
- *                              aggregated. [Used only for aggregate
- *                              reports.]
+ * @param string  $wts		  Comma separate list of integers.
+ *							  Represents the weighted ratio in
+ *							  which which a set of runs will be
+ *							  aggregated. [Used only for aggregate
+ *							  reports.]
  *
- * @param string  $symbol       Function symbol. If non-empty then the
- *                              parent/child view of this function is
- *                              displayed. If empty, a flat-profile view
- *                              of the functions is displayed.
+ * @param string  $symbol	   Function symbol. If non-empty then the
+ *							  parent/child view of this function is
+ *							  displayed. If empty, a flat-profile view
+ *							  of the functions is displayed.
  *
- * @param string  $run1         Base run id (for diff reports)
+ * @param string  $run1		 Base run id (for diff reports)
  *
- * @param string  $run2         New run id (for diff reports)
+ * @param string  $run2		 New run id (for diff reports)
  *
  */
 function displayXHProfReport($xhprof_runs_impl, $url_params, $source, $run, $wts, $symbol, $sort, $run1, $run2) {

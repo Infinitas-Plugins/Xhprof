@@ -6,7 +6,7 @@
 //  you may not use this file except in compliance with the License.
 //  You may obtain a copy of the License at
 //
-//      http://www.apache.org/licenses/LICENSE-2.0
+//	  http://www.apache.org/licenses/LICENSE-2.0
 //
 //  Unless required by applicable law or agreed to in writing, software
 //  distributed under the License is distributed on an "AS IS" BASIS,
@@ -97,10 +97,10 @@ function xhprof_build_parent_child_key($parent, $child) {
 /**
  * Checks if XHProf raw data appears to be valid and not corrupted.
  *
- *  @param   int    $run_id        Run id of run to be pruned.
- *                                 [Used only for reporting errors.]
- *  @param   array  $raw_data      XHProf raw data to be pruned
- *                                 & validated.
+ *  @param   int	$run_id		Run id of run to be pruned.
+ *								 [Used only for reporting errors.]
+ *  @param   array  $raw_data	  XHProf raw data to be pruned
+ *								 & validated.
  *
  *  @return  bool   true on success, false on failure
  *
@@ -213,26 +213,26 @@ function xhprof_normalize_metrics($raw_data, $num_runs) {
  * aggregated by certain weightage.
  *
  * Suppose you have run:5 corresponding to page1.php,
- *                  run:6 corresponding to page2.php,
- *             and  run:7 corresponding to page3.php
+ *				  run:6 corresponding to page2.php,
+ *			 and  run:7 corresponding to page3.php
  *
  * and you want to accumulate these runs in a 2:4:1 ratio. You
  * can do so by calling:
  *
- *     xhprof_aggregate_runs(array(5, 6, 7), array(2, 4, 1));
+ *	 xhprof_aggregate_runs(array(5, 6, 7), array(2, 4, 1));
  *
  * The above will return raw data for the runs aggregated
  * in 2:4:1 ratio.
  *
  *  @param object  $xhprof_runs_impl  An object that implements
- *                                    the iXHProfRuns interface
- *  @param  array  $runs            run ids of the XHProf runs..
- *  @param  array  $wts             integral (ideally) weights for $runs
- *  @param  string $source          source to fetch raw data for run from
+ *									the iXHProfRuns interface
+ *  @param  array  $runs			run ids of the XHProf runs..
+ *  @param  array  $wts			 integral (ideally) weights for $runs
+ *  @param  string $source		  source to fetch raw data for run from
  *  @param  bool   $use_script_name If true, a fake edge from main() to
- *                                  to __script::<scriptname> is introduced
- *                                  in the raw data so that after aggregations
- *                                  the script name is still preserved.
+ *								  to __script::<scriptname> is introduced
+ *								  in the raw data so that after aggregations
+ *								  the script name is still preserved.
  *
  *  @return array  Return aggregated raw data
  *
@@ -359,13 +359,13 @@ function xhprof_aggregate_runs($xhprof_runs_impl, $runs, $wts, $source="phprof",
  *
  * Also, store overall totals in the 2nd argument.
  *
- * @param  array $raw_data          XHProf format raw profiler data.
+ * @param  array $raw_data		  XHProf format raw profiler data.
  * @param  array &$overall_totals   OUT argument for returning
- *                                  overall totals for various
- *                                  metrics.
+ *								  overall totals for various
+ *								  metrics.
  * @return array Returns a map from function name to its
- *               call count and inclusive & exclusive metrics
- *               (such as wall time, etc.).
+ *			   call count and inclusive & exclusive metrics
+ *			   (such as wall time, etc.).
  *
  * @author Kannan Muthukkaruppan
  */
@@ -477,7 +477,7 @@ function xhprof_compute_diff($xhprof_data1, $xhprof_data2) {
  * function across all parents.
  *
  * @return array  Returns a map of function name to total (across all parents)
- *                inclusive metrics for the function.
+ *				inclusive metrics for the function.
  *
  * @author Kannan
  */
@@ -543,10 +543,10 @@ function xhprof_compute_inclusive_times($raw_data) {
  * the pruned parent(s) will be attributed to a special function/symbol
  * "__pruned__()".]
  *
- *  @param   array  $raw_data      XHProf raw data to be pruned & validated.
+ *  @param   array  $raw_data	  XHProf raw data to be pruned & validated.
  *  @param   double $prune_percent Any edges that account for less than
- *                                 $prune_percent of time will be pruned
- *                                 from the raw data.
+ *								 $prune_percent of time will be pruned
+ *								 from the raw data.
  *
  *  @return  array  Returns the pruned raw data.
  *
@@ -785,15 +785,15 @@ function xhprof_get_bool_param($param, $default = false) {
  * value specified in the input.
  *
  * @params array $params An array whose keys are the names
- *                       of URL params who value needs to
- *                       be retrieved from the URL query
- *                       string. PHP globals are created
- *                       with these names. The value is
- *                       itself an array with 2-elems (the
- *                       param type, and its default value).
- *                       If a param is not specified in the
- *                       query string the default value is
- *                       used.
+ *					   of URL params who value needs to
+ *					   be retrieved from the URL query
+ *					   string. PHP globals are created
+ *					   with these names. The value is
+ *					   itself an array with 2-elems (the
+ *					   param type, and its default value).
+ *					   If a param is not specified in the
+ *					   query string the default value is
+ *					   used.
  * @author Kannan
  */
 function xhprof_param_init($params) {

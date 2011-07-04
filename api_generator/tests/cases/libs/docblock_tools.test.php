@@ -179,8 +179,8 @@ EOD;
 		/**
 		 * @param int \$normal normal is a good param
 		 * @param				string		\$tabs			tabs is a good param
-		 * @param        string         \$spaces    spaces is a good param
-		 * @param  string    \$spacestwo  spacestwo is a good param
+		 * @param		string		 \$spaces	spaces is a good param
+		 * @param  string	\$spacestwo  spacestwo is a good param
 		 *   it also has a newline
 		 */
 EOD;

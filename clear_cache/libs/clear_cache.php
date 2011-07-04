@@ -9,18 +9,18 @@
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @package       app
- * @subpackage    app.plugins.clear_cache.libs
- * @copyright     2010 Marc Ypes, The Netherlands
- * @author        Ceeram
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @package	   app
+ * @subpackage	app.plugins.clear_cache.libs
+ * @copyright	 2010 Marc Ypes, The Netherlands
+ * @author		Ceeram
+ * @license	   MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 /**
  * Helps clear content of CACHE subfolders as well as content in cache engines
  *
- * @package       app
- * @subpackage    app.plugins.clear_cache.libs
+ * @package	   app
+ * @subpackage	app.plugins.clear_cache.libs
  */
 class ClearCache {
 

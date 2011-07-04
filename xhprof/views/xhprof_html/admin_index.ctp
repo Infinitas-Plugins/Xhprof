@@ -6,7 +6,7 @@
 //  you may not use this file except in compliance with the License.
 //  You may obtain a copy of the License at
 //
-//      http://www.apache.org/licenses/LICENSE-2.0
+//	  http://www.apache.org/licenses/LICENSE-2.0
 //
 //  Unless required by applicable law or agreed to in writing, software
 //  distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,15 +20,15 @@
 // XHProf has two components:
 //
 //  * This module is the UI/reporting component, used
-//    for viewing results of XHProf runs from a browser.
+//	for viewing results of XHProf runs from a browser.
 //
 //  * Data collection component: This is implemented
-//    as a PHP extension (XHProf).
+//	as a PHP extension (XHProf).
 //
 //
 //
 // @author(s)  Kannan Muthukkaruppan
-//             Changhao Jiang
+//			 Changhao Jiang
 //
 // by default assume that xhprof_html & xhprof_lib directories
 // are at the same level.

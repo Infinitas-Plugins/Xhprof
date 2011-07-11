@@ -480,6 +480,10 @@
 						(array)$this->__options[$plugin]
 					);
 				}
+
+				if(!is_array($relatedModel)){
+					$relatedModel = array('className' => $relatedModel);
+				}
 				list($_plugin, $_model) =pluginSplit($relatedModel['className']);
 				
 				$this->GraphViz->addNode(

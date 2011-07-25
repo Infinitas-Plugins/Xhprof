@@ -19,8 +19,6 @@ class DummyField extends DummyAppModel {
 	
 	public $order = 'name';
 	
-	public $useDbConfig = 'dummy';
-	
 	public $belongsTo = array(
 			'DummyTable' => array(
 					'className' => 'Dummy.DummyTable', 

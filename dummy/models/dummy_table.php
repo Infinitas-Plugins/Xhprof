@@ -17,8 +17,6 @@ class DummyTable extends DummyAppModel {
 	
 	public $name = 'DummyTable';
 	
-	public $useDbConfig = 'dummy';
-	
 	public $hasMany = array(
 			'DummyField' => array(
 					'className' => 'Dummy.DummyField', 

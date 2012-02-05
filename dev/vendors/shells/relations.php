@@ -102,9 +102,6 @@
 			'ShortUrls' => array(
 				'URL' => 'https://github.com/infinitas/infinitas/tree/beta/core/short_urls'
 			),
-			'Tags' => array(
-				'URL' => 'https://github.com/infinitas/infinitas/tree/beta/core/tags'
-			),
 			'Themes' => array(
 				'URL' => 'https://github.com/infinitas/infinitas/tree/beta/core/themes'
 			),

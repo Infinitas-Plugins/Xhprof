@@ -236,7 +236,7 @@ class DummyType extends DummyAppModel {
 					break;
 
 				case 'tag':
-					$model = 'Tags.Tag';
+					$model = 'Contents.GlobalTag';
 					break;
 			}
 			

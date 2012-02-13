@@ -1,5 +1,0 @@
-# Developer ignores
-config/api_config.ini
-
-# doc ignores
-dev/webroot/img/docs/*

@@ -28,7 +28,7 @@
 		}
 
 		public function admin_symlink(){
-			App::import('libs', 'developer.dev');
+			App::uses('DevLib', 'Dev.Lib');
 			$this->DevLib = new DevLib();
 
 			if(!is_writable(getcwd())){

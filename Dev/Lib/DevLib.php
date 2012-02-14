@@ -43,8 +43,8 @@
 
 			$plugins = App::objects('plugin');
 			foreach($plugins as $plugin){
-				if(is_link(getcwd() . DS . Inflector::underscore($plugin))){
-					$links[] = getcwd() . DS . Inflector::underscore($plugin);
+				if(is_link(getcwd() . DS . $plugin)){
+					$links[] = getcwd() . DS . $plugin;
 				}
 			}
 
@@ -83,18 +83,18 @@
 		 * @return int the number of links that were created
 		 */
 		private function __createAssetSymlinks(){
-			$Folder = new Folder(APP . 'views' . DS . 'themed' . DS);
+			$Folder = new Folder(APP . 'View' . DS . 'Themed' . DS);
 			$folders = $Folder->read();
 			$folders = $folders[0];
-			if(!is_dir(getcwd() . DS . 'theme')){
-				$Folder->create(getcwd() . DS . 'theme', 0755);
+			if(!is_dir(getcwd() . DS . 'Theme')){
+				$Folder->create(getcwd() . DS . 'Theme', 0755);
 			}
 			
 			$createdLinks = 0;
 			foreach((array)$folders as $folder){
-				if(is_dir(APP . 'views' . DS . 'themed' . DS . $folder . DS . 'webroot' . DS) && !is_dir(getcwd() . DS . 'theme' . DS . $folder . DS)){
+				if(is_dir(APP . 'View' . DS . 'Themed' . DS . $folder . DS . 'webroot' . DS) && !is_dir(getcwd() . DS . 'theme' . DS . $folder . DS)){
 					symlink(
-						APP . 'views' . DS . 'themed' . DS . $folder . DS . 'webroot' . DS,
+						APP . 'View' . DS . 'Themed' . DS . $folder . DS . 'webroot' . DS,
 						'theme' . DS . $folder
 					);
 					++$createdLinks;
@@ -104,7 +104,7 @@
 
 			$plugins = App::objects('plugin');
 			foreach($plugins as $plugin){
-				if(is_dir(App::pluginPath($plugin) . 'webroot' . DS) && !is_dir(getcwd() . DS . Inflector::underscore($plugin))){
+				if(is_dir(App::pluginPath($plugin) . 'webroot' . DS) && !is_dir(getcwd() . DS . $plugin)){
 					symlink(
 						App::pluginPath($plugin) . 'webroot' . DS,
 						Inflector::underscore($plugin)

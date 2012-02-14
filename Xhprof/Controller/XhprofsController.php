@@ -43,6 +43,7 @@
 
 				$this->xhprofSessions[$data[1]] = Inflector::humanize($data[1]);
 			}
+			return true;
 		}
 
 		public function admin_index() {

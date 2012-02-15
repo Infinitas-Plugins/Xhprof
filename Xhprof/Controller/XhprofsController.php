@@ -55,7 +55,7 @@
 
 		public function admin_view($id = null){
 			if(!$id || !is_file(Configure::read('Developer.Xhprof.output').$id)){
-				$this->Infinitas->noticeInvalidRecord();
+				$this->notice('invalid');
 			}
 
 			App::import('Lib', 'Developer.XhprofDisplay', array('file' => 'xhprof/xhprof_display.php'));

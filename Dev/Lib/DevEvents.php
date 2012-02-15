@@ -97,8 +97,8 @@
 		}
 
 		public function onAttachBehaviors($event){
-			if(is_subclass_of($event, 'Model') && isset($event->_schema) && is_array($event->_schema)) {
-				$event->Behaviors->attach('Dev.Dev');
+			if($event->Handler->shouldAutoAttachBehavior()) {
+				$event->Handler->Behaviors->attach('Dev.Dev');
 			}
 		}
 	}

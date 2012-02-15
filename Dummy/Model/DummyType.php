@@ -156,7 +156,7 @@ class DummyType extends DummyAppModel {
 
 			switch($model){
 				case 'BlogPosts':
-					$model = 'Blog.Post';
+					$model = 'Blog.BlogPost';
 					break;
 
 				case 'category':

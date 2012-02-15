@@ -21,11 +21,8 @@
 	class XhprofsController extends XhprofAppController {
 		public $uses = array();
 
-		public $helpers = array(
-			'Filter.Filter'
-		);
-
 		public $xhprofSessions = array();
+		
 		public $xhprofData = array();
 
 		public function beforeFilter() {

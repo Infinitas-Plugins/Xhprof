@@ -22,7 +22,7 @@
 		public $uses = array();
 
 		public function admin_index(){
-			$this->set($this->params['named']);
+			$this->set($this->request->params['named']);
 		}
 
 		public function admin_callgraph(){

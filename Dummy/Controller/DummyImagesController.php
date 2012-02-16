@@ -50,18 +50,18 @@
 			App::import('Vendor', 'Dummy.DummyImageColor', array('file' => 'dummy_image'.DS.'dummy_image_color.php'));			
 			
 			$this->DummyImageColorBackground = new DummyImageColor();
-			$this->DummyImageColorBackground->set_hex(isset($this->params['pass'][1]) ? $this->params['pass'][1] : 'ccc');
+			$this->DummyImageColorBackground->set_hex(isset($this->request->params['pass'][1]) ? $this->request->params['pass'][1] : 'ccc');
 
 			//Find the foreground color which is always after the 3rd param.
 
 			$this->DummyImageColorForeground = new DummyImageColor();
-			$this->DummyImageColorForeground->set_hex(isset($this->params['pass'][2]) ? $this->params['pass'][2] : '000');
+			$this->DummyImageColorForeground->set_hex(isset($this->request->params['pass'][2]) ? $this->request->params['pass'][2] : '000');
 
-			$file_format = isset($this->params['url']['ext']) ? $this->params['url']['ext'] : 'png';
+			$file_format = isset($this->request->params['url']['ext']) ? $this->request->params['url']['ext'] : 'png';
 
 			//Find the image dimensions
-			$this->params['pass'][0] = isset($this->params['pass'][0]) ? $this->params['pass'][0] : '200x200';
-			$dimensions = explode('x',$this->params['pass'][0]); 
+			$this->request->params['pass'][0] = isset($this->request->params['pass'][0]) ? $this->request->params['pass'][0] : '200x200';
+			$dimensions = explode('x',$this->request->params['pass'][0]); 
 			$height = $width = preg_replace('/[^\d]/i', '',$dimensions[0]);
 			if (isset($dimensions[1]) && $dimensions[1]) {
 				$height = preg_replace('/[^\d]/i', '',$dimensions[1]);
@@ -90,7 +90,7 @@
 			$fg_color = imageColorAllocate($img, $this->DummyImageColorForeground->get_rgb('r'), $this->DummyImageColorForeground->get_rgb('g'), $this->DummyImageColorForeground->get_rgb('b'));
 			unset($this->DummyImageColorBackground, $this->DummyImageColorForeground);
 
-			$text = isset($this->params['named']['text']) ? $this->params['named']['text'] : $width.' x '.$height;
+			$text = isset($this->request->params['named']['text']) ? $this->request->params['named']['text'] : $width.' x '.$height;
 			$text = preg_replace('/\|/i', "\n", $text);
 
 			//Ric Ewing: I modified this to behave better with long or narrow images and condensed the resize code to a single line.

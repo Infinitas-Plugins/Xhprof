@@ -40,11 +40,11 @@
 				);
 			}
 
-			if(isset($this->params['named']['remove']) && $this->params['named']['remove']){
+			if(isset($this->request->params['named']['remove']) && $this->request->params['named']['remove']){
 				$this->__removeSymlinks();
 			}
 
-			else if(isset($this->params['named']['show']) && $this->params['named']['show']){
+			else if(isset($this->request->params['named']['show']) && $this->request->params['named']['show']){
 				$this->set('links', $this->DevLib->listSymlinks());
 			}
 

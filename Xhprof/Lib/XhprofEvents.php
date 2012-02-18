@@ -50,8 +50,8 @@
 		public function onRequireCssToLoad($event) {
 			if($event->Handler->params['plugin'] == 'xhprof' && isset($event->Handler->params['admin']) && $event->Handler->params['admin']){
 				return array(
-					'/xhprof/css/xhprof',
-					'/xhprof/css/autocomplete'
+					'Xhprof.xhprof',
+					'Xhprof.autocomplete'
 				);
 			}
 		}
@@ -59,8 +59,8 @@
 		public function onRequireJavascriptToLoad($event) {
 			if($event->Handler->params['plugin'] == 'xhprof' && isset($event->Handler->params['admin']) && $event->Handler->params['admin']){
 				return array(
-					//'/xhprof/js/xhprof_report',
-					'/xhprof/js/autocomplete'
+					//'Xhprof.xhprof_report',
+					'Xhprof.autocomplete'
 				);
 			}
 		}

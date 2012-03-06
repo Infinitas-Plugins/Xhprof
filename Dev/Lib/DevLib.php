@@ -26,7 +26,7 @@
 		 * @return array a list of smylink folders
 		 */
 		public function listSymlinks(){
-			$themeAssets = getcwd() . DS . 'theme' . DS;
+			$themeAssets = getcwd() . DS . 'Theme' . DS;
 			$links = array();
 
 			if(is_dir($themeAssets)){
@@ -41,10 +41,11 @@
 				}
 			}
 
-			$plugins = App::objects('plugin');
-			foreach($plugins as $plugin){
-				if(is_link(getcwd() . DS . $plugin)){
-					$links[] = getcwd() . DS . $plugin;
+			$plugins = CakePlugin::loaded();
+			foreach($plugins as $plugin) {
+				$file = getcwd() . DS . Inflector::underscore($plugin);
+				if(is_link($file)) {
+					$links[] = $file;
 				}
 			}
 
@@ -91,19 +92,18 @@
 			}
 			
 			$createdLinks = 0;
-			foreach((array)$folders as $folder){
-				if(is_dir(APP . 'View' . DS . 'Themed' . DS . $folder . DS . 'webroot' . DS) && !is_dir(getcwd() . DS . 'theme' . DS . $folder . DS)){
-					symlink(
-						APP . 'View' . DS . 'Themed' . DS . $folder . DS . 'webroot' . DS,
-						'theme' . DS . $folder
-					);
+			foreach((array)$folders as $folder) {
+				$themeWebroot = APP . 'View' . DS . 'Themed' . DS . $folder . DS . 'webroot';
+				$targetSymlink = getcwd() . DS . 'Theme' . DS . $folder . DS;
+				if(is_dir($themeWebroot) && !is_dir($targetSymlink)) {
+					symlink($themeWebroot, $targetSymlink);
 					++$createdLinks;
 				}
 			}
 			unset($Folder);
 
-			$plugins = App::objects('plugin');
-			foreach($plugins as $plugin){
+			$plugins = CakePlugin::loaded();
+			foreach($plugins as $plugin) {
 				if(is_dir(App::pluginPath($plugin) . 'webroot' . DS) && !is_dir(getcwd() . DS . $plugin)){
 					symlink(
 						App::pluginPath($plugin) . 'webroot' . DS,

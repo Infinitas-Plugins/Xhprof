@@ -1,32 +1,38 @@
 <?php
-class R4e2df173e4204fe082213ca06318cd70 extends CakeRelease {
+	/**
+	 * Infinitas Releas
+	 *
+	 * Auto generated database update
+	 */
+	 
+	class R4f5637a2c43c432683e349426318cd70 extends CakeRelease {
 
-/**
- * Migration description
- *
- * @var string
- * @access public
- */
-	public $description = 'Migration for Dummy version 0.8';
+	/**
+	* Migration description
+	*
+	* @var string
+	* @access public
+	*/
+		public $description = 'Migration for Dummy version 0.9';
 
-/**
- * Plugin name
- *
- * @var string
- * @access public
- */
-	public $plugin = 'Dummy';
+	/**
+	* Plugin name
+	*
+	* @var string
+	* @access public
+	*/
+		public $plugin = 'Dummy';
 
-/**
- * Actions to be performed
- *
- * @var array $migration
- * @access public
- */
-	public $migration = array(
-		'up' => array(
+	/**
+	* Actions to be performed
+	*
+	* @var array $migration
+	* @access public
+	*/
+		public $migration = array(
+			'up' => array(
 			'create_table' => array(
-				'dummy_fields' => array(
+				'dum_dummy_fields' => array(
 					'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
 					'dummy_table_id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'index'),
 					'name' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
@@ -45,7 +51,7 @@ class R4e2df173e4204fe082213ca06318cd70 extends CakeRelease {
 					),
 					'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'MyISAM'),
 				),
-				'dummy_tables' => array(
+				'dum_dummy_tables' => array(
 					'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
 					'model' => array('type' => 'string', 'null' => true, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 					'table' => array('type' => 'string', 'null' => true, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
@@ -61,32 +67,31 @@ class R4e2df173e4204fe082213ca06318cd70 extends CakeRelease {
 		),
 		'down' => array(
 			'drop_table' => array(
-				'dummy_fields', 'dummy_tables'
+				'dum_dummy_fields', 'dum_dummy_tables'
 			),
 		),
-	);
+		);
 
 	
-/**
- * Before migration callback
- *
- * @param string $direction, up or down direction of migration process
- * @return boolean Should process continue
- * @access public
- */
-	public function before($direction) {
-		return true;
-	}
+	/**
+	* Before migration callback
+	*
+	* @param string $direction, up or down direction of migration process
+	* @return boolean Should process continue
+	* @access public
+	*/
+		public function before($direction) {
+			return true;
+		}
 
-/**
- * After migration callback
- *
- * @param string $direction, up or down direction of migration process
- * @return boolean Should process continue
- * @access public
- */
-	public function after($direction) {
-		return true;
+	/**
+	* After migration callback
+	*
+	* @param string $direction, up or down direction of migration process
+	* @return boolean Should process continue
+	* @access public
+	*/
+		public function after($direction) {
+			return true;
+		}
 	}
-}
-?>

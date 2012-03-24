@@ -17,12 +17,12 @@ class English extends Faker {
 	}
 
 	public static function city($options = array()) {
-		$cities = &DummyData::get_cities();
+		$cities = DummyData::get_cities();
 		return $cities[rand(0, count($cities) - 1)];
 	}
 
 	public static function color($options = array()) {
-		$colors = &DummyData::get_colors();
+		$colors = DummyData::get_colors();
 		return $colors[rand(0, count($colors) - 1)];
 	}
 	public static function title($options = array()) {

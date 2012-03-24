@@ -14,7 +14,7 @@ class PhpFakerTest extends CakeTestCase {
 	}
 	/**/
 	public function testEnglish() {
-		$E = &$this->Faker->English;
+		$E = $this->Faker->English;
 		$a['title'] = $E->title;
 		$a['noun'] = $E->noun;
 		$a['verb'] = $E->verb;
@@ -28,7 +28,7 @@ class PhpFakerTest extends CakeTestCase {
 	}
 	/**/
 	public function testNumber() {
-		$N = &$this->Faker->Number;
+		$N = $this->Faker->Number;
 		$a['integer']['full'] = $N->integer;
 		$a['integer']['0 12'] = $N->integer(array('min'=>0,'max'=>12));
 		$a['integer']['max 12'] = $N->integer(array('max'=>12));
@@ -50,7 +50,7 @@ class PhpFakerTest extends CakeTestCase {
 	}
 	/**/
 	public function testTime() {
-		$T = &$this->Faker->Time;
+		$T = $this->Faker->Time;
 
 		$a['date']['full'] = $T->date;
 		$a['date']['now'] = $T->date(array('variable' => 'now'));
@@ -91,7 +91,7 @@ class PhpFakerTest extends CakeTestCase {
 	}
 	/**/
 	public function testWeb() {
-		$W = &$this->Faker->Web;
+		$W = $this->Faker->Web;
 
 		$a['domain']['suffix'] = $W->domain_suffix;
 		$a['domain']['word'] = $W->domain_word;
@@ -116,7 +116,7 @@ class PhpFakerTest extends CakeTestCase {
 	}
 	/**/
 	public function testName() {
-		$N = &$this->Faker->Name;
+		$N = $this->Faker->Name;
 
 		$a['first_name']['default'] = $N->first_name;
 		$a['first_name']['single'] = $N->first_name(array('single' => true));
@@ -137,7 +137,7 @@ class PhpFakerTest extends CakeTestCase {
 	}
 	/**/
 	public function testAddress() {
-		$Ad = &$this->Faker->Address;
+		$Ad = $this->Faker->Address;
 
 		$a['street_suffix'] = $Ad->street_suffix;
 		$a['street_name'] = $Ad->street_name;
@@ -157,7 +157,7 @@ class PhpFakerTest extends CakeTestCase {
 	}
 	/**/
 	public function testUsa() {
-		$Usa = &$this->Faker->Usa;
+		$Usa = $this->Faker->Usa;
 
 		$a['us_state'] = $Usa->us_state;
 		$a['us_state_abbr'] = $Usa->us_state_abbr;
@@ -167,7 +167,7 @@ class PhpFakerTest extends CakeTestCase {
 	}
 	/**/
 	public function testUk() {
-		$Uk = &$this->Faker->Uk;
+		$Uk = $this->Faker->Uk;
 
 		$a['uk_county'] = $Uk->uk_county;
 		$a['uk_country'] = $Uk->uk_country;
@@ -193,7 +193,7 @@ class PhpFakerTest extends CakeTestCase {
 	}
 	/**/
 	function testCompany() {
-		$C =& $this->Faker->Company;
+		$C = $this->Faker->Company;
 
 		$a['name'] = $C->name;
 		$a['suffix'] = $C->suffix;

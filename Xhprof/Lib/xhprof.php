@@ -123,7 +123,7 @@
 				return false;
 			}
 
-			$_this =& Xhprof::getInstance();
+			$_this = Xhprof::getInstance();
 
 			if(!$session || empty($session) || !is_string($session)){
 				$session = str_replace('/', '_', env('SERVER_NAME').env('REQUEST_URI'));
@@ -158,7 +158,7 @@
 		}
 
 		public function stop(){
-			$_this =& Xhprof::getInstance();
+			$_this = Xhprof::getInstance();
 			if(!$_this->__started){
 				$this->errors[] = 'xprof is not started';
 				return false;
@@ -171,7 +171,7 @@
 		}
 
 		public function runs(){
-			$_this =& Xhprof::getInstance();
+			$_this = Xhprof::getInstance();
 
 			if($_this->__started && $_this->stop()){
 				$_this->__started = false;
@@ -202,7 +202,7 @@
 		}
 
 		private function __write(){
-			$_this =& Xhprof::getInstance();
+			$_this = Xhprof::getInstance();
 			$Xhprof = new XHProfRuns_Default();
 
 			$_this->runs[$this->__session] = $Xhprof->save_run($this->__data, $this->__session, str_replace('.', '_', microtime(true)));

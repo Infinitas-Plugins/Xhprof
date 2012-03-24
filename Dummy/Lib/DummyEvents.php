@@ -46,7 +46,7 @@
 		}
 
 		public function onSetupRoutes(){
-			Router::connect('/dummy_image/*', array('plugin' => 'dummy', 'controller' => 'dummy_images', 'action' => 'image'));
+			InfinitasRouter::connect('/dummy_image/*', array('plugin' => 'dummy', 'controller' => 'dummy_images', 'action' => 'image'));
 		}
 
 		public function onSetupExtensions(){

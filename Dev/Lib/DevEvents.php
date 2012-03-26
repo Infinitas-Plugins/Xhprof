@@ -97,7 +97,7 @@
 		}
 
 		public function onAttachBehaviors($event){
-			if($event->Handler->shouldAutoAttachBehavior()) {
+			if(Configure::read('debug') && $event->Handler->shouldAutoAttachBehavior()) {
 				$event->Handler->Behaviors->attach('Dev.Dev');
 			}
 		}

@@ -52,7 +52,7 @@ class Name extends Faker
 	}
 	
 	public function first_name($options = array()) {
-		$first_names =& DummyData::get_firstnames();
+		$first_names = DummyData::get_firstnames();
 		if ((isset($options['single']) && $options['single']) || (isset($options['variable']) && $options['variable'] == 'single'))
 			return self::random_name( $first_names );
 			
@@ -66,7 +66,7 @@ class Name extends Faker
 	}	
 	
 	public function surname($options = array()) {
-		$surnames =& DummyData::get_surnames();
+		$surnames = DummyData::get_surnames();
 		if ((isset($options['single']) && $options['single']) || (isset($options['variable']) && $options['variable'] == 'single'))
 			return parent::random( $surnames );
 			

@@ -1,17 +1,14 @@
-<?php 
-/* SVN FILE: $Id$ */
-/* Dummy schema generated on: 2011-07-25 23:07:59 : 1311633779*/
+<?php
 class DummySchema extends CakeSchema {
-	var $name = 'Dummy';
 
-	function before($event = array()) {
+	public function before($event = array()) {
 		return true;
 	}
 
-	function after($event = array()) {
+	public function after($event = array()) {
 	}
 
-	var $dummy_fields = array(
+	public $dum_dummy_fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
 		'dummy_table_id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'index'),
 		'name' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
@@ -26,7 +23,7 @@ class DummySchema extends CakeSchema {
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1), 'list' => array('column' => array('active', 'dummy_table_id'), 'unique' => 0), 'details' => array('column' => array('dummy_table_id', 'name'), 'unique' => 0)),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'MyISAM')
 	);
-	var $dummy_tables = array(
+	public $dum_dummy_tables = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
 		'model' => array('type' => 'string', 'null' => true, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'table' => array('type' => 'string', 'null' => true, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
@@ -37,4 +34,3 @@ class DummySchema extends CakeSchema {
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'MyISAM')
 	);
 }
-?>

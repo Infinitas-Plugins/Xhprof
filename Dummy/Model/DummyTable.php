@@ -86,7 +86,7 @@ class DummyTable extends DummyAppModel {
 		
 		$data = $this->read(null, $id);
 		
-		$Model = &$this->getDataModel();
+		$Model = $this->getDataModel();
 		$saveCount = 0;
 		
 		for ($i = 0; $i < $data['DummyTable']['number']; $i++) {
@@ -133,7 +133,7 @@ class DummyTable extends DummyAppModel {
 	 * @return array
 	 */
 	private function describe($id) {
-		$Model = &$this->getDataModel($id);
+		$Model = $this->getDataModel($id);
 		return ConnectionManager::getDataSource('default')->describe($Model);
 	}
 	

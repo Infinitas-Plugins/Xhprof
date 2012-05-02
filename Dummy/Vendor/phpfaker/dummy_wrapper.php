@@ -64,7 +64,7 @@ class DummyWrapper {
 	public static function listClasses($recursive = true) {
 		$ret = array();
 		if ($recursive) {
-			$ret =& self::$generator_classes;
+			$ret = self::$generator_classes;
 		} else {
 			$ret = array_keys(self::$generator_classes);
 		}		

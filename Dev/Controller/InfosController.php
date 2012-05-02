@@ -21,7 +21,13 @@
 	 */
 
 	class InfosController extends DevAppController {
-		public $uses = array();
+		public $uses = false;
+		
+		public function __construct($request = null, $response = null) {
+			parent::__construct($request, $response);
+			
+			unset($this->components['Filter.Filter']);
+		}
 		
 		public function admin_index(){
 			

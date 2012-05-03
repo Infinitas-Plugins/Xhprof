@@ -18,24 +18,24 @@
 	 * Licensed under The MIT License
 	 * Redistributions of files must retain the above copyright notice.
 	 */
-	class DevLib{
+	class DevLib {
 		/**
 		 * look through the webroot dir and find any symlinks. Also looks through
 		 * the webroot/theme dir for any links.
 		 *
 		 * @return array a list of smylink folders
 		 */
-		public function listSymlinks(){
+		public function listSymlinks() {
 			$themeAssets = getcwd() . DS . 'Theme' . DS;
 			$links = array();
 
-			if(is_dir($themeAssets)){
+			if(is_dir($themeAssets)) {
 				$Folder = new Folder($themeAssets);
 				$folders = $Folder->read();
 				$folders = $folders[0];
 
-				foreach($folders as $folder){
-					if(is_link($themeAssets . $folder)){
+				foreach($folders as $folder) {
+					if(is_link($themeAssets . $folder)) {
 						$links[] = $themeAssets . $folder;
 					}
 				}
@@ -66,10 +66,11 @@
 		 * @param bool $remove pass true to remove them
 		 * @return int the number of links that were added / removed.
 		 */
-		public function autoAssetLinks($remove = false){
-			if($remove === true){
+		public function autoAssetLinks($remove = false) {
+			if($remove === true) {
 				return $this->__removeAssetSymlinks();
 			}
+			
 			else{
 				$this->__removeAssetSymlinks();
 				return $this->__createAssetSymlinks();
@@ -83,11 +84,11 @@
 		 *
 		 * @return int the number of links that were created
 		 */
-		private function __createAssetSymlinks(){
+		private function __createAssetSymlinks() {
 			$Folder = new Folder(APP . 'View' . DS . 'Themed' . DS);
 			$folders = $Folder->read();
 			$folders = $folders[0];
-			if(!is_dir(getcwd() . DS . 'Theme')){
+			if(!is_dir(getcwd() . DS . 'Theme')) {
 				$Folder->create(getcwd() . DS . 'Theme', 0755);
 			}
 			
@@ -104,7 +105,7 @@
 
 			$plugins = CakePlugin::loaded();
 			foreach($plugins as $plugin) {
-				if(is_dir(App::pluginPath($plugin) . 'webroot' . DS) && !is_dir(getcwd() . DS . $plugin)){
+				if(is_dir(App::pluginPath($plugin) . 'webroot' . DS) && !is_dir(getcwd() . DS . $plugin)) {
 					symlink(
 						App::pluginPath($plugin) . 'webroot' . DS,
 						Inflector::underscore($plugin)
@@ -121,12 +122,12 @@
 		 *
 		 * @return int the number of links that were removed
 		 */
-		private function __removeAssetSymlinks(){
+		private function __removeAssetSymlinks() {
 			$links = $this->listSymlinks();
 			$removedLinks = 0;
 
-			foreach($links as $link){
-				if(unlink($link)){
+			foreach($links as $link) {
+				if(unlink($link)) {
 					++$removedLinks;
 				}
 			}

@@ -27,7 +27,7 @@ class Faker
 		return "";
 	}
 		
-	public function &__get( $var ){
+	public function &__get( $var ) {
 		if (empty(self::$_instances[$var])) {
 			$filename = "lib/".strtolower($var).".php";
 			include $filename;
@@ -105,7 +105,7 @@ class Faker
 		// unescaped x's to 0-9.
 		$new_str = "";
 		for ($i = 0; $i < strlen($str); $i++) {
-			switch ($str[$i]){
+			switch ($str[$i]) {
 				// Numbers
 				case "X":
 					$new_str .= rand(1, 9);

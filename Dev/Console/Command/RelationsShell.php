@@ -212,38 +212,38 @@
 			require_once CAKE_CORE_INCLUDE_PATH . DS . 'cake' . DS . 'libs' . DS . 'model' . DS . 'model.php';
 			require_once APP . 'app_model.php';
 
-			if(isset($dispatch->params['graphViz']) && is_file($dispatch->params['graphViz'])){
+			if(isset($dispatch->params['graphViz']) && is_file($dispatch->params['graphViz'])) {
 				$this->__params['graphViz'] = $dispatch->params['graphViz'];
 			}
 			$this->__loadGraphViz();
 
-			if(isset($dispatch->params['hide'])){
+			if(isset($dispatch->params['hide'])) {
 				$this->__params['hide'] = explode(',', $dispatch->params['hide']);
 			}
 
 			$this->__params['plugins'] = App::objects('plugin');
-			if(isset($dispatch->params['plugins'])){
+			if(isset($dispatch->params['plugins'])) {
 				$plugins = array();
-				foreach(explode(',', $dispatch->params['plugins']) as $plugin){
+				foreach(explode(',', $dispatch->params['plugins']) as $plugin) {
 					$plugins[] = Inflector::camelize($plugin);
 				}
 				
 				$this->__params['plugins'] = $plugins;
 			}
 
-			if(isset($dispatch->params['ignore'])){
+			if(isset($dispatch->params['ignore'])) {
 				$this->__params['ignore'] = explode(',', $dispatch->params['ignore']);
 			}
 
 			$this->__params['output'] = App::pluginPath('Dev') . 'webroot' . DS . 'img' . DS . 'docs';
-			if(isset($dispatch->params['output'])){
+			if(isset($dispatch->params['output'])) {
 				$this->__params['output'] = $dispatch->params['output'];
 			}
 
 			parent::__construct($dispatch);
 
-			foreach((array)App::objects('plugins') as $plugin){
-				if(isset($this->__options[$plugin])){
+			foreach((array)App::objects('plugins') as $plugin) {
+				if(isset($this->__options[$plugin])) {
 					continue;
 				}
 
@@ -258,33 +258,33 @@
 		 *
 		 * @access private
 		 */
-		private function __checkPaths(){
-			if(!is_dir($this->__params['output'])){
+		private function __checkPaths() {
+			if(!is_dir($this->__params['output'])) {
 				echo $this->__params['output'] . ' does not exist';
 				exit;
 			}
 
 			$mode = 0777;
 
-			if(!is_dir($this->__params['output'] . DS . 'plugins')){
+			if(!is_dir($this->__params['output'] . DS . 'plugins')) {
 				$Folder = new Folder($this->__params['output'] . DS . 'plugins', true, $mode);
-				if(!is_dir($this->__params['output'] . DS . 'plugins')){
+				if(!is_dir($this->__params['output'] . DS . 'plugins')) {
 					echo $this->__params['output'] . DS . 'plugins does not exist';
 					exit;
 				}
 			}
 
-			if(!is_dir($this->__params['output'] . DS . 'models')){
+			if(!is_dir($this->__params['output'] . DS . 'models')) {
 				$Folder = new Folder($this->__params['output'] . DS . 'models', true, $mode);
-				if(!is_dir($this->__params['output'] . DS . 'models')){
+				if(!is_dir($this->__params['output'] . DS . 'models')) {
 					echo $this->__params['output'] . DS . 'models does not exist';
 					exit;
 				}
 			}
 
-			if(!is_dir($this->__params['output'] . DS . 'fixtures')){
+			if(!is_dir($this->__params['output'] . DS . 'fixtures')) {
 				$Folder = new Folder($this->__params['output'] . DS . 'fixtures', true, $mode);
-				if(!is_dir($this->__params['output'] . DS . 'fixtures')){
+				if(!is_dir($this->__params['output'] . DS . 'fixtures')) {
 					echo $this->__params['output'] . DS . 'fixtures does not exist';
 					exit;
 				}
@@ -298,8 +298,8 @@
 		 *
 		 * @return void
 		 */
-		private function __loadGraphViz(){
-			if(!class_exists('Image_GraphViz')){
+		private function __loadGraphViz() {
+			if(!class_exists('Image_GraphViz')) {
 				require $this->__params['graphViz'];
 			}
 			
@@ -317,7 +317,7 @@
 			$this->Infinitas->out('Plugins:  (' . count($this->__params['plugins']) . ') ' . $plugins);
 
 			$skipping = '(' . count($this->__params['ignore']) . ') ';
-			if(count($this->__params['plugins']) == $totalPlugins){
+			if(count($this->__params['plugins']) == $totalPlugins) {
 				$skipping = $skipping . implode(', ', $this->__params['ignore']);
 			}
 			else{
@@ -395,12 +395,12 @@
 		 *
 		 * @return void
 		 */
-		public function everything(){
+		public function everything() {
 			$this->Infinitas->p('');
 			$this->Infinitas->p('Generating for Everything...');
 			$this->app();
 
-			foreach($this->__params['plugins'] as $plugin){
+			foreach($this->__params['plugins'] as $plugin) {
 				echo $plugin . '... ';
 				$this->buildDiagram($plugin);
 			}
@@ -424,7 +424,7 @@
 
 			$path = $this->__params['output'];
 
-			foreach($this->__params['plugins'] as $plugin){
+			foreach($this->__params['plugins'] as $plugin) {
 				$this->__loadGraphViz();
 
 				echo $plugin . '... ';
@@ -450,10 +450,10 @@
 			$hide = $this->__params['hide'];
 			$this->__params['hide'][] = 'pluginNames';
 
-			foreach($this->__params['plugins'] as $plugin){
+			foreach($this->__params['plugins'] as $plugin) {
 				$this->__getModels($plugin);
 				
-				foreach($this->__modelCache[$plugin] as $model){
+				foreach($this->__modelCache[$plugin] as $model) {
 					$this->__loadGraphViz();
 					$this->buildDiagram($plugin, array($model));
 					echo sprintf('%s...', $model);
@@ -464,21 +464,21 @@
 			$this->__params['hide'] = $hide;
 		}
 
-		public function addNode($Model, $relationType, $plugin){
-			if(empty($relationType)){
+		public function addNode($Model, $relationType, $plugin) {
+			if(empty($relationType)) {
 				return false;
 			}
 
-			foreach($Model->{$relationType} as $name => $relatedModel){
+			foreach($Model->{$relationType} as $name => $relatedModel) {
 				$options = array('title' => $relationType);
-				if(isset($this->__options[$plugin])){
+				if(isset($this->__options[$plugin])) {
 					$options = array_merge(
 						$options,
 						(array)$this->__options[$plugin]
 					);
 				}
 
-				if(!is_array($relatedModel)){
+				if(!is_array($relatedModel)) {
 					$relatedModel = array('className' => $relatedModel);
 				}
 				list($_plugin, $_model) =pluginSplit($relatedModel['className']);
@@ -489,7 +489,7 @@
 					$Model->alias
 				);
 
-				switch($relationType){
+				switch($relationType) {
 					case 'hasOne':
 					case 'belongsTo':
 						$color = '#ff9900';
@@ -525,26 +525,26 @@
 		 *
 		 * @return void
 		 */
-		public function buildDiagram($plugin, $models = array()){
-			if(in_array($plugin, $this->__params['ignore'])){
+		public function buildDiagram($plugin, $models = array()) {
+			if(in_array($plugin, $this->__params['ignore'])) {
 				return false;
 			}
 
-			if(empty($models)){
+			if(empty($models)) {
 				$models = $this->__getModels($plugin);
 			}
 
-			if(empty($models)){
+			if(empty($models)) {
 				return false;
 			}
 
 			$this->__recordPluginData($plugin);
 
-			foreach($models as $model){
+			foreach($models as $model) {
 				list($plugin, $model) = pluginSplit($model);
 				$Model = (object)get_class_vars($model);
-				if(!isset($Model->alias)){
-					if(isset($Model->name)){
+				if(!isset($Model->alias)) {
+					if(isset($Model->name)) {
 						$Model->alias = $Model->name;
 					}
 					else{
@@ -552,15 +552,15 @@
 					}
 				}
 				
-				if(!isset($Model->name)){
+				if(!isset($Model->name)) {
 					$Model->name = $Model->alias;
 				}
 
-				if(!isset($Model->plugin)){
+				if(!isset($Model->plugin)) {
 					$Model->plugin = Inflector::underscore($plugin);
 				}
 
-				if(!isset($Model->alias)){
+				if(!isset($Model->alias)) {
 					continue;
 				}
 
@@ -574,8 +574,8 @@
 
 				$this->addMethodNodes($Model, $plugin);
 
-				foreach($this->relations as $relationType){
-					if(!isset($Model->{$relationType})){
+				foreach($this->relations as $relationType) {
+					if(!isset($Model->{$relationType})) {
 						continue;
 					}
 
@@ -584,13 +584,13 @@
 			}
 		}
 
-		private function __recordPluginData($plugin, $Model = null){
-			if(in_array('pluginNames', $this->__params['hide'])){
+		private function __recordPluginData($plugin, $Model = null) {
+			if(in_array('pluginNames', $this->__params['hide'])) {
 				return false;
 			}
 
 			$options = array('shape' => 'box');
-			if(isset($this->__options[$plugin])){
+			if(isset($this->__options[$plugin])) {
 				$options = array_merge(
 					$options,
 					(array)$this->__options[$plugin]
@@ -603,7 +603,7 @@
 				$plugin
 			);
 
-			if($Model){
+			if($Model) {
 				$this->GraphViz->addEdge(
 					array($plugin . ' Plugin' => $Model->alias),
 					array('style' => 'dashed')
@@ -621,7 +621,7 @@
 		 *
 		 * @return mixed, false if nothing to add. true when adding
 		 */
-		public function addMethodNodes($Model, $plugin){
+		public function addMethodNodes($Model, $plugin) {
 			$this->__getTableFields($Model, $plugin);
 			$this->__getClassVariables($Model, $plugin);
 			$this->__getClassMethods($Model, $plugin);
@@ -644,13 +644,13 @@
 		 *
 		 * @return array of models that were found
 		 */
-		private function __getModels($plugin){
-			if(isset($this->__modelCache[$plugin])){
+		private function __getModels($plugin) {
+			if(isset($this->__modelCache[$plugin])) {
 				return $this->__modelCache[$plugin];
 			}
 
 			$path = APP . 'models';
-			if($plugin != 'App'){
+			if($plugin != 'App') {
 				$path = App::pluginPath($plugin) . 'models';
 				$pluginAppModel = App::pluginPath($plugin) . Inflector::underscore($plugin) . '_app_model.php';
 				if(is_file($pluginAppModel)) {
@@ -660,18 +660,18 @@
 
 			$Folder = new Folder($path);
 			$files = $Folder->read();
-			foreach($files[1] as $k => $_file){
+			foreach($files[1] as $k => $_file) {
 				$files[1][$k] = $path . DS . $_file;
 			}
 			
-			foreach($files[0] as $folder){
-				if($folder == 'behaviors' || $folder == 'datasources'){
+			foreach($files[0] as $folder) {
+				if($folder == 'behaviors' || $folder == 'datasources') {
 					continue;
 				}
 
 				$Folder = new Folder($path . DS . $folder);
 				$dirFiles = $Folder->read();
-				foreach($dirFiles[1] as $k => $_file){
+				foreach($dirFiles[1] as $k => $_file) {
 					$dirFiles[1][$k] = $path . DS . $folder . DS . $_file;
 				}
 				
@@ -679,13 +679,13 @@
 			}
 
 			$this->__modelCache[$plugin] = array();
-			foreach($files[1] as $file){
-				if(basename($file) == 'empty'){
+			foreach($files[1] as $file) {
+				if(basename($file) == 'empty') {
 					continue;
 				}
 
 				$modelName = implode('.', array($plugin, Inflector::camelize(basename($file, '.php'))));
-				if(!class_exists($modelName)){
+				if(!class_exists($modelName)) {
 					include_once $file;
 				}
 				
@@ -706,16 +706,16 @@
 		 *
 		 * @return array of variables in the class
 		 */
-		private function __getClassVariables($Model){
-			if(in_array('variables', $this->__params['hide'])){
+		private function __getClassVariables($Model) {
+			if(in_array('variables', $this->__params['hide'])) {
 				return false;
 			}
 
 			$variables = array_keys((array)$Model);
 			$parentVariables = array_keys(get_class_vars('Model'));
 
-			foreach($variables as $k => $variable){
-				if(in_array($variable, $parentVariables) || substr($variable, 0,1) == '__'){
+			foreach($variables as $k => $variable) {
+				if(in_array($variable, $parentVariables) || substr($variable, 0,1) == '__') {
 					unset($variables[$k]);
 					continue;
 				}
@@ -769,11 +769,11 @@
 		 *
 		 * @return array the methods from the class
 		 */
-		private function __getClassMethods($Model){
-			if(in_array('methods', $this->__params['hide'])){
+		private function __getClassMethods($Model) {
+			if(in_array('methods', $this->__params['hide'])) {
 				return false;
 			}
-			if(!isset($Model->name)){
+			if(!isset($Model->name)) {
 				pr($Model);
 				exit;
 			}
@@ -781,8 +781,8 @@
 			$methods = get_class_methods($Model->name);
 			$parentMethods = get_class_methods('Model');
 
-			foreach($methods as $k => $method){
-				if(in_array($method, $parentMethods) || substr($method, 0,1) == '__'){
+			foreach($methods as $k => $method) {
+				if(in_array($method, $parentMethods) || substr($method, 0,1) == '__') {
 					unset($methods[$k]);
 					continue;
 				}
@@ -836,8 +836,8 @@
 		 *
 		 * @return bool
 		 */
-		private function __getTableFields($Model){
-			if(in_array('fields', $this->__params['hide'])){
+		private function __getTableFields($Model) {
+			if(in_array('fields', $this->__params['hide'])) {
 				return false;
 			}
 			pr($Model);
@@ -845,7 +845,7 @@
 
 			$data = $Model->alias . " fields\n" . trim(implode("\n", array_keys($Model->schema())));
 
-			if(empty($data)){
+			if(empty($data)) {
 				return false;
 			}
 
@@ -887,16 +887,16 @@
 		 *
 		 * @access private
 		 */
-		private function __writeFile($path = null){
+		private function __writeFile($path = null) {
 			$this->Infinitas->br();
 			$this->Infinitas->br();
 			$this->Infinitas->out('Writing files:');
 
-			if(!$path){
+			if(!$path) {
 				$path = $this->__params['output'];
 			}
 
-			if(isset($this->__params['hide']['direction']) && $this->__params['hide']['direction']){
+			if(isset($this->__params['hide']['direction']) && $this->__params['hide']['direction']) {
 				$this->GraphViz->setDirected(false);
 			}
 

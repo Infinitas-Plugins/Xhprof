@@ -29,15 +29,15 @@
 			unset($this->components['Filter.Filter']);
 		}
 		
-		public function admin_index(){
+		public function admin_index() {
 			
 		}
 
-		public function admin_symlink(){
+		public function admin_symlink() {
 			App::uses('DevLib', 'Dev.Lib');
 			$this->DevLib = new DevLib();
 
-			if(!is_writable(getcwd())){
+			if(!is_writable(getcwd())) {
 				$this->notice(
 					__('The webroot directory is not writable'),
 					array(
@@ -46,11 +46,11 @@
 				);
 			}
 
-			if(isset($this->request->params['named']['remove']) && $this->request->params['named']['remove']){
+			if(isset($this->request->params['named']['remove']) && $this->request->params['named']['remove']) {
 				$this->__removeSymlinks();
 			}
 
-			else if(isset($this->request->params['named']['show']) && $this->request->params['named']['show']){
+			else if(isset($this->request->params['named']['show']) && $this->request->params['named']['show']) {
 				$this->set('links', $this->DevLib->listSymlinks());
 			}
 
@@ -59,10 +59,10 @@
 			}
 		}
 
-		private function __createSymlinks(){
+		private function __createSymlinks() {
 			$links = $this->DevLib->autoAssetLinks();
 
-			if($links && (int)$links > 0){
+			if($links && (int)$links > 0) {
 				$this->notice(
 					sprintf(__('%d symlinks created'), $links),
 					array(
@@ -79,10 +79,10 @@
 			);
 		}
 
-		private function __removeSymlinks(){
+		private function __removeSymlinks() {
 			$links = $this->DevLib->autoAssetLinks(true);
 
-			if($links && (int)$links > 0){
+			if($links && (int)$links > 0) {
 				$this->notice(
 					sprintf(__('%d symlinks removed'), $links),
 					array(

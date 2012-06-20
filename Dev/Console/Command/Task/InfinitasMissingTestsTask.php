@@ -10,7 +10,7 @@
 			$this->Folder = new Folder(APP);
 		}
 
-		public function report($plugins, $format = null){
+		public function report($plugins, $format = null) {
 			$this->Infinitas->h1(sprintf('Missing Tests :: %s', date('Y-m-d H:i:s')));
 			
 			$missing = $this->getMissingTests($plugins);
@@ -21,11 +21,11 @@
 			$grandTotalCount = $grandTotalCountOf = 0;
 
 			$allTests = array();
-			foreach($missing as $plugin => $types){
+			foreach($missing as $plugin => $types) {
 				$this->Infinitas->h2($plugin);
 
 				$count = $countOf = 0;
-				foreach($types as $type => $files){
+				foreach($types as $type => $files) {
 					$allTests = array_merge($allTests, (array)$files);
 
 					$count = count($files);
@@ -34,7 +34,7 @@
 					$countOf = count($allFiles[$plugin][$type]);
 					$grandTotalCountOf += $countOf;
 
-					if($count){
+					if($count) {
 						echo sprintf(
 							"%s: %s %s\n",
 							str_pad(Inflector::humanize($type), 15, ' '),
@@ -58,9 +58,9 @@
 			$this->Infinitas->out();
 		}
 
-		public function getMissingTests($plugins){			
+		public function getMissingTests($plugins) {			
 			$files = array();
-			foreach($plugins as $plugin){
+			foreach($plugins as $plugin) {
 				$files[$plugin] = array_filter($this->__getFilesThatCouldHaveTests($plugin));
 			}
 
@@ -70,24 +70,24 @@
 			);
 		}
 
-		private function __missingTests($applicationFiles){
+		private function __missingTests($applicationFiles) {
 			$missing = array();
-			foreach($applicationFiles as $plugin => $types){
-				foreach($types as $type => $files){
+			foreach($applicationFiles as $plugin => $types) {
+				foreach($types as $type => $files) {
 					$testFiles = $this->__getFiles($plugin, $type, array(), false, true);
 
-					if(!$testFiles){
+					if(!$testFiles) {
 						$missing[$plugin][$type] = $files;
 						continue;
 					}
 
-					foreach((array)$files as $k => $file){
+					foreach((array)$files as $k => $file) {
 						$testFile = str_replace('.php', '.test.php', $file);
-						if(in_array($testFile, $testFiles)){
+						if(in_array($testFile, $testFiles)) {
 							unset($files[$k]);
 						}
 
-						if(empty($files)){
+						if(empty($files)) {
 							$files = null;
 						}
 					}
@@ -99,7 +99,7 @@
 			return $missing;
 		}
 
-		private function __getFilesThatCouldHaveTests($plugin){
+		private function __getFilesThatCouldHaveTests($plugin) {
 			return array(
 				'controllers' => $this->__getFiles($plugin, 'controllers', array('components')),
 				'components' => $this->__getFiles($plugin, 'components'),
@@ -114,9 +114,9 @@
 			);
 		}
 
-		private function __getFiles($plugin, $type, $skip = array(), $keepPath = false, $tests = false){
+		private function __getFiles($plugin, $type, $skip = array(), $keepPath = false, $tests = false) {
 			$path = $this->__getPath($plugin, $type, $tests);
-			if(!$path){
+			if(!$path) {
 				return false;
 			}
 
@@ -124,18 +124,18 @@
 
 			$files = $this->__getFilesRecursive($skip, $keepPath);
 
-			switch($type){
+			switch($type) {
 				case 'controllers':
-					foreach($files as $k => $file){
-						if(!strstr($file, 'controller.php')){
+					foreach($files as $k => $file) {
+						if(!strstr($file, 'controller.php')) {
 							unset($files[$k]);
 						}
 					}
 					break;
 
 				case 'misc':
-					foreach($files as $k => $file){
-						if(!strstr($file, '.php')){
+					foreach($files as $k => $file) {
+						if(!strstr($file, '.php')) {
 							unset($files[$k]);
 						}
 					}
@@ -155,15 +155,15 @@
 			return $files;
 		}
 
-		private function __getPath($plugin, $type, $tests = false){
+		private function __getPath($plugin, $type, $tests = false) {
 			$pluginPath = App::pluginPath($plugin);
-			if($tests){
+			if($tests) {
 				$pluginPath .= 'tests' . DS . 'cases' . DS;
 			}
 			
 			$path = null;
 			
-			switch($type){
+			switch($type) {
 				case 'misc':
 					$path = $pluginPath;
 					break;
@@ -195,7 +195,7 @@
 					break;
 			}
 
-			if(!is_dir($path)){
+			if(!is_dir($path)) {
 				return false;
 			}
 
@@ -211,7 +211,7 @@
 		 *
 		 * @return array the list of files found
 		 */
-		private function __getFilesRecursive($skip = array(), $savePath = false){
+		private function __getFilesRecursive($skip = array(), $savePath = false) {
 			$skip = array_merge(
 				array('.git'),
 				(array)$skip
@@ -220,16 +220,16 @@
 			$path = $this->Folder->path;
 			$data = $this->Folder->read();
 			$files = $data[1];
-			if(!empty($data[0])){
-				foreach($data[0] as $folder){
-					if(in_array($folder, $skip)){
+			if(!empty($data[0])) {
+				foreach($data[0] as $folder) {
+					if(in_array($folder, $skip)) {
 						continue;
 					}
 					
-					if($this->Folder->cd($path . DS . $folder)){
+					if($this->Folder->cd($path . DS . $folder)) {
 						$tmp = $this->Folder->read();
-						if($savePath){
-							foreach($tmp[1] as $k => $file){
+						if($savePath) {
+							foreach($tmp[1] as $k => $file) {
 								$tmp[1][$k] = $folder . DS . $file;
 							}
 						}

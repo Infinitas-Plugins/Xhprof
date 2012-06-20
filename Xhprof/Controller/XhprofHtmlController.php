@@ -21,15 +21,15 @@
 	class XhprofHtmlController extends XhprofAppController {
 		public $uses = array();
 
-		public function admin_index(){
+		public function admin_index() {
 			$this->set($this->request->params['named']);
 		}
 
-		public function admin_callgraph(){
+		public function admin_callgraph() {
 			$this->layout = 'xhprof.image';
 		}
 
-		public function admin_typeahead(){
+		public function admin_typeahead() {
 
 		}
 	}

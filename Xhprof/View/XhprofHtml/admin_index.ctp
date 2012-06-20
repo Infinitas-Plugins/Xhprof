@@ -57,7 +57,7 @@ xhprof_param_init($params);
   to be preserved for the next page. unset all unwanted keys in $params.
  */
 foreach ($params as $k => $v) {
-	if(isset($$k)){
+	if(isset($$k)) {
 		$params[$k] = $$k;
 	}
 
@@ -85,17 +85,17 @@ $sort = isset($sort) ? $sort : null;
 $run1 = isset($run1) ? $run1 : null;
 $run2 = isset($run2) ? $run2 : null;
 
-function normalUrlToCakeUrl($url){
+function normalUrlToCakeUrl($url) {
 	$a = explode('&', $url);
 
 	$return = array();
-	foreach($a as $key => $b){
+	foreach($a as $key => $b) {
 		$b = split('=', $b);
 		$name = htmlspecialchars(urldecode($b[0]));
-		if(strstr($name, '/?')){
+		if(strstr($name, '/?')) {
 			$name = substr($name, 2);
 		}
-		else if($name == '/callgraph.php?run'){
+		else if($name == '/callgraph.php?run') {
 			$return['action'] = 'callgraph';
 			$name = 'run';
 		}

@@ -17,7 +17,7 @@
 			$i = 1;
 			$inactive = false;
 
-			foreach ($data as $one){
+			foreach ($data as $one) {
 				$table = $one['DummyTable'];
 				if (!isset($table['active']) || (isset($table['active']) && $table['active']) ) {
 					?>
@@ -76,10 +76,10 @@
 						);
 						
 						$i = 1;
-						foreach ($data as $one ){
+						foreach ($data as $one ) {
 							$table = $one['DummyTable'];
 
-							if (!$table['active']){ ?>
+							if (!$table['active']) { ?>
 								<tr class="<?php echo $this->Infinitas->rowClass(); ?>">
 									<td><?php echo $html->link(Inflector::underscore($table['name']), array('controller'=>'dummy_fields', 'action'=>'index', $table['name'])); ?></td>
 									<td>

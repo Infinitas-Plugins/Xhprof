@@ -11,7 +11,7 @@
 class Web extends Faker {
 	private static $_domain_suffix = array('co.uk','com','us','org','ca','biz','info','name','no');
 	
-	public function __construct(){}
+	public function __construct() {}
 	
 	public function __get($var) {
 		return $this->$var();

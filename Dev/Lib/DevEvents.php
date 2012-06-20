@@ -19,7 +19,7 @@
 	 */
 
 	class DevEvents extends AppEvents{
-		public function onPluginRollCall(){
+		public function onPluginRollCall() {
 			return array(
 				'name' => 'Developer',
 				'description' => 'Some help developing your Infinitas powered website',
@@ -29,14 +29,14 @@
 			);
 		}
 
-		public function onAdminMenu($event){
+		public function onAdminMenu($event) {
 			$menu['main']['Dashboard'] = array('plugin' => 'dev', 'controller' => 'infos', 'action' => 'index');
 			$menu['main']['Xhprof'] = array('plugin' => 'xhprof', 'controller' => 'xhprofs', 'action' => 'index');
 			$menu['main']['Dummy Data'] = array('plugin' => 'xhprof', 'controller' => 'dummy', 'action' => 'dummy_tables');
 			return $menu;
 		}
 
-		public function onRequestDone(){
+		public function onRequestDone() {
 			/**
 			 * dump an array of data from Apc to see what is going on
 			 */
@@ -48,12 +48,12 @@
 				'SELECT CHARACTER_SET_NAME'
 			);
 			$profiles = array();
-			foreach($DB->query('show profiles;') as $k => $profile){
+			foreach($DB->query('show profiles;') as $k => $profile) {
 				$explain = true;
-				foreach($skip as $miss){
+				foreach($skip as $miss) {
 					$explain &= !strstr($profile[0]['Query'], $miss);
 				}
-				if(!isset($profile[0]['Query']) || !$explain){
+				if(!isset($profile[0]['Query']) || !$explain) {
 					continue;
 				}
 				pr($profile[0]);
@@ -70,14 +70,14 @@
 				<th colspan="7">Query</th>
 				<th style="width:100px;">Status</th>
 				<th style="width:100px;">Duration</th></tr>';
-			foreach($profiles as $profile){
+			foreach($profiles as $profile) {
 				echo '<tr style="border-top:1px solid;">
 					<td>', $profile['Query_ID'], '</td>
 					<td colspan="7">', $profile['Query'], '</td>
 					<td>Total: </td><td>', $profile['Duration'], '</td></tr>';
 				foreach((array)$profile['explain'] as $explain) {
 					$_extra = '<table>';
-					foreach($profile['profile'] as $_p){
+					foreach($profile['profile'] as $_p) {
 						$_extra .= '<tr><td>'.$_p['PROFILING']['Status'].'</td><td>'.$_p['PROFILING']['Duration'].'</td></tr>';
 					}
 					$_extra .= '</table>';
@@ -96,23 +96,23 @@
 			echo '</table></div>';
 		}
 
-		public function onAttachBehaviors($event){
+		public function onAttachBehaviors($event) {
 			if(Configure::read('debug') && $event->Handler->shouldAutoAttachBehavior()) {
 				$event->Handler->Behaviors->attach('Dev.Dev');
 			}
 		}
 	}
 
-	function outputApcData(){
+	function outputApcData() {
 		$data = array();
-		if(function_exists('apc_cache_info')){
+		if(function_exists('apc_cache_info')) {
 			$data = apc_cache_info();
 		}
 
 		$ths = str_repeat('<th>%s</th>', count($data['cache_list'][0]));
 				$tds = str_replace('th', 'td', $ths);
 		echo '<table style="width:100%">'.call_user_func_array('sprintf', array('a' => '<tr>'.$ths.'</tr>') + array_map('Inflector::humanize', array_keys($data['cache_list'][0])));
-		foreach($data['cache_list'] as $cache){
+		foreach($data['cache_list'] as $cache) {
 			echo call_user_func_array('sprintf', array('<tr>'.$tds.'</tr>') + $cache);
 		}
 		echo '</table>';

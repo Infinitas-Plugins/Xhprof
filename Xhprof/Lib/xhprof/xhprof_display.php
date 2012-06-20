@@ -471,7 +471,7 @@ function print_td_pct($numer, $denom, $bold=false, $attributes=null) {
 	$class = get_print_class($numer, $bold);
 
 	$pct = "N/A%";
-	if ($denom != 0){
+	if ($denom != 0) {
 		$pct = xhprof_percent_format($numer / abs($denom));
 	}
 
@@ -716,7 +716,7 @@ function pc_info($info, $base_ct, $base_info, $parent) {
 	global $metrics;
 	global $display_calls;
 
-	if ($parent){
+	if ($parent) {
 		$type = "Parent";
 	}
 	else{
@@ -901,7 +901,7 @@ function symbol_report($url_params, $run_data, $symbol_info, $sort, $rep_symbol,
 			$header = xhprof_render_link($desc, $href);
 		}
 
-		if ($stat == "fn"){
+		if ($stat == "fn") {
 			print("<th align=left><nobr>$header</th>");
 		}
 		else{
@@ -1090,7 +1090,7 @@ function profiler_diff_report($url_params, $xhprof_data1, $run1_desc, $xhprof_da
  *
  */
 function displayXHProfReport($xhprof_runs_impl, $url_params, $source, $run, $wts, $symbol, $sort, $run1, $run2) {
-	if(!$run){
+	if(!$run) {
 		echo "No XHProf runs specified in the URL.";
 	}
 

@@ -53,8 +53,8 @@
 			$this->set('xhprofData', $this->xhprofData);
 		}
 
-		public function admin_view($id = null){
-			if(!$id || !is_file(Configure::read('Developer.Xhprof.output').$id)){
+		public function admin_view($id = null) {
+			if(!$id || !is_file(Configure::read('Developer.Xhprof.output').$id)) {
 				$this->notice('invalid');
 			}
 

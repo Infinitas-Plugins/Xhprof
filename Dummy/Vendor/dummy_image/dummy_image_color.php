@@ -45,7 +45,7 @@ class DummyImageColor {
 	* @access public	
 	* @desc Sets the RGB values
 	*/
-	function set_rgb($red,$green,$blue){
+	function set_rgb($red,$green,$blue) {
 		
 		$this->rgb['r']=$red;
 		$this->rgb['g']=$green;
@@ -61,7 +61,7 @@ class DummyImageColor {
 	* @access public	
 	* @desc Sets the HEX HTML color value like ffff00. It will convert shorthand to a 6 digit hex.
 	*/
-	function set_hex($hex){
+	function set_hex($hex) {
 		//$hex = settype($hex, 'string');
 		$hex = strtolower($hex);
 		$hex = preg_replace('/#/', '', $hex); //Strips out the # character
@@ -90,7 +90,7 @@ class DummyImageColor {
 	* @access public	
 	* @desc Sets the HTML color name, converting it to a 6 digit hex code.
 	*/
-	function set_name($name){
+	function set_name($name) {
 		$this->hex = $this->convert_name_to_hex($name);
 		
 		$this->convert_hex_to_rgb();
@@ -106,7 +106,7 @@ class DummyImageColor {
 	* @access public
 	* @desc Sets the CMYK color values
 	*/	
-	function set_cmyk($c,$m,$y,$b){
+	function set_cmyk($c,$m,$y,$b) {
 		$this->cmyk['c']=$c;
 		$this->cmyk['m']=$m;
 		$this->cmyk['y']=$y;
@@ -122,7 +122,7 @@ class DummyImageColor {
 	* @access public	
 	* @desc Sets the pantone color value
 	*/	
-	function set_pantone($pantone_name){
+	function set_pantone($pantone_name) {
 		$this->pantone=$pantone_name;
 		$this->cmyk['c']=$this->pantone_pallete[$pantone_name]['c'];
 		$this->cmyk['m']=$this->pantone_pallete[$pantone_name]['m'];
@@ -139,7 +139,7 @@ class DummyImageColor {
 	* @access public	
 	* @desc Sets the pantone pc color value
 	*/		
-	function set_pantone_pc($pantone_name){
+	function set_pantone_pc($pantone_name) {
 		$this->pantone_pc=$pantone_name;
 		$this->cmyk['c']=$this->pantone_pallete_pc[$pantone_name]['c'];
 		$this->cmyk['m']=$this->pantone_pallete_pc[$pantone_name]['m'];
@@ -158,7 +158,7 @@ class DummyImageColor {
 	* @access public
 	* @desc Returns the RGB values of a set color
 	*/	
-	function get_rgb($val){
+	function get_rgb($val) {
 		if($val) {
 			return $this->rgb[$val];
 		} else {
@@ -172,7 +172,7 @@ class DummyImageColor {
 	* @access public
 	* @desc Returns the HEX HTML color value of a set color
 	*/	
-	function get_hex(){
+	function get_hex() {
 		return $this->hex;
 	}
 	
@@ -182,7 +182,7 @@ class DummyImageColor {
 	* @access public	
 	* @desc Returns the CMYK values of a set color
 	*/	
-	function get_cmyk(){
+	function get_cmyk() {
 		return $this->cmyk;
 	}
 
@@ -191,7 +191,7 @@ class DummyImageColor {
 	* @access private
 	* @desc Converts the RGB colors to HEX HTML colors
 	*/	
-	function convert_rgb_to_hex(){
+	function convert_rgb_to_hex() {
 		$this->hex=$this->hex_trip[$this->rgb['r']].$this->hex_trip[$this->rgb['g']].$this->hex_trip[$this->rgb['b']];
 	}
 	
@@ -200,7 +200,7 @@ class DummyImageColor {
 	* @access private
 	* @desc Converts the RGB colors to CMYK colors
 	*/		
-	function convert_rgb_to_cmyk(){
+	function convert_rgb_to_cmyk() {
 		$c = (255-$this->rgb['r'] )/255.0*100;
 		$m = (255-$this->rgb['g'] )/255.0*100;
 		$y = (255-$this->rgb['b'] )/255.0*100;
@@ -218,7 +218,7 @@ class DummyImageColor {
 	* @access private
 	* @desc Converts the CMYK colors to RGB colors
 	*/		
-	function convert_cmyk_to_rgb(){
+	function convert_cmyk_to_rgb() {
 		$red=$this->cmyk['c']+$this->cmyk['b'];
 		$green=$this->cmyk['m']+$this->cmyk['b'];
 		$blue=$this->cmyk['y']+$this->cmyk['b'];
@@ -242,7 +242,7 @@ class DummyImageColor {
 	* @desc Converts the HTML HEX colors to RGB colors
 	* @url http://css-tricks.com/snippets/php/convert-hex-to-rgb/
 	*/		
-	function convert_hex_to_rgb(){
+	function convert_hex_to_rgb() {
 		$red = substr($this->hex,0,2);
 		$green = substr($this->hex,2,2);
 		$blue = substr($this->hex,4,2);
@@ -258,7 +258,7 @@ class DummyImageColor {
 	* @desc Converts HTML color name to 6 digit HEX value.
 	* @url http://en.wikipedia.org/wiki/HTML_color_names
 	*/		
-	function convert_name_to_hex($name){
+	function convert_name_to_hex($name) {
 		$color_names = array(
 			'aqua' => '00ffff',
 			'cyan' => '00ffff',

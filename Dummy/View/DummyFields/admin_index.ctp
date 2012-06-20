@@ -16,7 +16,7 @@
 			);
 
 			$i = 1;
-			foreach ($data['DummyField'] as $dummyField){
+			foreach ($data['DummyField'] as $dummyField) {
 				if ($dummyField['active']) {
 					?>
 						<tr class="<?php echo $this->Infinitas->rowClass(); ?>">
@@ -70,7 +70,7 @@
 			);
 
 			$i = 1;
-			foreach ($data['DummyField'] as $dummyField){
+			foreach ($data['DummyField'] as $dummyField) {
 				if (!$dummyField['active'] ) {
 					?>
 						<tr class="<?php echo $this->Infinitas->rowClass(); ?>">
@@ -102,12 +102,12 @@ if (sizeof($contents)) { ?>
 			echo $this->Infinitas->adminTableHeader($tds);
 
 			$i = 1;
-			foreach ($contents as $one){
+			foreach ($contents as $one) {
 				$row = $one['Model'];
 				?>
 					<tr class="<?php echo $this->Infinitas->rowClass(); ?>">
 						<?php
-							foreach ($row as $field){
+							foreach ($row as $field) {
 								echo '<td>', $this->Text->truncate(htmlspecialchars($field), 200), '</td>';
 							}
 						?>

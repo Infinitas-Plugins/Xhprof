@@ -30,8 +30,8 @@
 				)
 			);
 
-			foreach($xhprofData as $data){
-				if(!strstr($data['Xhprof']['session'], env('HTTP_HOST'))){
+			foreach($xhprofData as $data) {
+				if(!strstr($data['Xhprof']['session'], env('HTTP_HOST'))) {
 					continue;
 				}
 				?>

@@ -14,7 +14,7 @@ class Uk extends Address {
 	private static $_uk_countries = array('England', 'Scotland','Wales', 'Northern Ireland');
 	private static $_uk_postcode_formats = array( 'LLxx xLL', 'LLx xLL' );
 		
-	public function __construct(){}
+	public function __construct() {}
 	
 	public function __get( $var ) {
 		return $this->$var();

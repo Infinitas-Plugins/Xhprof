@@ -14,7 +14,7 @@ class Usa extends Address {
 	private static $_us_states_abbr = array('AL','AK','AS','AZ','AR','CA','CO','CT','DE','DC','FM','FL','GA','GU','HI','ID','IL','IN','IA','KS','KY','LA','ME','MH','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','MP','OH','OK','OR','PW','PA','PR','RI','SC','SD','TN','TX','UT','VT','VI','VA','WA','WV','WI','WY','AE','AA','AP');
 	private static $_us_zipcode_formats = array( 'xxxxx', 'xxxxx-xxxx' );
 	
-	public function __construct(){}
+	public function __construct() {}
 	
 	public function __get( $var ) {
 		return $this->$var();

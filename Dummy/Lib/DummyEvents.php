@@ -21,12 +21,12 @@
 	 */
 
 	class DummyEvents extends AppEvents{
-		public function onAdminMenu($event){
+		public function onAdminMenu($event) {
 			$id = isset($event->Handler->params['pass'][0]) ? $event->Handler->params['pass'][0] : '';
 
 			$menu['main']['Dashboard'] = array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'index');
 			$menu['main']['Images'] = array('plugin' => 'dummy', 'controller' => 'dummy_images', 'action' => 'index');
-			switch($event->Handler->params['controller']){
+			switch($event->Handler->params['controller']) {
 				case 'dummy_fields':
 					$menu['main']['Generate Data']	 = array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'generate', $id);
 					$menu['main']['Re-analyze Table'] = array('plugin' => 'dummy', 'controller' => 'dummy_tables', 'action' => 'analyze', $id);
@@ -45,11 +45,11 @@
 			return $menu;
 		}
 
-		public function onSetupRoutes(){
+		public function onSetupRoutes() {
 			InfinitasRouter::connect('/dummy_image/*', array('plugin' => 'dummy', 'controller' => 'dummy_images', 'action' => 'image'));
 		}
 
-		public function onSetupExtensions(){
+		public function onSetupExtensions() {
 			return array(
 				'png',
 				'gif',

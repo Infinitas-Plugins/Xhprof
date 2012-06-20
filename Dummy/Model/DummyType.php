@@ -154,7 +154,7 @@ class DummyType extends DummyAppModel {
 				$model = substr($field['name'], 0, strlen($field['name']) - 3);
 			}
 
-			switch($model){
+			switch($model) {
 				case 'BlogPosts':
 					$model = 'Blog.BlogPost';
 					break;

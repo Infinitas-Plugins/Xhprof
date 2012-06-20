@@ -21,32 +21,32 @@
 	 */
 
 	class DevBehavior extends ModelBehavior{
-		public function beforeFind($Model, $query){
+		public function beforeFind($Model, $query) {
 			$Model->query('set profiling=1;');
 			return parent::beforeFind($Model, $query);
 		}
 
-		public function afterFind($Model, $results, $primary){
+		public function afterFind($Model, $results, $primary) {
 			$Model->query('set profiling=0;');
 			return parent::afterFind($Model, $results, $primary);
 		}
 
-		public function beforeDelete($Model, $cascade){
+		public function beforeDelete($Model, $cascade) {
 			$Model->query('set profiling=1;');
 			return parent::beforeDelete($Model, $cascade);
 		}
 
-		public function afterDelete($Model){
+		public function afterDelete($Model) {
 			$Model->query('set profiling=0;');
 			return parent::afterDelete($Model);
 		}
 
-		public function beforeSave($Model){
+		public function beforeSave($Model) {
 			$Model->query('set profiling=1;');
 			return parent::beforeSave($Model);
 		}
 
-		public function AfterSave($Model, $created){
+		public function AfterSave($Model, $created) {
 			$Model->query('set profiling=0;');
 			return parent::afterSave($Model, $created);
 		}

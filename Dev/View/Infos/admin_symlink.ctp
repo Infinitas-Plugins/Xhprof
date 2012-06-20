@@ -1,8 +1,8 @@
 <div class="dashboard">
 	<h1><?php echo sprintf(__('Symlinks <small>%d links found</small>'), count($links)); ?></h1>
 	<?php
-		if(!empty($links)){
-			foreach($links as $k => $link){
+		if(!empty($links)) {
+			foreach($links as $k => $link) {
 				$links[$k] = str_replace(getcwd() . DS, 'WEBROOT/', $link);
 			}
 			

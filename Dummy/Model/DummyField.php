@@ -38,7 +38,7 @@ class DummyField extends DummyAppModel {
 			$this->set('active', false);
 		}
 		
-		switch ($this->data['DummyField']['name']){
+		switch ($this->data['DummyField']['name']) {
 			case 'lft':
 			case 'rght':
 			case 'slug':

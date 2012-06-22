@@ -6,18 +6,18 @@
  * You call DummyTable::analyze() to (re-)analyze a table i.e. creating the metadata for the table
  * then DummyTable::generate() is used to add data to the table using either a specified model or
  * a generic model
- * 
- *   
+ *
+ *
  * @package DummyData plugin
  * @author Ronny Vindenes (rvv)
  * @author AlexandeR Morland (alkemann)
  * @modified 10. feb. 2009
  */
-class DummyTable extends DummyAppModel {	
+class DummyTable extends DummyAppModel {
 	public $hasMany = array(
 			'DummyField' => array(
-					'className' => 'Dummy.DummyField', 
-					'foreignKey' => 'dummy_table_id', 
+					'className' => 'Dummy.DummyField',
+					'foreignKey' => 'dummy_table_id',
 					'conditions' => array('DummyField.active' => true)));
 	/**
 	 * Analyze the table and create dummy fields. If no table id is given it will analyze all the tables in the $default DataSource.
@@ -27,7 +27,7 @@ class DummyTable extends DummyAppModel {
 	 */
 	public function analyze($id = null) {
 		$success = false;
-		
+
 		if (!$id) {
 			$tables = $this->showTables();
 			if ($this->find('count')) {
@@ -37,14 +37,14 @@ class DummyTable extends DummyAppModel {
 			$tables = $this->find('all', array('fields' => 'id', 'recursive' => -1));
 		} else {
 			$tables = $this->find('all', array(
-					'fields' => 'id', 
-					'recursive' => -1, 
+					'fields' => 'id',
+					'recursive' => -1,
 					'conditions' => array('DummyTable.id =' => $id)));
 			$this->DummyField->deleteAll(array(
 					'DummyField.dummy_table_id =' => $id));
 			$success = true;
 		}
-		
+
 		foreach ($tables as $table) {
 			$fields = $this->describe($table['DummyTable']['id']);
 			foreach ($fields as $field => $data) {
@@ -54,10 +54,10 @@ class DummyTable extends DummyAppModel {
 				$this->DummyField->analyze();
 				$this->DummyField->save();
 			}
-		}		
+		}
 		return $success;
 	}
-	
+
 	/**
 	 * Wrapper for find('all', $options) on the data table
 	 *
@@ -75,7 +75,7 @@ class DummyTable extends DummyAppModel {
 		$Model->alias = 'Model';
 		return $Model->find('all', $options);
 	}
-	
+
 	/**
 	 * Generate data and save it in the data table
 	 *
@@ -83,12 +83,12 @@ class DummyTable extends DummyAppModel {
 	 * @return integer number of entries saved
 	 */
 	public function generate($id = null) {
-		
+
 		$data = $this->read(null, $id);
-		
+
 		$Model = $this->getDataModel();
 		$saveCount = 0;
-		
+
 		for ($i = 0; $i < $data['DummyTable']['number']; $i++) {
 			$Model->create();
 			foreach ($data['DummyField'] as $field) {
@@ -98,9 +98,9 @@ class DummyTable extends DummyAppModel {
 			foreach ($data['DummyField'] as $field) {
 				if (array_key_exists($field['generator'],$this->DummyField->DummyType->specialGenerators)) {
 					$var = null;
-					foreach ($this->DummyField->DummyType->specialGenerators[$field['generator']]['fields'] as $data_field) {	
-						if (isset($Model->data[$Model->alias][$data_field])) {	
-							if ($this->DummyField->DummyType->specialGenerators[$field['generator']]['field'] == 'first') {						
+					foreach ($this->DummyField->DummyType->specialGenerators[$field['generator']]['fields'] as $data_field) {
+						if (isset($Model->data[$Model->alias][$data_field])) {
+							if ($this->DummyField->DummyType->specialGenerators[$field['generator']]['field'] == 'first') {
 								$var = $Model->data[$Model->alias][$data_field];
 								break;
 							} else {
@@ -122,10 +122,10 @@ class DummyTable extends DummyAppModel {
 				$saveCount++;
 			}
 		}
-		
+
 		return $saveCount;
 	}
-	
+
 	/**
 	 * Describe the table
 	 *
@@ -136,9 +136,9 @@ class DummyTable extends DummyAppModel {
 		$Model = $this->getDataModel($id);
 		return ConnectionManager::getDataSource('default')->describe($Model);
 	}
-	
+
 	/**
-	 * Get the model for the data table 
+	 * Get the model for the data table
 	 *
 	 * @param integer $id
 	 * @return object model
@@ -146,7 +146,6 @@ class DummyTable extends DummyAppModel {
 	private function getDataModel($id = null) {
 		$data = $this->read(null, $id);
 		
-	//	debug($data);
 		/* Try to use the specified model if it exits, otherwise create a generic model using the table as it's source */
 		if (!empty($data['DummyTable']['model'])) {
 			if (App::import('model', $data['DummyTable']['model'])) {
@@ -164,7 +163,7 @@ class DummyTable extends DummyAppModel {
 		}
 		return $Model;
 	}
-	
+
 	/**
 	 * Get a list of tables from the DataSource. Does not include the DummyData tables.
 	 *
@@ -173,7 +172,7 @@ class DummyTable extends DummyAppModel {
 	private function showTables($source = 'default') {
 		$tables = ConnectionManager::getDataSource($source)->listSources();
 		$data = array();
-		
+
 		$prefix = ConnectionManager::getDataSource('dummy')->config['prefix'];
 
 		$ignore = array(
@@ -196,13 +195,13 @@ class DummyTable extends DummyAppModel {
 				$active = !in_array($table, $ignore);
 				$data[] = array(
 						$this->alias => array(
-								'table' => $table, 
+								'table' => $table,
 								'active' => $active));
 			}
 		}
 		return $data;
 	}
-	
+
 	/**
 	 * Create displayField from model, table or id
 	 *

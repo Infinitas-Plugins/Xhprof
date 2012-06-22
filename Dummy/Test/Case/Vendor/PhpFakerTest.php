@@ -23,8 +23,6 @@ class PhpFakerTest extends CakeTestCase {
 		$a['filename'] = $E->filename;
 		$a['color'] = $E->color;
 		$a['city'] = $E->city;
-
-		debug(array('English' => $a));
 	}
 	/**/
 	public function testNumber() {
@@ -45,8 +43,6 @@ class PhpFakerTest extends CakeTestCase {
 		$a['tinyInt']['tinyInt(1)'] = $N->tinyInt(array('max'=>1));
 
 		$a['boolean'] = $N->boolean;
-
-		debug(array('Number' => $a));
 	}
 	/**/
 	public function testTime() {
@@ -86,8 +82,6 @@ class PhpFakerTest extends CakeTestCase {
 		$a['day']['now'] = $T->day(array('variable' => 'now'));
 		$a['day']['past'] = $T->day(array('variable' => 'past'));
 		$a['day']['future'] = $T->day(array('variable' => 'future'));
-
-		debug(array('Time' => $a));
 	}
 	/**/
 	public function testWeb() {
@@ -111,8 +105,6 @@ class PhpFakerTest extends CakeTestCase {
 		$a['url'] = $W->url;
 
 		$a['html'] = $W->html;
-
-		debug(array('Web' => $a),true);
 	}
 	/**/
 	public function testName() {
@@ -132,8 +124,6 @@ class PhpFakerTest extends CakeTestCase {
 
 		$a['name'] = $N->name;
 		$a['full_name'] = $N->full_name;
-
-		debug(array('Name' => $a),true);
 	}
 	/**/
 	public function testAddress() {
@@ -152,8 +142,6 @@ class PhpFakerTest extends CakeTestCase {
 
 		$a['phone']['default'] = $Ad->phone;
 		$a['phone']['555 Xxx xxx'] = $Ad->phone(array('variable'=>'555 Xxx xxx'));
-
-		debug(array('Address' => $a),true);
 	}
 	/**/
 	public function testUsa() {
@@ -162,8 +150,6 @@ class PhpFakerTest extends CakeTestCase {
 		$a['us_state'] = $Usa->us_state;
 		$a['us_state_abbr'] = $Usa->us_state_abbr;
 		$a['zip_code'] = $Usa->zip_code;
-
-		debug(array('Usa' => $a),true);
 	}
 	/**/
 	public function testUk() {
@@ -172,8 +158,6 @@ class PhpFakerTest extends CakeTestCase {
 		$a['uk_county'] = $Uk->uk_county;
 		$a['uk_country'] = $Uk->uk_country;
 		$a['post_code'] = $Uk->post_code;
-
-		debug(array('Uk' => $a),true);
 	}
 	/**/
 	function testLorem() {
@@ -183,13 +167,8 @@ class PhpFakerTest extends CakeTestCase {
 		$a['sentence'] = $L->sentence(array(''));
 		$a['paragraph'] = $L->paragraph;
 
-		debug(array('Lorem' => $a),true);
-
 		App::import('vendor','Dummy.phpfaker/DummyWrapper');
 		$english_generators = DummyWrapper::listMethods('Lorem');
-		debug(array(
-			'code' => 'DummyWrapper::listMethods("Lorem")',
-			'english_generators' => $english_generators));
 	}
 	/**/
 	function testCompany() {
@@ -199,42 +178,22 @@ class PhpFakerTest extends CakeTestCase {
 		$a['suffix'] = $C->suffix;
 		$a['catch_phrase'] = $C->catch_phrase;
 		$a['bs'] = $C->bs;
-
-		debug(array('Company' => $a));
 	}
 	/**/
 	function testDummyWrapper() {
 		App::import('vendor','Dummy.phpfaker/DummyWrapper');
 
 		$classes = DummyWrapper::listClasses(false);
-		debug(array(
-			'code' => 'DummyWrapper::listClasses(false)',
-			'classes' => $classes));
 
 		$english_generators = DummyWrapper::listMethods('English');
-		debug(array(
-			'code' => 'DummyWrapper::listMethods("English")',
-			'english_generators' => $english_generators));
 
 		$name = DummyWrapper::generate('English','title', array('max' => 200));
-		debug(array(
-			'code' => 'DummyWrapper::generate("English","title", array("max" => 200))',
-			'english title' => $name));
 
 		$subclasses = DummyWrapper::listSubClasses('Address');
-		debug(array(
-			'code' => 'DummyWrapper::listSubClasses("Address")',
-			'classes' => $subclasses));
 
 		$uk_post_code = DummyWrapper::generate('Uk','post_code');
-		debug(array(
-			'code' => 'DummyWrapper::generate(\'Uk\',\'post_code\')',
-			'post_code' => $uk_post_code));
 
 		$us_post_code = DummyWrapper::generate('Usa','post_code');
-		debug(array(
-			'code' => 'DummyWrapper::generate(\'Usa\',\'post_code\')',
-			'post_code' => $us_post_code));
 	}
 	/**/
 }

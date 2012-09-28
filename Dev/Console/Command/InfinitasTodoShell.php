@@ -1,8 +1,7 @@
 <?php
-	class InfinitasTodoShell extends Shell {
+	class InfinitasTodoShell extends AppShell {
 		public $tasks = array(
-			'Infinitas',
-			'InfinitasMissingTests'
+			'Dev.InfinitasMissingTests'
 		);
 
 		private $__options = array(
@@ -14,8 +13,8 @@
 			'Q' => 'quit'
 		);
 
-		public function  __construct(&$dispatch) {
-			parent::__construct($dispatch);
+		public function  __construct($stdout = null, $stderr = null, $stdin = null) {
+			parent::__construct($stdout, $stderr, $stdin);
 			Configure::write('debug', 2);
 
 			$this->__params['plugins'] = App::objects('plugin');
@@ -32,14 +31,14 @@
 		}
 
 		public function main() {
-			$this->Infinitas->h1('Dev Roadmap thingy');
+			$this->h1('Dev Roadmap thingy');
 
-			$this->Infinitas->out('[E]verything');
-			$this->Infinitas->out('[M]issing Tests');
-			$this->Infinitas->out('[S]tandards');
-			$this->Infinitas->out('[C]yclomatic complexity');
-			$this->Infinitas->out('[T]odo\'s');
-			$this->Infinitas->out('[Q]Quit');
+			$this->out('[E]verything');
+			$this->out('[M]issing Tests');
+			$this->out('[S]tandards');
+			$this->out('[C]yclomatic complexity');
+			$this->out('[T]odo\'s');
+			$this->out('[Q]Quit');
 
 			$method = strtoupper($this->in(__('What would you like to generate?'), array_keys($this->__options)));
 

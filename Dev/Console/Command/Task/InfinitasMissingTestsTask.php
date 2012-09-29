@@ -191,6 +191,7 @@ class InfinitasMissingTestsTask extends AppShell {
 		$plugins = array_flip(array_keys($this->_pluginPaths));
 		for ($it->rewind(); $it->valid(); $it->next()) {
 			unset($plugins[substr(substr($it->current()->getFilename(), 3), 0, -13)]);
+			unset($plugins[substr(substr($it->current()->getFilename(), 3), 0, -8)]);
 		}
 
 		return array_flip($plugins);

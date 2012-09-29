@@ -7,16 +7,25 @@
 
 	class AllTestableFilterIterator extends FilterIterator {
 		public function accept() {
+			$skip = array(
+				'Test/',
+				'Fixture.php',
+				'Config/',
+				'config/',
+				'webroot/',
+				'tmp/'
+			);
+			foreach($skip as $s) {
+				if(strstr($this->current(), $s) !== false) {
+					return false;
+				}
+			}
+
 			$testable = $this->current()->getExtension() == 'php' &&
-				!strstr($this->current(), 'Test') &&
-				!strstr($this->current(), 'Fixture.php') &&
-				!strstr($this->current(), 'Config') &&
-				!strstr($this->current(), 'config') &&
-				!strstr($this->current(), 'webroot') &&
-				!strstr($this->current(), 'tmp') &&
 				!strstr($this->current()->getPath(), 'Vendor') &&
 				!strstr($this->current()->getFilename(), 'App') &&
 				substr($this->current()->getFilename(), 0, 2) != '00';
+
 			return $testable;
 		}
 	}

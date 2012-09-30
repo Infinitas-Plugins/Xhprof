@@ -9,8 +9,8 @@ class DummyFieldFixture extends CakeTestFixture {
 	public $name = 'DummyField';
 
 	public $fields = array(
-		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
-		'dummy_table_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'index'),
+		'id' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 36, 'key' => 'primary'),
+		'dummy_table_id' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 36, 'key' => 'index'),
 		'name' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'allow_null' => array('type' => 'boolean', 'null' => false, 'default' => null),
 		'default' => array('type' => 'string', 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),

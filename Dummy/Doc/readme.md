@@ -1,3 +1,0 @@
-The dummy plugin was originally [coppied / forked](http://code.google.com/p/alkemann/downloads/list) from a plugin for normal CakePHP application written by [alkemann](https://github.com/alkemann). The frontend to it has mostly been re-written to fit in with the style and design of the Infinitas backed, and also removing the need for adding additional connections and various setting up that was originally required.
-
-> This is currently not in a working state, nor is it currently a high priority on the list of things todo.

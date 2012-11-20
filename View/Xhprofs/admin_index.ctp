@@ -19,54 +19,43 @@
 	echo $this->Form->create('Xhprof', array('url' => array('action' => 'mass')));
 	echo $this->Infinitas->adminIndexHead($filterOptions);
 ?>
-<div class="table">
-	<table class="listing" cellpadding="0" cellspacing="0">
-		<?php
-			echo $this->Infinitas->adminTableHeader(
-				array(
-					__('Session'),
-					__('Run time'),
-					__('Action')
-				)
-			);
+<table class="listing">
+	<?php
+		echo $this->Infinitas->adminTableHeader(array(
+			__d('xhprof', 'Session'),
+			__d('xhprof', 'Run time'),
+			__d('xhprof', 'Action')
+		));
 
-			foreach($xhprofData as $data) {
-				if(!strstr($data['Xhprof']['session'], env('HTTP_HOST'))) {
-					continue;
-				}
-				?>
-					<tr class="<?php echo $this->Infinitas->rowClass(); ?>">
-						<td>
-							<?php
-								echo $this->Html->link(
-									$data['Xhprof']['session'],
-									array(
-										'Xhprof.xhprof_session' => $data['Xhprof']['session']
-									)
-								);
-							?>
-						</td>
-						<td>
-							<?php
-								$date = explode('_', $data['Xhprof']['time']);								
-								echo date('j M, H:m:s', str_replace('_', '.', $date[0])), '.', $date[1];
-							?>
-						</td>
-						<td>
-							<?php
-								echo $this->Html->link(
-									__('view'),
-									array(
-										'action' => 'view',
-										$data['Xhprof']['time'].'.'.$data['Xhprof']['session']
-									)
-								);
-							?>
-						</td>
-					</tr>
-				<?php
-			}
-		?>
-	</table>
-	<?php echo $this->Form->end(); ?>
-</div>
+		foreach($xhprofData as $data) {
+			if(!strstr($data['Xhprof']['session'], env('HTTP_HOST'))) {
+				continue;
+			} ?>
+			<tr>
+				<td>
+					<?php
+						echo $this->Html->link($data['Xhprof']['session'], array(
+							'Xhprof.xhprof_session' => $data['Xhprof']['session']
+						));
+					?>&nbsp;
+				</td>
+				<td>
+					<?php
+						$date = explode('_', $data['Xhprof']['time']);
+						echo date('j M, H:m:s', str_replace('_', '.', $date[0])), '.', $date[1];
+					?>&nbsp;
+				</td>
+				<td>
+					<?php
+						echo $this->Html->link(__d('xhprof', 'view'), array(
+							'action' => 'view',
+							$data['Xhprof']['time'].'.'.$data['Xhprof']['session']
+						));
+					?>&nbsp;
+				</td>
+			</tr> <?php
+		}
+	?>
+</table>
+<?php
+	echo $this->Form->end();

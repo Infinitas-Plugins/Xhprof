@@ -7,9 +7,11 @@
 	}
 	if(!defined('XHPROF_FLAGS_CPU')) {
 		define('XHPROF_FLAGS_CPU', false);
-	}	
+	}
+	App::import('Lib', 'Xhprof.Lib/xhprof/xhprof_lib.php');
+	App::uses('XHProfRuns_Default', 'Xhprof.Lib/xhprof');
 
-	final class Xhprof{
+	final class Xhprof {
 		public $profileFlags = array(
 			XHPROF_FLAGS_MEMORY,	  // track memory usage
 			XHPROF_FLAGS_NO_BUILTINS, // ignore php methods
@@ -60,7 +62,7 @@
 			'Set::diff', 'Set::reverse',
 
 			'DboSource::length', 'DboSource::cacheMethod', 'DboSource::hasResult', 'DboSource::fetchVirtualField', 'DboSource::name', 'DboSource::fetchAll', 'DboMysql::resultSet',
-			'DboMysql::fetchResult', 'DboMysqlBase::column', 'DboMysql::_execute', 'DboMysqlBase::describe', 
+			'DboMysql::fetchResult', 'DboMysqlBase::column', 'DboMysql::_execute', 'DboMysqlBase::describe',
 			'ConnectionManager::getInstance', 'ConnectionManager::getDataSource',
 
 			'App::__load', 'App::getInstance', 'App::__settings', 'App::import', 'App::__mapped', 'App::__paths', 'App::__map', 'App::__overload', 'App::__find',
@@ -103,7 +105,6 @@
 		public static function getInstance() {
 			static $instance = array();
 			if (!$instance) {
-				Configure::load('xhprof.config');
 				$instance[0] = new Xhprof();
 				$instance[0]->__xhprofInstalled =
 					function_exists('xhprof_enable') &
@@ -133,19 +134,19 @@
 				$_this->errors[] = 'xhprof does not seem to be installed';
 				return false;
 			}
-			
+
 			if($_this->__started === true) {
 				$_this->errors[] = sprintf('xprof is already started :: %s', $_this->__session);
 				return false;
 			}
-			
+
 			$_this->__session = $session;
 
 			$ignore = array();
 			if(!$_this->profileCake) {
 				$ignore = $_this->cakeFunctions;
 			}
-			$ignore = array_merge($ignore, $_this->ignore);			
+			$ignore = array_merge($ignore, $_this->ignore);
 
 			xhprof_enable(
 				array_sum((array)$_this->profileFlags),
@@ -163,7 +164,7 @@
 				$this->errors[] = 'xprof is not started';
 				return false;
 			}
-			
+
 			$this->__started = false;
 
 			$_this->__data = xhprof_disable();
@@ -207,7 +208,7 @@
 
 			$_this->runs[$this->__session] = $Xhprof->save_run($this->__data, $this->__session, str_replace('.', '_', microtime(true)));
 			unset($Xhprof, $this->__data, $this->__session);
-			
+
 			return !empty($_this->runs);
 		}
 	}

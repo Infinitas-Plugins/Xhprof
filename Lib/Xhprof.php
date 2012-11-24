@@ -8,7 +8,12 @@
 	if(!defined('XHPROF_FLAGS_CPU')) {
 		define('XHPROF_FLAGS_CPU', false);
 	}
-	App::import('Lib', 'Xhprof.Lib/xhprof/xhprof_lib.php');
+
+	function normalUrlToCakeUrl($url) {
+		return urldecode($url);
+	}
+
+	require_once InfinitasPlugin::path('Xhprof') . 'Lib/xhprof/xhprof_lib.php';
 	App::uses('XHProfRuns_Default', 'Xhprof.Lib/xhprof');
 
 	final class Xhprof {
@@ -94,7 +99,7 @@
 		 */
 		private function __clone() {}
 
-		private function __construct() {}
+		public function __construct() {}
 
 		/**
 		 * Get an instance.

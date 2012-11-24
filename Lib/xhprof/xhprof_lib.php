@@ -169,7 +169,7 @@ function xhprof_trim_run($raw_data, $functions_to_keep) {
 	$function_map['main()'] = 1;
 
 	$new_raw_data = array();
-	foreach ($raw_data as $parent_child => $info) {
+	foreach ((array)$raw_data as $parent_child => $info) {
 		list($parent, $child) = xhprof_parse_parent_child($parent_child);
 
 		if (isset($function_map[$parent]) || isset($function_map[$child])) {

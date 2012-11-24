@@ -1,24 +1,22 @@
 <?php
-	/* 
-	 * Short Description / title.
-	 * 
-	 * Overview of what the file does. About a paragraph or two
-	 * 
-	 * Copyright (c) 2010 Carl Sutton ( dogmatic69 )
-	 * 
-	 * @filesource
-	 * @copyright Copyright (c) 2010 Carl Sutton ( dogmatic69 )
-	 * @link http://www.infinitas-cms.org
-	 * @package developer
-	 * @subpackage developer.controller
-	 * @license http://www.opensource.org/licenses/mit-license.php The MIT License
-	 * @since 0.1
-	 * 
-	 * @author dogmatic69
-	 * 
-	 * Licensed under The MIT License
-	 * Redistributions of files must retain the above copyright notice.
-	 */
+/**
+ * XhprofAppController
+ * 
+ * @package Xhprof.Controller
+ */
 
-	 class XhprofAppController extends AppController{
-	 }
+/**
+ * XhprofAppController
+ *
+ * @copyright Copyright (c) 2010 Carl Sutton ( dogmatic69 )
+ * @link http://www.infinitas-cms.org
+ * @package Xhprof.Controller
+ * @license http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @since 0.6a
+ *
+ * @author Carl Sutton <dogmatic69@infinitas-cms.org>
+ */
+
+class XhprofAppController extends AppController {
+
+}

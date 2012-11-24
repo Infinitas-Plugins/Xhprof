@@ -53,7 +53,7 @@ $base_path = rtrim(dirname($_SERVER['SCRIPT_NAME']), "/");
  *
  */
 
-function xhprof_count_format($num) {	
+function xhprof_count_format($num) {
 	$num = round($num, 3);
 	return round($num) == $num ? number_format($num) : number_format($num, 3);
 }
@@ -226,9 +226,11 @@ function init_metrics($xhprof_data, $rep_symbol, $sort, $diff_report = false) {
 	global $display_calls;
 
 	$diff_mode = $diff_report;
-
+	if(is_array($sort)) {
+		$sort = end($sort);
+	}
 	if (!empty($sort)) {
-		if (array_key_exists($sort, Configure::read('Xhprof.sortable_columns'))) {
+		if (array_key_exists((string)$sort, Configure::read('Xhprof.sortable_columns'))) {
 			$sort_col = $sort;
 		} else {
 			print('Invalid Sort Key $sort specified in URL');
@@ -296,7 +298,7 @@ function init_metrics($xhprof_data, $rep_symbol, $sort, $diff_report = false) {
 function stat_description($stat) {
 	global $diff_mode;
 
-	return $diff_mode 
+	return $diff_mode
 		? Configure::read('Xhprof.diff_descriptions.' . $stat)
 		: Configure::read('Xhprof.descriptions.' . $stat);
 }
@@ -440,8 +442,8 @@ function get_print_class($num, $bold) {
 			if ($num <= 0) {
 				$class = $vgbar; // green (improvement)
 			}
-		} 
-	} 
+		}
+	}
 
 	return $class;
 }
@@ -556,7 +558,7 @@ function print_flat_data($url_params, $title, $flat_data, $sort, $run1, $run2, $
 				$header = $desc = stat_description($stat);
 				if (array_key_exists($stat, Configure::read('Xhprof.sortable_columns'))) {
 					$href = $base_path . '/?' . http_build_query(xhprof_array_set($url_params, 'sort', $stat));
-					$header = xhprof_render_link($desc, $href);					
+					$header = xhprof_render_link($desc, $href);
 				}
 
 				echo sprintf('<th %s >%s</th>', $stat = 'fn' ? 'align="left"' : $vwbar, $header);
@@ -669,7 +671,7 @@ function full_report($url_params, $symbol_tab, $sort, $run1, $run2) {
 
 
 	$flat_data = array();
-	foreach ($symbol_tab as $symbol => $info) {		
+	foreach ($symbol_tab as $symbol => $info) {
 		$info['fn'] = $symbol;
 		$flat_data[] = $info;
 	}
@@ -694,7 +696,7 @@ function full_report($url_params, $symbol_tab, $sort, $run1, $run2) {
 			$title = sprintf('Total Diff Report: Sorted by absolute value of regression/improvement in %s', $desc);
 		}
 	}
-	
+
 	print_flat_data($url_params, $title, $flat_data, $sort, $run1, $run2, $limit);
 }
 
@@ -745,7 +747,7 @@ function print_pc_array($url_params, $results, $base_ct, $base_info, $parent, $r
 	if ($parent) {
 		$title = 'Parent function';
 	}
-	
+
 	if (count($results) > 1) {
 		$title .= 's';
 	}
@@ -1000,7 +1002,7 @@ function symbol_report($url_params, $run_data, $symbol_info, $sort, $rep_symbol,
 	if ($display_calls) {
 		print("var func_ct   = " . $symbol_info["ct"] . ";\n");
 	}
-	
+
 	print("var func_metrics = new Array();\n");
 	print("var metrics_col  = new Array();\n");
 	print("var metrics_desc  = new Array();\n");
@@ -1010,7 +1012,7 @@ function symbol_report($url_params, $run_data, $symbol_info, $sort, $rep_symbol,
 	else {
 		print("var diff_mode = false;\n");
 	}
-	
+
 	$column_index = 3; // First three columns are Func Name, Calls, Calls%
 	foreach ($metrics as $metric) {
 		print("func_metrics[\"" . $metric . "\"] = " . round($symbol_info[$metric]) . ";\n");

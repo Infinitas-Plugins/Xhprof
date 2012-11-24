@@ -33,7 +33,7 @@
 // by default assume that xhprof_html & xhprof_lib directories
 // are at the same level.
 
-$GLOBALS['XHPROF_LIB_ROOT'] = App::pluginPath('xhprof') . 'libs' . DS .'xhprof';
+$GLOBALS['XHPROF_LIB_ROOT'] = InfinitasPlugin::path('Xhprof') . 'Lib' . DS .'xhprof';
 
 require_once $GLOBALS['XHPROF_LIB_ROOT'] . DS . 'xhprof_lib.php';
 require_once $GLOBALS['XHPROF_LIB_ROOT'] . DS . 'xhprof_display.php';
@@ -90,7 +90,7 @@ function normalUrlToCakeUrl($url) {
 
 	$return = array();
 	foreach($a as $key => $b) {
-		$b = split('=', $b);
+		$b = explode('=', $b);
 		$name = htmlspecialchars(urldecode($b[0]));
 		if(strstr($name, '/?')) {
 			$name = substr($name, 2);

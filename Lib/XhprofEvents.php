@@ -22,7 +22,10 @@ class XhprofEvents extends AppEvents{
 
 	public function onRequestDone(Event $Event) {
 		if(class_exists('Xhprof')) {
-			Xhprof::runs();
+			$Request = new CakeRequest();
+			if (strstr($Request->here, '.json') === false) {
+				Xhprof::runs();
+			}
 		}
 	}
 

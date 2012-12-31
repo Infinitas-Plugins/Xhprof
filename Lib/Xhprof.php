@@ -124,7 +124,7 @@
 		 * @param string $session
 		 * @return bool
 		 */
-		public function start($session = null) {
+		public static function start($session = null) {
 			if(strstr(env('REQUEST_URI'), '/admin/xhprof')) {
 				return false;
 			}
@@ -163,7 +163,7 @@
 			return true;
 		}
 
-		public function stop() {
+		public static function stop() {
 			$_this = Xhprof::getInstance();
 			if(!$_this->__started) {
 				$this->errors[] = 'xprof is not started';
@@ -176,7 +176,7 @@
 			return $_this->__write();
 		}
 
-		public function runs() {
+		public static function runs() {
 			$_this = Xhprof::getInstance();
 
 			if($_this->__started && $_this->stop()) {

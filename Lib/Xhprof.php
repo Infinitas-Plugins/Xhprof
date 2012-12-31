@@ -1,11 +1,11 @@
 <?php
-	if(!defined('XHPROF_FLAGS_MEMORY')) {
+	if (!defined('XHPROF_FLAGS_MEMORY')) {
 		define('XHPROF_FLAGS_MEMORY', false);
 	}
-	if(!defined('XHPROF_FLAGS_NO_BUILTINS')) {
+	if (!defined('XHPROF_FLAGS_NO_BUILTINS')) {
 		define('XHPROF_FLAGS_NO_BUILTINS', false);
 	}
-	if(!defined('XHPROF_FLAGS_CPU')) {
+	if (!defined('XHPROF_FLAGS_CPU')) {
 		define('XHPROF_FLAGS_CPU', false);
 	}
 
@@ -125,22 +125,22 @@
 		 * @return bool
 		 */
 		public static function start($session = null) {
-			if(strstr(env('REQUEST_URI'), '/admin/xhprof')) {
+			if (strstr(env('REQUEST_URI'), '/admin/xhprof')) {
 				return false;
 			}
 
 			$_this = Xhprof::getInstance();
 
-			if(!$session || empty($session) || !is_string($session)) {
+			if (!$session || empty($session) || !is_string($session)) {
 				$session = str_replace('/', '_', env('SERVER_NAME').env('REQUEST_URI'));
 			}
 
-			if(!$_this->__xhprofInstalled) {
+			if (!$_this->__xhprofInstalled) {
 				$_this->errors[] = 'xhprof does not seem to be installed';
 				return false;
 			}
 
-			if($_this->__started === true) {
+			if ($_this->__started === true) {
 				$_this->errors[] = sprintf('xprof is already started :: %s', $_this->__session);
 				return false;
 			}
@@ -148,61 +148,55 @@
 			$_this->__session = $session;
 
 			$ignore = array();
-			if(!$_this->profileCake) {
+			if (!$_this->profileCake) {
 				$ignore = $_this->cakeFunctions;
 			}
 			$ignore = array_merge($ignore, $_this->ignore);
 
-			xhprof_enable(
-				array_sum((array)$_this->profileFlags),
-				array(
-					'ignored_functions' =>  $ignore
-				)
-			);
+			xhprof_enable(array_sum((array)$_this->profileFlags), array(
+				'ignored_functions' =>  $ignore
+			));
 			$_this->__started = true;
 			return true;
 		}
 
 		public static function stop() {
 			$_this = Xhprof::getInstance();
-			if(!$_this->__started) {
-				$this->errors[] = 'xprof is not started';
+			if (!$_this->__started) {
+				$_this->errors[] = 'xprof is not started';
 				return false;
 			}
 
-			$this->__started = false;
-
+			$_this->__started = false;
 			$_this->__data = xhprof_disable();
+			
 			return $_this->__write();
 		}
 
 		public static function runs() {
 			$_this = Xhprof::getInstance();
 
-			if($_this->__started && $_this->stop()) {
+			if ($_this->__started && $_this->stop()) {
 				$_this->__started = false;
-			}
-			else{
+			} else {
 				$_this->errors[] = 'not started';
 				return false;
 			}
 
-			if(empty($_this->runs)) {
+			if (empty($_this->runs)) {
 				$_this->errors[] = 'No runs started';
 				return false;
 			}
 
 			$links = array();
-			foreach($_this->runs as $name => $run) {
-				if(Configure::read('debug')) {
+			foreach ($_this->runs as $name => $run) {
+				if (Configure::read('debug')) {
 					$links[] = '<a href="'.Configure::read('Xhprof.url').'index/run:'.$run.'/source:'.$name.'/all:0" target="_blank">'.str_replace('_', '/', $name).'</a>';
 					continue;
 				}
-
-				//$Object->log($name.': '.Configure::read('Developer.Xhprof.url').'index.php?run='.$run.'&source='.$name, 'xhprof');
 			}
 
-			if(!empty($links)) {
+			if (!empty($links)) {
 				echo implode('<br/>', $links);
 			}
 		}
@@ -211,8 +205,8 @@
 			$_this = Xhprof::getInstance();
 			$Xhprof = new XHProfRuns_Default();
 
-			$_this->runs[$this->__session] = $Xhprof->save_run($this->__data, $this->__session, str_replace('.', '_', microtime(true)));
-			unset($Xhprof, $this->__data, $this->__session);
+			$_this->runs[$_this->__session] = $Xhprof->save_run($_this->__data, $_this->__session, str_replace('.', '_', microtime(true)));
+			unset($Xhprof, $_this->__data, $_this->__session);
 
 			return !empty($_this->runs);
 		}
